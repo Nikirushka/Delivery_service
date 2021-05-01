@@ -1,0 +1,17 @@
+E:\BitBucket\PRTEST1\scyng5src\Delivery service\Delivery service\bin\Debug\Delivery service.exe.config
+E:\BitBucket\PRTEST1\scyng5src\Delivery service\Delivery service\bin\Debug\Delivery service.exe
+E:\BitBucket\PRTEST1\scyng5src\Delivery service\Delivery service\bin\Debug\Delivery service.pdb
+E:\BitBucket\PRTEST1\scyng5src\Delivery service\Delivery service\obj\Debug\Delivery service.csprojAssemblyReference.cache
+E:\BitBucket\PRTEST1\scyng5src\Delivery service\Delivery service\obj\Debug\Delivery_service.Login.resources
+E:\BitBucket\PRTEST1\scyng5src\Delivery service\Delivery service\obj\Debug\Delivery_service.Properties.Resources.resources
+E:\BitBucket\PRTEST1\scyng5src\Delivery service\Delivery service\obj\Debug\Delivery service.csproj.GenerateResource.cache
+E:\BitBucket\PRTEST1\scyng5src\Delivery service\Delivery service\obj\Debug\Delivery service.csproj.CoreCompileInputs.cache
+E:\BitBucket\PRTEST1\scyng5src\Delivery service\Delivery service\obj\Debug\Delivery service.exe
+E:\BitBucket\PRTEST1\scyng5src\Delivery service\Delivery service\obj\Debug\Delivery service.pdb
+E:\BitBucket\PRTEST1\scyng5src\Delivery service\Delivery service\obj\Debug\Delivery_service.NewUser.resources
+E:\BitBucket\PRTEST1\scyng5src\Delivery service\Delivery service\obj\Debug\Delivery service.csproj.CopyComplete
+E:\BitBucket\PRTEST1\scyng5src\Delivery service\Delivery service\obj\Debug\Delivery_service.ForClient.resources
+E:\BitBucket\PRTEST1\scyng5src\Delivery service\Delivery service\obj\Debug\Delivery_service.ForEmployee.resources
+E:\BitBucket\PRTEST1\scyng5src\Delivery service\Delivery service\obj\Debug\Delivery_service.ForOwner.resources
+E:\BitBucket\PRTEST1\scyng5src\Delivery service\Delivery service\obj\Debug\Delivery_service.ResPass.resources
+E:\BitBucket\PRTEST1\scyng5src\Delivery service\Delivery service\obj\Debug\Delivery_service.InfoDeliveryForClient.resources
