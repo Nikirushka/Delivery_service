@@ -22,7 +22,7 @@ namespace Delivery_service
         SqlDataReader reader = null;
         SqlCommand cmd;
         string FileNameImage;
-        string connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename='|DataDirectory|Delivery_service.mdf';Integrated Security=True;Connect Timeout=30";
+        string connectionString = @"Server=tcp:deliveryservice.database.windows.net,1433;Initial Catalog=Delivery service;Persist Security Info=False;User ID=Nikiru;Password=Rnp26122001;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;";
         public NewUser()
         {
             InitializeComponent();
@@ -76,7 +76,7 @@ namespace Delivery_service
                 reader.Close();
                 // добавление нового пользователя
                 query = $"INSERT INTO [Delivery service user] " +
-                    $"VALUES ( N'{textBox4.Text}', N'{textBox3.Text}', N'{textBox5.Text}',N'{dateTimePicker1.Value.ToString("yyyy-MM-dd")}', N'{textBox6.Text}', N'{textBox8.Text}', @p,N'{textBox1.Text}', N'{textBox2.Text}',GETDATE())";
+                    $"VALUES ( N'{textBox4.Text}', N'{textBox3.Text}', N'{textBox5.Text}',N'{dateTimePicker1.Value.ToString("yyyy-MM-dd")}', N'{maskedTextBox6.Text}', N'{textBox8.Text}', @p,N'{textBox1.Text}', N'{textBox2.Text}',GETDATE())";
                 cmd = new SqlCommand(query, connection);
                 if(memoryStream.ToArray().ToString()=="System.Byte[]")
                 {

@@ -16,7 +16,7 @@ namespace Delivery_service
     {
         private OleDbConnection myConnection;
         private OleDbDataReader reader;
-        private string connectionString = @"Provider=Microsoft.Jet.OLEDB.4.0;Data Source=Data.mdb";
+        string connectionString = @"Server=tcp:deliveryservice.database.windows.net,1433;Initial Catalog=Delivery service;Persist Security Info=False;User ID=Nikiru;Password=Rnp26122001;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;";
         string ClientID = "";
         public ForOwner(string id)
         {

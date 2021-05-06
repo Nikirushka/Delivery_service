@@ -17,7 +17,7 @@ namespace Delivery_service
         SqlConnection connection;
         SqlDataReader reader = null;
         SqlCommand cmd;
-        string connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename='|DataDirectory|Delivery_service.mdf';Integrated Security=True;Connect Timeout=30";
+        string connectionString = @"Server=tcp:deliveryservice.database.windows.net,1433;Initial Catalog=Delivery service;Persist Security Info=False;User ID=Nikiru;Password=Rnp26122001;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;";
         string DeliveryID;
         public InfoDeliveryForClient()
         {

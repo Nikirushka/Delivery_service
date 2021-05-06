@@ -12,7 +12,7 @@ namespace Delivery_service
         SqlConnection connection;
         SqlDataReader reader = null;
         SqlCommand cmd;
-        string connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename='|DataDirectory|Delivery_service.mdf';Integrated Security=True;Connect Timeout=30";
+        string connectionString = @"Server=tcp:deliveryservice.database.windows.net,1433;Initial Catalog=Delivery service;Persist Security Info=False;User ID=Nikiru;Password=Rnp26122001;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;";
         string UserID = "";
         string ClientID = "";
         public ForClient(string id)
@@ -71,7 +71,6 @@ namespace Delivery_service
 
         private void ForClient_Load(object sender, EventArgs e)
         {
-
         }
 
         private void Orders_Click(object sender, EventArgs e)
@@ -142,13 +141,13 @@ namespace Delivery_service
 
         private void Settings_Click(object sender, EventArgs e)
         {
-            SettingPanel.Location = loc;
-            SettingPanel.Show();
+            UpdateProfile();
+            ProfilePanel.Location = loc;
+            ProfilePanel.Show();
             QuestionPanel.Hide();
             MyDeliveryPanel.Hide();
-            ProfilePanel.Hide();
             NewDeliveryPanel.Hide();
-            NamePanel.Text = "Настройки";
+            NamePanel.Text = "Профиль";
             Question.ForeColor = Color.FromArgb(227, 213, 212);
             NewDelivery.ForeColor = Color.FromArgb(227, 213, 212);
             Orders.ForeColor = Color.FromArgb(227, 213, 212);
@@ -321,7 +320,7 @@ namespace Delivery_service
                 connection.Open();
                 // добавление новой доставки
 
-                string query = $"INSERT INTO [Delivery service order]VALUES ({ClientID},1,5,N'{ObjTextBox.Text}',NULL,N'{RecTextBox.Text}', N'{DesTextBox.Text}',N'{DeadDateTimePicker.Value.ToString("yyyy-MM-dd")}',N' {CommentaryTextBox.Text}',GETDATE())";
+                string query = $"INSERT INTO [Delivery service order]VALUES ({ClientID},1,5,N'{ObjTextBox.Text}',NULL,N'{RecTextBox.Text}',N'{RecDateTimePicker.Value.ToString()}',N'{RecDateTimePicker2.Value.ToString()}', N'{DesTextBox.Text}',N'{DesDateTimePicker.Value.ToString()}',N'{DesDateTimePicker2.Value.ToString()}',N' {CommentaryTextBox.Text}',GETDATE())";
                 cmd = new SqlCommand(query, connection);
                 cmd.ExecuteNonQuery();
                 connection.Close();
@@ -489,6 +488,9 @@ namespace Delivery_service
 
         }
 
-
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Maximized;
+        }
     }
 }

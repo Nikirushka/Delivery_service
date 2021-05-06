@@ -15,3 +15,20 @@ E:\BitBucket\PRTEST1\scyng5src\Delivery service\Delivery service\obj\Debug\Deliv
 E:\BitBucket\PRTEST1\scyng5src\Delivery service\Delivery service\obj\Debug\Delivery_service.ForOwner.resources
 E:\BitBucket\PRTEST1\scyng5src\Delivery service\Delivery service\obj\Debug\Delivery_service.ResPass.resources
 E:\BitBucket\PRTEST1\scyng5src\Delivery service\Delivery service\obj\Debug\Delivery_service.InfoDeliveryForClient.resources
+E:\GitHub\Delivery service\Delivery_service\Delivery service\bin\Debug\Delivery service.exe.config
+E:\GitHub\Delivery service\Delivery_service\Delivery service\bin\Debug\Delivery service.exe
+E:\GitHub\Delivery service\Delivery_service\Delivery service\bin\Debug\Delivery service.pdb
+E:\GitHub\Delivery service\Delivery_service\Delivery service\obj\Debug\Delivery service.csprojAssemblyReference.cache
+E:\GitHub\Delivery service\Delivery_service\Delivery service\obj\Debug\Delivery_service.ForEmployee.resources
+E:\GitHub\Delivery service\Delivery_service\Delivery service\obj\Debug\Delivery_service.ForOwner.resources
+E:\GitHub\Delivery service\Delivery_service\Delivery service\obj\Debug\Delivery_service.ForClient.resources
+E:\GitHub\Delivery service\Delivery_service\Delivery service\obj\Debug\Delivery_service.InfoDeliveryForClient.resources
+E:\GitHub\Delivery service\Delivery_service\Delivery service\obj\Debug\Delivery_service.Login.resources
+E:\GitHub\Delivery service\Delivery_service\Delivery service\obj\Debug\Delivery_service.NewUser.resources
+E:\GitHub\Delivery service\Delivery_service\Delivery service\obj\Debug\Delivery_service.Properties.Resources.resources
+E:\GitHub\Delivery service\Delivery_service\Delivery service\obj\Debug\Delivery_service.ResPass.resources
+E:\GitHub\Delivery service\Delivery_service\Delivery service\obj\Debug\Delivery service.csproj.GenerateResource.cache
+E:\GitHub\Delivery service\Delivery_service\Delivery service\obj\Debug\Delivery service.csproj.CoreCompileInputs.cache
+E:\GitHub\Delivery service\Delivery_service\Delivery service\obj\Debug\Delivery service.csproj.CopyComplete
+E:\GitHub\Delivery service\Delivery_service\Delivery service\obj\Debug\Delivery service.exe
+E:\GitHub\Delivery service\Delivery_service\Delivery service\obj\Debug\Delivery service.pdb

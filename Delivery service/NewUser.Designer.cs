@@ -42,7 +42,6 @@
             this.label4 = new System.Windows.Forms.Label();
             this.textBox5 = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.textBox6 = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.textBox8 = new System.Windows.Forms.TextBox();
@@ -50,6 +49,7 @@
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.label10 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.maskedTextBox6 = new System.Windows.Forms.MaskedTextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.UserComboBox = new Guna.UI.WinForms.GunaComboBox();
             this.PhotoButton = new System.Windows.Forms.Button();
@@ -68,10 +68,10 @@
             this.BackB.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.BackB.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(213)))), ((int)(((byte)(212)))));
             this.BackB.Location = new System.Drawing.Point(110, 319);
-            this.BackB.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.BackB.Margin = new System.Windows.Forms.Padding(2);
             this.BackB.Name = "BackB";
             this.BackB.Size = new System.Drawing.Size(106, 44);
-            this.BackB.TabIndex = 4;
+            this.BackB.TabIndex = 88;
             this.BackB.Text = "Отмена";
             this.BackB.UseVisualStyleBackColor = false;
             this.BackB.Click += new System.EventHandler(this.BackB_Click);
@@ -87,10 +87,10 @@
             this.RegB.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.RegB.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(213)))), ((int)(((byte)(212)))));
             this.RegB.Location = new System.Drawing.Point(220, 319);
-            this.RegB.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.RegB.Margin = new System.Windows.Forms.Padding(2);
             this.RegB.Name = "RegB";
             this.RegB.Size = new System.Drawing.Size(237, 44);
-            this.RegB.TabIndex = 5;
+            this.RegB.TabIndex = 890;
             this.RegB.Text = "Зарегистрироваться";
             this.RegB.UseVisualStyleBackColor = false;
             this.RegB.Click += new System.EventHandler(this.RegB_Click);
@@ -102,10 +102,10 @@
             this.textBox1.BackColor = System.Drawing.Color.White;
             this.textBox1.Font = new System.Drawing.Font("Segoe UI", 13.8F);
             this.textBox1.Location = new System.Drawing.Point(174, 140);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(2);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(164, 32);
-            this.textBox1.TabIndex = 6;
+            this.textBox1.TabIndex = 1;
             // 
             // label1
             // 
@@ -124,10 +124,10 @@
             this.textBox2.BackColor = System.Drawing.Color.White;
             this.textBox2.Font = new System.Drawing.Font("Segoe UI", 13.8F);
             this.textBox2.Location = new System.Drawing.Point(174, 204);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox2.Margin = new System.Windows.Forms.Padding(2);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(164, 32);
-            this.textBox2.TabIndex = 9;
+            this.textBox2.TabIndex = 2;
             // 
             // label2
             // 
@@ -146,10 +146,10 @@
             this.textBox3.BackColor = System.Drawing.Color.White;
             this.textBox3.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.textBox3.Location = new System.Drawing.Point(174, 273);
-            this.textBox3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox3.Margin = new System.Windows.Forms.Padding(2);
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(164, 32);
-            this.textBox3.TabIndex = 11;
+            this.textBox3.TabIndex = 6;
             // 
             // label3
             // 
@@ -168,10 +168,10 @@
             this.textBox4.BackColor = System.Drawing.Color.White;
             this.textBox4.Font = new System.Drawing.Font("Segoe UI", 13.8F);
             this.textBox4.Location = new System.Drawing.Point(4, 273);
-            this.textBox4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox4.Margin = new System.Windows.Forms.Padding(2);
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(164, 32);
-            this.textBox4.TabIndex = 13;
+            this.textBox4.TabIndex = 5;
             // 
             // label4
             // 
@@ -190,10 +190,10 @@
             this.textBox5.BackColor = System.Drawing.Color.White;
             this.textBox5.Font = new System.Drawing.Font("Segoe UI", 13.8F);
             this.textBox5.Location = new System.Drawing.Point(344, 273);
-            this.textBox5.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox5.Margin = new System.Windows.Forms.Padding(2);
             this.textBox5.Name = "textBox5";
             this.textBox5.Size = new System.Drawing.Size(164, 32);
-            this.textBox5.TabIndex = 15;
+            this.textBox5.TabIndex = 7;
             // 
             // label5
             // 
@@ -206,16 +206,6 @@
             this.label5.Size = new System.Drawing.Size(108, 30);
             this.label5.TabIndex = 16;
             this.label5.Text = "Отчество";
-            // 
-            // textBox6
-            // 
-            this.textBox6.BackColor = System.Drawing.Color.White;
-            this.textBox6.Font = new System.Drawing.Font("Segoe UI", 13.8F);
-            this.textBox6.Location = new System.Drawing.Point(344, 204);
-            this.textBox6.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(164, 32);
-            this.textBox6.TabIndex = 17;
             // 
             // label6
             // 
@@ -246,10 +236,10 @@
             this.textBox8.BackColor = System.Drawing.Color.White;
             this.textBox8.Font = new System.Drawing.Font("Segoe UI", 13.8F);
             this.textBox8.Location = new System.Drawing.Point(343, 141);
-            this.textBox8.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox8.Margin = new System.Windows.Forms.Padding(2);
             this.textBox8.Name = "textBox8";
             this.textBox8.Size = new System.Drawing.Size(164, 32);
-            this.textBox8.TabIndex = 21;
+            this.textBox8.TabIndex = 3;
             // 
             // label8
             // 
@@ -272,12 +262,13 @@
             this.dateTimePicker1.Font = new System.Drawing.Font("Segoe UI", 13.8F);
             this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dateTimePicker1.Location = new System.Drawing.Point(342, 72);
-            this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(2);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.dateTimePicker1.Size = new System.Drawing.Size(164, 32);
             this.dateTimePicker1.TabIndex = 25;
             this.dateTimePicker1.UseWaitCursor = true;
+            this.dateTimePicker1.Value = new System.DateTime(2021, 5, 6, 22, 19, 48, 0);
             // 
             // label10
             // 
@@ -294,6 +285,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(18)))), ((int)(((byte)(38)))));
+            this.panel1.Controls.Add(this.maskedTextBox6);
             this.panel1.Controls.Add(this.label9);
             this.panel1.Controls.Add(this.UserComboBox);
             this.panel1.Controls.Add(this.PhotoButton);
@@ -304,7 +296,6 @@
             this.panel1.Controls.Add(this.textBox8);
             this.panel1.Controls.Add(this.label7);
             this.panel1.Controls.Add(this.label6);
-            this.panel1.Controls.Add(this.textBox6);
             this.panel1.Controls.Add(this.label5);
             this.panel1.Controls.Add(this.textBox5);
             this.panel1.Controls.Add(this.label4);
@@ -318,12 +309,21 @@
             this.panel1.Controls.Add(this.RegB);
             this.panel1.Controls.Add(this.BackB);
             this.panel1.Location = new System.Drawing.Point(9, 10);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(514, 375);
             this.panel1.TabIndex = 6;
             this.panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.NewUser_MouseDown);
             this.panel1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.NewUser_MouseMove);
+            // 
+            // maskedTextBox6
+            // 
+            this.maskedTextBox6.Font = new System.Drawing.Font("Segoe UI", 13.8F);
+            this.maskedTextBox6.Location = new System.Drawing.Point(344, 204);
+            this.maskedTextBox6.Mask = "00-000-00-00";
+            this.maskedTextBox6.Name = "maskedTextBox6";
+            this.maskedTextBox6.Size = new System.Drawing.Size(163, 32);
+            this.maskedTextBox6.TabIndex = 4;
             // 
             // label9
             // 
@@ -352,7 +352,7 @@
             "Клиент",
             "Владелец"});
             this.UserComboBox.Location = new System.Drawing.Point(174, 72);
-            this.UserComboBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.UserComboBox.Margin = new System.Windows.Forms.Padding(2);
             this.UserComboBox.Name = "UserComboBox";
             this.UserComboBox.OnHoverItemBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.UserComboBox.OnHoverItemForeColor = System.Drawing.Color.White;
@@ -368,7 +368,7 @@
             this.PhotoButton.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.PhotoButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(213)))), ((int)(((byte)(212)))));
             this.PhotoButton.Location = new System.Drawing.Point(22, 188);
-            this.PhotoButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.PhotoButton.Margin = new System.Windows.Forms.Padding(2);
             this.PhotoButton.Name = "PhotoButton";
             this.PhotoButton.Size = new System.Drawing.Size(131, 44);
             this.PhotoButton.TabIndex = 28;
@@ -399,7 +399,7 @@
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "NewUser";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "NewUser";
@@ -427,7 +427,6 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox textBox5;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBox6;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox textBox8;
@@ -440,5 +439,6 @@
         private System.Windows.Forms.PictureBox ProfilePic;
         private System.Windows.Forms.Label label9;
         private Guna.UI.WinForms.GunaComboBox UserComboBox;
+        private System.Windows.Forms.MaskedTextBox maskedTextBox6;
     }
 }
