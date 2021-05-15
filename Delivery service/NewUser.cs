@@ -32,7 +32,7 @@ namespace Delivery_service
 
         private void NewUser_Load(object sender, EventArgs e)
         {
-
+            dateTimePicker1.Value = DateTime.Now;
         }
 
         private void BackB_Click(object sender, EventArgs e)

@@ -44,14 +44,14 @@ namespace Delivery_service
             MyDeliveryPanel.Hide();
             ProfilePanel.Hide();
             QuestionPanel.Hide();
-            SettingPanel.Hide();
+            InfoPanel.Hide();
 
         }
         Point loc = new Point(191, 63);
 
         private void NewOrder_Click(object sender, EventArgs e)
         {
-            SettingPanel.Hide();
+            InfoPanel.Hide();
             QuestionPanel.Hide();
             MyDeliveryPanel.Hide();
             ProfilePanel.Hide();
@@ -71,11 +71,13 @@ namespace Delivery_service
 
         private void ForClient_Load(object sender, EventArgs e)
         {
+            RecDateTimePicker.Value = DateTime.Now;
+            DesDateTimePicker.Value = DateTime.Now;
         }
 
         private void Orders_Click(object sender, EventArgs e)
         {
-            SettingPanel.Hide();
+            InfoPanel.Hide();
             QuestionPanel.Hide();
             UpdateDelivery();
             MyDeliveryPanel.Location = loc;
@@ -97,7 +99,7 @@ namespace Delivery_service
 
         private void Question_Click(object sender, EventArgs e)
         {
-            SettingPanel.Hide();
+            InfoPanel.Hide();
             QuestionPanel.Location = loc;
             QuestionPanel.Show();
             UpdateQuestions();
@@ -120,7 +122,8 @@ namespace Delivery_service
 
         private void Help_Click(object sender, EventArgs e)
         {
-            SettingPanel.Hide();
+            InfoPanel.Location = loc;
+            InfoPanel.Show();
             QuestionPanel.Hide();
             MyDeliveryPanel.Hide();
             ProfilePanel.Hide();
@@ -136,11 +139,11 @@ namespace Delivery_service
             Help.ForeColor = Color.FromArgb(217, 35, 73);
             Help.Image = Properties.Resources.Help_on;
             NewDelivery.Image = Properties.Resources.NewDelivery;
-            SettingPanel.Hide();
         }
 
         private void Settings_Click(object sender, EventArgs e)
         {
+            InfoPanel.Hide();
             UpdateProfile();
             ProfilePanel.Location = loc;
             ProfilePanel.Show();
@@ -258,7 +261,7 @@ namespace Delivery_service
         private void ProfilePic_Click(object sender, EventArgs e)
         {
 
-            SettingPanel.Hide();
+            InfoPanel.Hide();
             MyDeliveryPanel.Hide();
             UpdateProfile();
             NewDeliveryPanel.Hide();
@@ -320,7 +323,7 @@ namespace Delivery_service
                 connection.Open();
                 // добавление новой доставки
 
-                string query = $"INSERT INTO [Delivery service order]VALUES ({ClientID},1,5,N'{ObjTextBox.Text}',NULL,N'{RecTextBox.Text}',N'{RecDateTimePicker.Value.ToString()}',N'{RecDateTimePicker2.Value.ToString()}', N'{DesTextBox.Text}',N'{DesDateTimePicker.Value.ToString()}',N'{DesDateTimePicker2.Value.ToString()}',N' {CommentaryTextBox.Text}',GETDATE())";
+                string query = $"INSERT INTO [Delivery service order]VALUES ({ClientID},1,5,N'{ObjTextBox.Text}',NULL,N'{RecTextBox.Text}',N'{RecDateTimePicker.Value.ToString("yyyy-MM-dd")}',N'{maskedTextBox1.Text}', N'{DesTextBox.Text}',N'{DesDateTimePicker.Value.ToString("yyyy-MM-dd")}',N'{maskedTextBox2.Text}',N' {CommentaryTextBox.Text}',GETDATE())";
                 cmd = new SqlCommand(query, connection);
                 cmd.ExecuteNonQuery();
                 connection.Close();
@@ -365,6 +368,10 @@ namespace Delivery_service
             string rp = DeliveryDataGridView[4, index].Value.ToString();
             string dp = DeliveryDataGridView[5, index].Value.ToString();
             string com = DeliveryDataGridView[7, index].Value.ToString();
+            string rd = DeliveryDataGridView[5, index].Value.ToString();
+            string dd = DeliveryDataGridView[8, index].Value.ToString();
+            string rt = DeliveryDataGridView[6, index].Value.ToString();
+            string dt = DeliveryDataGridView[9, index].Value.ToString();
             try
             {
                 string query = $"select [id] from [Delivery service order] where [Client id]={ClientID} and [Object description]=N'{obj}'and [Reception point]=N'{rp}' and [Destination point]=N'{dp}' and [Commentary]=N'{com}' ";
@@ -378,7 +385,7 @@ namespace Delivery_service
             {
                 MessageBox.Show(ex.Message);
             }
-            InfoDeliveryForClient infoDelivery = new InfoDeliveryForClient(DeliveryID, obj, rp, dp, DeliveryDataGridView[6, index].Value.ToString(), com);
+            InfoDeliveryForClient infoDelivery =new InfoDeliveryForClient(DeliveryID, obj, rp, dp, rt, dt, rd, dd, com);
             DialogResult dialogResult = new DialogResult();
             dialogResult = infoDelivery.ShowDialog();
             UpdateDelivery();
@@ -395,9 +402,12 @@ namespace Delivery_service
             }
             string obj = DeliveryDataGridView[2, index].Value.ToString();
             string rp = DeliveryDataGridView[4, index].Value.ToString();
-            string dp = DeliveryDataGridView[5, index].Value.ToString();
-            string com = DeliveryDataGridView[7, index].Value.ToString();
-            string date = DeliveryDataGridView[6, index].Value.ToString();
+            string dp = DeliveryDataGridView[7, index].Value.ToString();
+            string com = DeliveryDataGridView[10, index].Value.ToString();
+            string rd = DeliveryDataGridView[5, index].Value.ToString();
+            string dd = DeliveryDataGridView[8, index].Value.ToString();
+            string rt = DeliveryDataGridView[6, index].Value.ToString();
+            string dt = DeliveryDataGridView[9, index].Value.ToString();
             try
             {
                 string query = $"select [id] from [Delivery service order] where [Client id]={ClientID} and [Object description]=N'{obj}'and [Reception point]=N'{rp}' and [Destination point]=N'{dp}' and [Commentary]=N'{com}' ";
@@ -411,7 +421,7 @@ namespace Delivery_service
             {
                 MessageBox.Show(ex.Message);
             }
-            InfoDeliveryForClient infoDelivery = new InfoDeliveryForClient(DeliveryID, obj, rp, dp, DeliveryDataGridView[6, index].Value.ToString(), com);
+            InfoDeliveryForClient infoDelivery = new InfoDeliveryForClient(DeliveryID, obj, rp, dp, rt,dt,rd,dd, com);
             DialogResult dialogResult = new DialogResult();
             dialogResult = infoDelivery.ShowDialog();
             UpdateDelivery();
@@ -441,11 +451,8 @@ namespace Delivery_service
 
             try
             {
-
                 connection = new SqlConnection(connectionString);
                 connection.Open();
-                // добавление новой доставки
-                Random rand = new Random();
                 string query = $"INSERT INTO [delivery service questions] " +
                     $"([Client id],[worker id], [question],[date]) " +
                     $"VALUES ( {ClientID},1,@commentary,GETDATE())";
@@ -459,8 +466,8 @@ namespace Delivery_service
                 MessageBox.Show(ex.Message);
             }
             UpdateQuestions();
-
         }
+
         MemoryStream memoryStream = new MemoryStream();
         int check = 0;
         private void ProfilePicture_Click(object sender, EventArgs e)

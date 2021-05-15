@@ -39,6 +39,10 @@
             this.MainPanel = new System.Windows.Forms.Panel();
             this.NavPanel = new System.Windows.Forms.Panel();
             this.Settings = new Guna.UI.WinForms.GunaButton();
+            this.Help = new Guna.UI.WinForms.GunaButton();
+            this.Question = new Guna.UI.WinForms.GunaButton();
+            this.Orders = new Guna.UI.WinForms.GunaButton();
+            this.NewDelivery = new Guna.UI.WinForms.GunaButton();
             this.panel2 = new System.Windows.Forms.Panel();
             this.ClientName = new System.Windows.Forms.Label();
             this.ProfilePic = new System.Windows.Forms.PictureBox();
@@ -83,6 +87,10 @@
             this.ProfilePanel = new System.Windows.Forms.Panel();
             this.NewDeliveryPanel = new System.Windows.Forms.Panel();
             this.panel6 = new System.Windows.Forms.Panel();
+            this.DesDateTimePicker = new Guna.UI.WinForms.GunaDateTimePicker();
+            this.label24 = new System.Windows.Forms.Label();
+            this.label23 = new System.Windows.Forms.Label();
+            this.label21 = new System.Windows.Forms.Label();
             this.RecDateTimePicker = new Guna.UI.WinForms.GunaDateTimePicker();
             this.label12 = new System.Windows.Forms.Label();
             this.CommentaryTextBox = new Guna.UI.WinForms.GunaTextBox();
@@ -108,19 +116,12 @@
             this.label13 = new System.Windows.Forms.Label();
             this.gunaElipse7 = new Guna.UI.WinForms.GunaElipse(this.components);
             this.gunaElipse8 = new Guna.UI.WinForms.GunaElipse(this.components);
-            this.SettingPanel = new System.Windows.Forms.Panel();
+            this.InfoPanel = new System.Windows.Forms.Panel();
             this.label18 = new System.Windows.Forms.Label();
-            this.gunaButton5 = new Guna.UI.WinForms.GunaButton();
-            this.NewDelivery = new Guna.UI.WinForms.GunaButton();
-            this.Help = new Guna.UI.WinForms.GunaButton();
-            this.Question = new Guna.UI.WinForms.GunaButton();
-            this.Orders = new Guna.UI.WinForms.GunaButton();
-            this.label21 = new System.Windows.Forms.Label();
-            this.label23 = new System.Windows.Forms.Label();
-            this.DesDateTimePicker = new Guna.UI.WinForms.GunaDateTimePicker();
-            this.label24 = new System.Windows.Forms.Label();
-            this.RecDateTimePicker2 = new Guna.UI.WinForms.GunaDateTimePicker();
-            this.DesDateTimePicker2 = new Guna.UI.WinForms.GunaDateTimePicker();
+            this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
+            this.maskedTextBox2 = new System.Windows.Forms.MaskedTextBox();
+            this.label25 = new System.Windows.Forms.Label();
+            this.label26 = new System.Windows.Forms.Label();
             this.MainPanel.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ProfilePic)).BeginInit();
@@ -137,7 +138,7 @@
             this.QuestionPanel.SuspendLayout();
             this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.QuestionsDataGridView)).BeginInit();
-            this.SettingPanel.SuspendLayout();
+            this.InfoPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // MainPanel
@@ -154,7 +155,7 @@
             this.MainPanel.Controls.Add(this.NewDelivery);
             this.MainPanel.Controls.Add(this.panel2);
             this.MainPanel.Location = new System.Drawing.Point(0, 0);
-            this.MainPanel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.MainPanel.Margin = new System.Windows.Forms.Padding(2);
             this.MainPanel.Name = "MainPanel";
             this.MainPanel.Size = new System.Drawing.Size(186, 577);
             this.MainPanel.TabIndex = 0;
@@ -163,7 +164,7 @@
             // 
             this.NavPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(35)))), ((int)(((byte)(73)))));
             this.NavPanel.Location = new System.Drawing.Point(0, 157);
-            this.NavPanel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.NavPanel.Margin = new System.Windows.Forms.Padding(2);
             this.NavPanel.Name = "NavPanel";
             this.NavPanel.Size = new System.Drawing.Size(2, 81);
             this.NavPanel.TabIndex = 2;
@@ -186,7 +187,7 @@
             this.Settings.ImageOffsetX = 13;
             this.Settings.ImageSize = new System.Drawing.Size(32, 32);
             this.Settings.Location = new System.Drawing.Point(0, 525);
-            this.Settings.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Settings.Margin = new System.Windows.Forms.Padding(2);
             this.Settings.Name = "Settings";
             this.Settings.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(35)))), ((int)(((byte)(73)))));
             this.Settings.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -200,13 +201,139 @@
             this.Settings.Click += new System.EventHandler(this.Settings_Click);
             this.Settings.Leave += new System.EventHandler(this.Settings_Leave);
             // 
+            // Help
+            // 
+            this.Help.Animated = true;
+            this.Help.AnimationHoverSpeed = 0.07F;
+            this.Help.AnimationSpeed = 0.03F;
+            this.Help.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(18)))), ((int)(((byte)(38)))));
+            this.Help.BorderColor = System.Drawing.Color.Black;
+            this.Help.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Help.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.Help.Dock = System.Windows.Forms.DockStyle.Top;
+            this.Help.FocusedColor = System.Drawing.Color.Empty;
+            this.Help.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
+            this.Help.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(213)))), ((int)(((byte)(212)))));
+            this.Help.Image = global::Delivery_service.Properties.Resources.Help;
+            this.Help.ImageAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.Help.ImageOffsetX = 13;
+            this.Help.ImageSize = new System.Drawing.Size(32, 32);
+            this.Help.Location = new System.Drawing.Point(0, 273);
+            this.Help.Margin = new System.Windows.Forms.Padding(2);
+            this.Help.Name = "Help";
+            this.Help.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(35)))), ((int)(((byte)(73)))));
+            this.Help.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.Help.OnHoverForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(213)))), ((int)(((byte)(212)))));
+            this.Help.OnHoverImage = null;
+            this.Help.OnPressedColor = System.Drawing.Color.Black;
+            this.Help.Size = new System.Drawing.Size(186, 52);
+            this.Help.TabIndex = 1;
+            this.Help.Text = "Помощь";
+            this.Help.TextOffsetX = 23;
+            this.Help.Click += new System.EventHandler(this.Help_Click);
+            this.Help.Leave += new System.EventHandler(this.Help_Leave);
+            // 
+            // Question
+            // 
+            this.Question.Animated = true;
+            this.Question.AnimationHoverSpeed = 0.07F;
+            this.Question.AnimationSpeed = 0.03F;
+            this.Question.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(18)))), ((int)(((byte)(38)))));
+            this.Question.BorderColor = System.Drawing.Color.Black;
+            this.Question.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Question.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.Question.Dock = System.Windows.Forms.DockStyle.Top;
+            this.Question.FocusedColor = System.Drawing.Color.Empty;
+            this.Question.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
+            this.Question.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(213)))), ((int)(((byte)(212)))));
+            this.Question.Image = global::Delivery_service.Properties.Resources.Question;
+            this.Question.ImageAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.Question.ImageOffsetX = 13;
+            this.Question.ImageSize = new System.Drawing.Size(32, 32);
+            this.Question.Location = new System.Drawing.Point(0, 221);
+            this.Question.Margin = new System.Windows.Forms.Padding(2);
+            this.Question.Name = "Question";
+            this.Question.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(35)))), ((int)(((byte)(73)))));
+            this.Question.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.Question.OnHoverForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(213)))), ((int)(((byte)(212)))));
+            this.Question.OnHoverImage = null;
+            this.Question.OnPressedColor = System.Drawing.Color.Black;
+            this.Question.Size = new System.Drawing.Size(186, 52);
+            this.Question.TabIndex = 1;
+            this.Question.Text = "Задать вопрос";
+            this.Question.TextOffsetX = 5;
+            this.Question.Click += new System.EventHandler(this.Question_Click);
+            this.Question.Leave += new System.EventHandler(this.Question_Leave);
+            // 
+            // Orders
+            // 
+            this.Orders.Animated = true;
+            this.Orders.AnimationHoverSpeed = 0.07F;
+            this.Orders.AnimationSpeed = 0.03F;
+            this.Orders.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(18)))), ((int)(((byte)(38)))));
+            this.Orders.BorderColor = System.Drawing.Color.Black;
+            this.Orders.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Orders.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.Orders.Dock = System.Windows.Forms.DockStyle.Top;
+            this.Orders.FocusedColor = System.Drawing.Color.Empty;
+            this.Orders.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
+            this.Orders.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(213)))), ((int)(((byte)(212)))));
+            this.Orders.Image = global::Delivery_service.Properties.Resources.MyDelivery;
+            this.Orders.ImageAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.Orders.ImageSize = new System.Drawing.Size(60, 60);
+            this.Orders.Location = new System.Drawing.Point(0, 169);
+            this.Orders.Margin = new System.Windows.Forms.Padding(2);
+            this.Orders.Name = "Orders";
+            this.Orders.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(35)))), ((int)(((byte)(73)))));
+            this.Orders.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.Orders.OnHoverForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(213)))), ((int)(((byte)(212)))));
+            this.Orders.OnHoverImage = null;
+            this.Orders.OnPressedColor = System.Drawing.Color.Black;
+            this.Orders.Size = new System.Drawing.Size(186, 52);
+            this.Orders.TabIndex = 1;
+            this.Orders.Text = "Мои доставки";
+            this.Orders.TextOffsetX = 5;
+            this.Orders.Click += new System.EventHandler(this.Orders_Click);
+            this.Orders.Leave += new System.EventHandler(this.Orders_Leave);
+            // 
+            // NewDelivery
+            // 
+            this.NewDelivery.Animated = true;
+            this.NewDelivery.AnimationHoverSpeed = 0.07F;
+            this.NewDelivery.AnimationSpeed = 0.03F;
+            this.NewDelivery.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(18)))), ((int)(((byte)(38)))));
+            this.NewDelivery.BorderColor = System.Drawing.Color.Black;
+            this.NewDelivery.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.NewDelivery.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.NewDelivery.Dock = System.Windows.Forms.DockStyle.Top;
+            this.NewDelivery.FocusedColor = System.Drawing.Color.Empty;
+            this.NewDelivery.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
+            this.NewDelivery.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(213)))), ((int)(((byte)(212)))));
+            this.NewDelivery.Image = global::Delivery_service.Properties.Resources.NewDelivery;
+            this.NewDelivery.ImageAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.NewDelivery.ImageSize = new System.Drawing.Size(60, 60);
+            this.NewDelivery.Location = new System.Drawing.Point(0, 117);
+            this.NewDelivery.Margin = new System.Windows.Forms.Padding(2);
+            this.NewDelivery.Name = "NewDelivery";
+            this.NewDelivery.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(35)))), ((int)(((byte)(73)))));
+            this.NewDelivery.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.NewDelivery.OnHoverForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(213)))), ((int)(((byte)(212)))));
+            this.NewDelivery.OnHoverImage = null;
+            this.NewDelivery.OnPressedColor = System.Drawing.Color.Black;
+            this.NewDelivery.Size = new System.Drawing.Size(186, 52);
+            this.NewDelivery.TabIndex = 1;
+            this.NewDelivery.Text = "Новая доставка";
+            this.NewDelivery.TextOffsetX = 5;
+            this.NewDelivery.Click += new System.EventHandler(this.NewOrder_Click);
+            this.NewDelivery.Leave += new System.EventHandler(this.NewDelivery_Leave);
+            // 
             // panel2
             // 
             this.panel2.Controls.Add(this.ClientName);
             this.panel2.Controls.Add(this.ProfilePic);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 0);
-            this.panel2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel2.Margin = new System.Windows.Forms.Padding(2);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(186, 117);
             this.panel2.TabIndex = 1;
@@ -231,7 +358,7 @@
             this.ProfilePic.Cursor = System.Windows.Forms.Cursors.Hand;
             this.ProfilePic.Image = global::Delivery_service.Properties.Resources.Profile;
             this.ProfilePic.Location = new System.Drawing.Point(60, 22);
-            this.ProfilePic.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.ProfilePic.Margin = new System.Windows.Forms.Padding(2);
             this.ProfilePic.Name = "ProfilePic";
             this.ProfilePic.Size = new System.Drawing.Size(63, 63);
             this.ProfilePic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -331,7 +458,7 @@
             this.ProfilePicture.Cursor = System.Windows.Forms.Cursors.Hand;
             this.ProfilePicture.Image = global::Delivery_service.Properties.Resources.Profile_on;
             this.ProfilePicture.Location = new System.Drawing.Point(78, 18);
-            this.ProfilePicture.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.ProfilePicture.Margin = new System.Windows.Forms.Padding(2);
             this.ProfilePicture.Name = "ProfilePicture";
             this.ProfilePicture.Size = new System.Drawing.Size(63, 63);
             this.ProfilePicture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -846,7 +973,7 @@
             // NewDeliveryPanel
             // 
             this.NewDeliveryPanel.Controls.Add(this.panel6);
-            this.NewDeliveryPanel.Location = new System.Drawing.Point(191, 70);
+            this.NewDeliveryPanel.Location = new System.Drawing.Point(803, 194);
             this.NewDeliveryPanel.Name = "NewDeliveryPanel";
             this.NewDeliveryPanel.Size = new System.Drawing.Size(791, 514);
             this.NewDeliveryPanel.TabIndex = 8;
@@ -855,8 +982,8 @@
             // 
             this.panel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(243)))), ((int)(((byte)(241)))));
             this.panel6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.panel6.Controls.Add(this.DesDateTimePicker2);
-            this.panel6.Controls.Add(this.RecDateTimePicker2);
+            this.panel6.Controls.Add(this.maskedTextBox2);
+            this.panel6.Controls.Add(this.maskedTextBox1);
             this.panel6.Controls.Add(this.DesDateTimePicker);
             this.panel6.Controls.Add(this.label24);
             this.panel6.Controls.Add(this.label23);
@@ -876,19 +1003,79 @@
             this.panel6.ForeColor = System.Drawing.SystemColors.ControlText;
             this.panel6.Location = new System.Drawing.Point(13, 8);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(659, 474);
+            this.panel6.Size = new System.Drawing.Size(659, 402);
             this.panel6.TabIndex = 6;
+            // 
+            // DesDateTimePicker
+            // 
+            this.DesDateTimePicker.BackColor = System.Drawing.Color.Transparent;
+            this.DesDateTimePicker.BaseColor = System.Drawing.Color.White;
+            this.DesDateTimePicker.BorderColor = System.Drawing.SystemColors.WindowFrame;
+            this.DesDateTimePicker.CustomFormat = "MM/dd/yyyy ";
+            this.DesDateTimePicker.DropDownAlign = System.Windows.Forms.LeftRightAlignment.Right;
+            this.DesDateTimePicker.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.DesDateTimePicker.Font = new System.Drawing.Font("Segoe UI", 9.75F);
+            this.DesDateTimePicker.ForeColor = System.Drawing.Color.Black;
+            this.DesDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.DesDateTimePicker.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.DesDateTimePicker.Location = new System.Drawing.Point(330, 272);
+            this.DesDateTimePicker.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
+            this.DesDateTimePicker.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
+            this.DesDateTimePicker.Name = "DesDateTimePicker";
+            this.DesDateTimePicker.OnHoverBaseColor = System.Drawing.Color.White;
+            this.DesDateTimePicker.OnHoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.DesDateTimePicker.OnHoverForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.DesDateTimePicker.OnPressedColor = System.Drawing.Color.Black;
+            this.DesDateTimePicker.Radius = 7;
+            this.DesDateTimePicker.Size = new System.Drawing.Size(310, 30);
+            this.DesDateTimePicker.TabIndex = 20;
+            this.DesDateTimePicker.Text = "04/23/2021 ";
+            this.DesDateTimePicker.Value = new System.DateTime(2021, 4, 23, 19, 38, 19, 903);
+            // 
+            // label24
+            // 
+            this.label24.AutoSize = true;
+            this.label24.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label24.ForeColor = System.Drawing.Color.DimGray;
+            this.label24.Location = new System.Drawing.Point(330, 249);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(168, 20);
+            this.label24.TabIndex = 19;
+            this.label24.Text = "Дата и время доставки";
+            // 
+            // label23
+            // 
+            this.label23.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label23.ForeColor = System.Drawing.Color.DimGray;
+            this.label23.Location = new System.Drawing.Point(330, 169);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(310, 20);
+            this.label23.TabIndex = 18;
+            this.label23.Text = "Куда";
+            this.label23.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // label21
+            // 
+            this.label21.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label21.ForeColor = System.Drawing.Color.DimGray;
+            this.label21.Location = new System.Drawing.Point(10, 169);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(314, 20);
+            this.label21.TabIndex = 17;
+            this.label21.Text = "Откуда";
+            this.label21.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // RecDateTimePicker
             // 
             this.RecDateTimePicker.BackColor = System.Drawing.Color.Transparent;
             this.RecDateTimePicker.BaseColor = System.Drawing.Color.White;
             this.RecDateTimePicker.BorderColor = System.Drawing.SystemColors.WindowFrame;
-            this.RecDateTimePicker.CustomFormat = "MM/dd/yyyy hh:mm:ss";
+            this.RecDateTimePicker.CustomFormat = "MM/dd/yyyy ";
             this.RecDateTimePicker.DropDownAlign = System.Windows.Forms.LeftRightAlignment.Right;
             this.RecDateTimePicker.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.RecDateTimePicker.Font = new System.Drawing.Font("Segoe UI", 9.75F);
             this.RecDateTimePicker.ForeColor = System.Drawing.Color.Black;
+            this.RecDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.RecDateTimePicker.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.RecDateTimePicker.Location = new System.Drawing.Point(14, 272);
             this.RecDateTimePicker.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
@@ -901,7 +1088,7 @@
             this.RecDateTimePicker.Radius = 7;
             this.RecDateTimePicker.Size = new System.Drawing.Size(310, 30);
             this.RecDateTimePicker.TabIndex = 16;
-            this.RecDateTimePicker.Text = "пятница, 23 апреля 2021 г.";
+            this.RecDateTimePicker.Text = "04/23/2021 ";
             this.RecDateTimePicker.Value = new System.DateTime(2021, 4, 23, 19, 38, 19, 903);
             // 
             // label12
@@ -1111,7 +1298,7 @@
             this.Close_button.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Close_button.Image = global::Delivery_service.Properties.Resources.Close_button_leave2;
             this.Close_button.Location = new System.Drawing.Point(900, 8);
-            this.Close_button.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Close_button.Margin = new System.Windows.Forms.Padding(2);
             this.Close_button.Name = "Close_button";
             this.Close_button.Size = new System.Drawing.Size(40, 40);
             this.Close_button.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -1124,7 +1311,7 @@
             // QuestionPanel
             // 
             this.QuestionPanel.Controls.Add(this.panel5);
-            this.QuestionPanel.Location = new System.Drawing.Point(686, 260);
+            this.QuestionPanel.Location = new System.Drawing.Point(684, 305);
             this.QuestionPanel.Name = "QuestionPanel";
             this.QuestionPanel.Size = new System.Drawing.Size(791, 514);
             this.QuestionPanel.TabIndex = 10;
@@ -1225,13 +1412,13 @@
             this.QuestionsDataGridView.DefaultCellStyle = dataGridViewCellStyle6;
             this.QuestionsDataGridView.EnableHeadersVisualStyles = false;
             this.QuestionsDataGridView.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(192)))), ((int)(((byte)(188)))));
-            this.QuestionsDataGridView.Location = new System.Drawing.Point(14, 184);
+            this.QuestionsDataGridView.Location = new System.Drawing.Point(14, 194);
             this.QuestionsDataGridView.Name = "QuestionsDataGridView";
             this.QuestionsDataGridView.ReadOnly = true;
             this.QuestionsDataGridView.RowHeadersVisible = false;
             this.QuestionsDataGridView.RowHeadersWidth = 51;
             this.QuestionsDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.QuestionsDataGridView.Size = new System.Drawing.Size(692, 290);
+            this.QuestionsDataGridView.Size = new System.Drawing.Size(692, 280);
             this.QuestionsDataGridView.TabIndex = 1;
             this.QuestionsDataGridView.Theme = Guna.UI.WinForms.GunaDataGridViewPresetThemes.Alizarin;
             this.QuestionsDataGridView.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(201)))), ((int)(((byte)(197)))));
@@ -1286,20 +1473,21 @@
             this.gunaElipse8.Radius = 15;
             this.gunaElipse8.TargetControl = this.panel5;
             // 
-            // SettingPanel
+            // InfoPanel
             // 
-            this.SettingPanel.Controls.Add(this.label18);
-            this.SettingPanel.Controls.Add(this.gunaButton5);
-            this.SettingPanel.Location = new System.Drawing.Point(359, 514);
-            this.SettingPanel.Name = "SettingPanel";
-            this.SettingPanel.Size = new System.Drawing.Size(791, 514);
-            this.SettingPanel.TabIndex = 11;
+            this.InfoPanel.Controls.Add(this.label26);
+            this.InfoPanel.Controls.Add(this.label25);
+            this.InfoPanel.Controls.Add(this.label18);
+            this.InfoPanel.Location = new System.Drawing.Point(312, 489);
+            this.InfoPanel.Name = "InfoPanel";
+            this.InfoPanel.Size = new System.Drawing.Size(791, 514);
+            this.InfoPanel.TabIndex = 11;
             // 
             // label18
             // 
             this.label18.AutoSize = true;
             this.label18.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label18.Location = new System.Drawing.Point(89, 59);
+            this.label18.Location = new System.Drawing.Point(85, 373);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(607, 120);
             this.label18.TabIndex = 13;
@@ -1307,271 +1495,46 @@
     "\r\nРуденко Никита Павлович\r\n2021\r\n";
             this.label18.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
-            // gunaButton5
+            // maskedTextBox1
             // 
-            this.gunaButton5.Animated = true;
-            this.gunaButton5.AnimationHoverSpeed = 0.07F;
-            this.gunaButton5.AnimationSpeed = 0.03F;
-            this.gunaButton5.BackColor = System.Drawing.Color.Transparent;
-            this.gunaButton5.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(18)))), ((int)(((byte)(38)))));
-            this.gunaButton5.BorderColor = System.Drawing.Color.Black;
-            this.gunaButton5.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.gunaButton5.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.gunaButton5.FocusedColor = System.Drawing.Color.Empty;
-            this.gunaButton5.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
-            this.gunaButton5.ForeColor = System.Drawing.Color.White;
-            this.gunaButton5.Image = null;
-            this.gunaButton5.ImageSize = new System.Drawing.Size(20, 20);
-            this.gunaButton5.Location = new System.Drawing.Point(295, 20);
-            this.gunaButton5.Name = "gunaButton5";
-            this.gunaButton5.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(35)))), ((int)(((byte)(73)))));
-            this.gunaButton5.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.gunaButton5.OnHoverForeColor = System.Drawing.Color.White;
-            this.gunaButton5.OnHoverImage = null;
-            this.gunaButton5.OnPressedColor = System.Drawing.Color.Black;
-            this.gunaButton5.Radius = 7;
-            this.gunaButton5.Size = new System.Drawing.Size(155, 31);
-            this.gunaButton5.TabIndex = 12;
-            this.gunaButton5.Text = "Справка";
-            this.gunaButton5.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.gunaButton5.Click += new System.EventHandler(this.gunaButton5_Click);
+            this.maskedTextBox1.Font = new System.Drawing.Font("Segoe UI", 9.75F);
+            this.maskedTextBox1.Location = new System.Drawing.Point(14, 308);
+            this.maskedTextBox1.Mask = "00:00";
+            this.maskedTextBox1.Name = "maskedTextBox1";
+            this.maskedTextBox1.Size = new System.Drawing.Size(310, 25);
+            this.maskedTextBox1.TabIndex = 23;
+            this.maskedTextBox1.ValidatingType = typeof(System.DateTime);
             // 
-            // NewDelivery
+            // maskedTextBox2
             // 
-            this.NewDelivery.Animated = true;
-            this.NewDelivery.AnimationHoverSpeed = 0.07F;
-            this.NewDelivery.AnimationSpeed = 0.03F;
-            this.NewDelivery.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(18)))), ((int)(((byte)(38)))));
-            this.NewDelivery.BorderColor = System.Drawing.Color.Black;
-            this.NewDelivery.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.NewDelivery.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.NewDelivery.Dock = System.Windows.Forms.DockStyle.Top;
-            this.NewDelivery.FocusedColor = System.Drawing.Color.Empty;
-            this.NewDelivery.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
-            this.NewDelivery.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(213)))), ((int)(((byte)(212)))));
-            this.NewDelivery.Image = global::Delivery_service.Properties.Resources.NewDelivery;
-            this.NewDelivery.ImageAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.NewDelivery.ImageSize = new System.Drawing.Size(60, 60);
-            this.NewDelivery.Location = new System.Drawing.Point(0, 117);
-            this.NewDelivery.Margin = new System.Windows.Forms.Padding(2);
-            this.NewDelivery.Name = "NewDelivery";
-            this.NewDelivery.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(35)))), ((int)(((byte)(73)))));
-            this.NewDelivery.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.NewDelivery.OnHoverForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(213)))), ((int)(((byte)(212)))));
-            this.NewDelivery.OnHoverImage = null;
-            this.NewDelivery.OnPressedColor = System.Drawing.Color.Black;
-            this.NewDelivery.Size = new System.Drawing.Size(186, 52);
-            this.NewDelivery.TabIndex = 1;
-            this.NewDelivery.Text = "Новая доставка";
-            this.NewDelivery.TextOffsetX = 5;
-            this.NewDelivery.Click += new System.EventHandler(this.NewOrder_Click);
-            this.NewDelivery.Leave += new System.EventHandler(this.NewDelivery_Leave);
+            this.maskedTextBox2.Font = new System.Drawing.Font("Segoe UI", 9.75F);
+            this.maskedTextBox2.Location = new System.Drawing.Point(330, 308);
+            this.maskedTextBox2.Mask = "00:00";
+            this.maskedTextBox2.Name = "maskedTextBox2";
+            this.maskedTextBox2.Size = new System.Drawing.Size(310, 25);
+            this.maskedTextBox2.TabIndex = 23;
+            this.maskedTextBox2.ValidatingType = typeof(System.DateTime);
             // 
-            // Help
+            // label25
             // 
-            this.Help.Animated = true;
-            this.Help.AnimationHoverSpeed = 0.07F;
-            this.Help.AnimationSpeed = 0.03F;
-            this.Help.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(18)))), ((int)(((byte)(38)))));
-            this.Help.BorderColor = System.Drawing.Color.Black;
-            this.Help.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.Help.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.Help.Dock = System.Windows.Forms.DockStyle.Top;
-            this.Help.FocusedColor = System.Drawing.Color.Empty;
-            this.Help.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
-            this.Help.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(213)))), ((int)(((byte)(212)))));
-            this.Help.Image = global::Delivery_service.Properties.Resources.Help;
-            this.Help.ImageAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.Help.ImageOffsetX = 13;
-            this.Help.ImageSize = new System.Drawing.Size(32, 32);
-            this.Help.Location = new System.Drawing.Point(0, 273);
-            this.Help.Margin = new System.Windows.Forms.Padding(2);
-            this.Help.Name = "Help";
-            this.Help.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(35)))), ((int)(((byte)(73)))));
-            this.Help.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.Help.OnHoverForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(213)))), ((int)(((byte)(212)))));
-            this.Help.OnHoverImage = null;
-            this.Help.OnPressedColor = System.Drawing.Color.Black;
-            this.Help.Size = new System.Drawing.Size(186, 52);
-            this.Help.TabIndex = 1;
-            this.Help.Text = "Помощь";
-            this.Help.TextOffsetX = 23;
-            this.Help.Click += new System.EventHandler(this.Help_Click);
-            this.Help.Leave += new System.EventHandler(this.Help_Leave);
+            this.label25.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label25.Location = new System.Drawing.Point(3, 1);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(757, 46);
+            this.label25.TabIndex = 14;
+            this.label25.Text = "Справка";
+            this.label25.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
-            // Question
+            // label26
             // 
-            this.Question.Animated = true;
-            this.Question.AnimationHoverSpeed = 0.07F;
-            this.Question.AnimationSpeed = 0.03F;
-            this.Question.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(18)))), ((int)(((byte)(38)))));
-            this.Question.BorderColor = System.Drawing.Color.Black;
-            this.Question.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.Question.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.Question.Dock = System.Windows.Forms.DockStyle.Top;
-            this.Question.FocusedColor = System.Drawing.Color.Empty;
-            this.Question.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
-            this.Question.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(213)))), ((int)(((byte)(212)))));
-            this.Question.Image = global::Delivery_service.Properties.Resources.Question;
-            this.Question.ImageAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.Question.ImageOffsetX = 13;
-            this.Question.ImageSize = new System.Drawing.Size(32, 32);
-            this.Question.Location = new System.Drawing.Point(0, 221);
-            this.Question.Margin = new System.Windows.Forms.Padding(2);
-            this.Question.Name = "Question";
-            this.Question.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(35)))), ((int)(((byte)(73)))));
-            this.Question.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.Question.OnHoverForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(213)))), ((int)(((byte)(212)))));
-            this.Question.OnHoverImage = null;
-            this.Question.OnPressedColor = System.Drawing.Color.Black;
-            this.Question.Size = new System.Drawing.Size(186, 52);
-            this.Question.TabIndex = 1;
-            this.Question.Text = "Задать вопрос";
-            this.Question.TextOffsetX = 5;
-            this.Question.Click += new System.EventHandler(this.Question_Click);
-            this.Question.Leave += new System.EventHandler(this.Question_Leave);
-            // 
-            // Orders
-            // 
-            this.Orders.Animated = true;
-            this.Orders.AnimationHoverSpeed = 0.07F;
-            this.Orders.AnimationSpeed = 0.03F;
-            this.Orders.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(18)))), ((int)(((byte)(38)))));
-            this.Orders.BorderColor = System.Drawing.Color.Black;
-            this.Orders.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.Orders.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.Orders.Dock = System.Windows.Forms.DockStyle.Top;
-            this.Orders.FocusedColor = System.Drawing.Color.Empty;
-            this.Orders.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
-            this.Orders.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(213)))), ((int)(((byte)(212)))));
-            this.Orders.Image = global::Delivery_service.Properties.Resources.MyDelivery;
-            this.Orders.ImageAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.Orders.ImageSize = new System.Drawing.Size(60, 60);
-            this.Orders.Location = new System.Drawing.Point(0, 169);
-            this.Orders.Margin = new System.Windows.Forms.Padding(2);
-            this.Orders.Name = "Orders";
-            this.Orders.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(35)))), ((int)(((byte)(73)))));
-            this.Orders.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.Orders.OnHoverForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(213)))), ((int)(((byte)(212)))));
-            this.Orders.OnHoverImage = null;
-            this.Orders.OnPressedColor = System.Drawing.Color.Black;
-            this.Orders.Size = new System.Drawing.Size(186, 52);
-            this.Orders.TabIndex = 1;
-            this.Orders.Text = "Мои доставки";
-            this.Orders.TextOffsetX = 5;
-            this.Orders.Click += new System.EventHandler(this.Orders_Click);
-            this.Orders.Leave += new System.EventHandler(this.Orders_Leave);
-            // 
-            // label21
-            // 
-            this.label21.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label21.ForeColor = System.Drawing.Color.DimGray;
-            this.label21.Location = new System.Drawing.Point(10, 169);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(314, 20);
-            this.label21.TabIndex = 17;
-            this.label21.Text = "Откуда";
-            this.label21.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
-            // label23
-            // 
-            this.label23.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label23.ForeColor = System.Drawing.Color.DimGray;
-            this.label23.Location = new System.Drawing.Point(330, 169);
-            this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(310, 20);
-            this.label23.TabIndex = 18;
-            this.label23.Text = "Куда";
-            this.label23.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
-            // DesDateTimePicker
-            // 
-            this.DesDateTimePicker.BackColor = System.Drawing.Color.Transparent;
-            this.DesDateTimePicker.BaseColor = System.Drawing.Color.White;
-            this.DesDateTimePicker.BorderColor = System.Drawing.SystemColors.WindowFrame;
-            this.DesDateTimePicker.CustomFormat = "MM/dd/yyyy hh:mm:ss";
-            this.DesDateTimePicker.DropDownAlign = System.Windows.Forms.LeftRightAlignment.Right;
-            this.DesDateTimePicker.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.DesDateTimePicker.Font = new System.Drawing.Font("Segoe UI", 9.75F);
-            this.DesDateTimePicker.ForeColor = System.Drawing.Color.Black;
-            this.DesDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.DesDateTimePicker.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.DesDateTimePicker.Location = new System.Drawing.Point(334, 272);
-            this.DesDateTimePicker.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
-            this.DesDateTimePicker.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
-            this.DesDateTimePicker.Name = "DesDateTimePicker";
-            this.DesDateTimePicker.OnHoverBaseColor = System.Drawing.Color.White;
-            this.DesDateTimePicker.OnHoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.DesDateTimePicker.OnHoverForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.DesDateTimePicker.OnPressedColor = System.Drawing.Color.Black;
-            this.DesDateTimePicker.Radius = 7;
-            this.DesDateTimePicker.Size = new System.Drawing.Size(310, 30);
-            this.DesDateTimePicker.TabIndex = 20;
-            this.DesDateTimePicker.Text = "04/23/2021 07:38:19";
-            this.DesDateTimePicker.Value = new System.DateTime(2021, 4, 23, 19, 38, 19, 903);
-            // 
-            // label24
-            // 
-            this.label24.AutoSize = true;
-            this.label24.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label24.ForeColor = System.Drawing.Color.DimGray;
-            this.label24.Location = new System.Drawing.Point(330, 249);
-            this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(168, 20);
-            this.label24.TabIndex = 19;
-            this.label24.Text = "Дата и время доставки";
-            // 
-            // RecDateTimePicker2
-            // 
-            this.RecDateTimePicker2.BackColor = System.Drawing.Color.Transparent;
-            this.RecDateTimePicker2.BaseColor = System.Drawing.Color.White;
-            this.RecDateTimePicker2.BorderColor = System.Drawing.SystemColors.WindowFrame;
-            this.RecDateTimePicker2.CustomFormat = "MM/dd/yyyy hh:mm:ss";
-            this.RecDateTimePicker2.DropDownAlign = System.Windows.Forms.LeftRightAlignment.Right;
-            this.RecDateTimePicker2.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.RecDateTimePicker2.Font = new System.Drawing.Font("Segoe UI", 9.75F);
-            this.RecDateTimePicker2.ForeColor = System.Drawing.Color.Black;
-            this.RecDateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.RecDateTimePicker2.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.RecDateTimePicker2.Location = new System.Drawing.Point(14, 306);
-            this.RecDateTimePicker2.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
-            this.RecDateTimePicker2.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
-            this.RecDateTimePicker2.Name = "RecDateTimePicker2";
-            this.RecDateTimePicker2.OnHoverBaseColor = System.Drawing.Color.White;
-            this.RecDateTimePicker2.OnHoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.RecDateTimePicker2.OnHoverForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.RecDateTimePicker2.OnPressedColor = System.Drawing.Color.Black;
-            this.RecDateTimePicker2.Radius = 7;
-            this.RecDateTimePicker2.Size = new System.Drawing.Size(310, 30);
-            this.RecDateTimePicker2.TabIndex = 21;
-            this.RecDateTimePicker2.Text = "19:38:19";
-            this.RecDateTimePicker2.Value = new System.DateTime(2021, 4, 23, 19, 38, 19, 903);
-            // 
-            // DesDateTimePicker2
-            // 
-            this.DesDateTimePicker2.BackColor = System.Drawing.Color.Transparent;
-            this.DesDateTimePicker2.BaseColor = System.Drawing.Color.White;
-            this.DesDateTimePicker2.BorderColor = System.Drawing.SystemColors.WindowFrame;
-            this.DesDateTimePicker2.CustomFormat = "MM/dd/yyyy hh:mm:ss";
-            this.DesDateTimePicker2.DropDownAlign = System.Windows.Forms.LeftRightAlignment.Right;
-            this.DesDateTimePicker2.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.DesDateTimePicker2.Font = new System.Drawing.Font("Segoe UI", 9.75F);
-            this.DesDateTimePicker2.ForeColor = System.Drawing.Color.Black;
-            this.DesDateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.DesDateTimePicker2.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.DesDateTimePicker2.Location = new System.Drawing.Point(334, 306);
-            this.DesDateTimePicker2.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
-            this.DesDateTimePicker2.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
-            this.DesDateTimePicker2.Name = "DesDateTimePicker2";
-            this.DesDateTimePicker2.OnHoverBaseColor = System.Drawing.Color.White;
-            this.DesDateTimePicker2.OnHoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.DesDateTimePicker2.OnHoverForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.DesDateTimePicker2.OnPressedColor = System.Drawing.Color.Black;
-            this.DesDateTimePicker2.Radius = 7;
-            this.DesDateTimePicker2.Size = new System.Drawing.Size(310, 30);
-            this.DesDateTimePicker2.TabIndex = 22;
-            this.DesDateTimePicker2.Text = "19:38:19";
-            this.DesDateTimePicker2.Value = new System.DateTime(2021, 4, 23, 19, 38, 19, 903);
+            this.label26.AutoSize = true;
+            this.label26.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label26.Location = new System.Drawing.Point(3, 59);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(45, 300);
+            this.label26.TabIndex = 15;
+            this.label26.Text = "1)\r\n2)\r\n3)\r\n4)\r\n5)\r\n6)\r\n7)\r\n8)\r\n9)\r\n10)\r\n";
+            this.label26.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // ForClient
             // 
@@ -1579,8 +1542,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(213)))), ((int)(((byte)(212)))));
             this.ClientSize = new System.Drawing.Size(951, 577);
-            this.Controls.Add(this.NewDeliveryPanel);
-            this.Controls.Add(this.SettingPanel);
+            this.Controls.Add(this.InfoPanel);
             this.Controls.Add(this.ProfilePanel);
             this.Controls.Add(this.MyDeliveryPanel);
             this.Controls.Add(this.QuestionPanel);
@@ -1588,9 +1550,10 @@
             this.Controls.Add(this.Close_button);
             this.Controls.Add(this.NamePanel);
             this.Controls.Add(this.MainPanel);
+            this.Controls.Add(this.NewDeliveryPanel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "ForClient";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Client";
@@ -1615,8 +1578,8 @@
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.QuestionsDataGridView)).EndInit();
-            this.SettingPanel.ResumeLayout(false);
-            this.SettingPanel.PerformLayout();
+            this.InfoPanel.ResumeLayout(false);
+            this.InfoPanel.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1696,8 +1659,7 @@
         private System.Windows.Forms.Label label2;
         private Guna.UI.WinForms.GunaDateTimePicker RecDateTimePicker;
         private Guna.UI.WinForms.GunaElipse gunaElipse8;
-        private System.Windows.Forms.Panel SettingPanel;
-        private Guna.UI.WinForms.GunaButton gunaButton5;
+        private System.Windows.Forms.Panel InfoPanel;
         private System.Windows.Forms.Label label18;
         private Guna.UI.WinForms.GunaButton Help;
         private Guna.UI.WinForms.GunaButton Question;
@@ -1707,7 +1669,9 @@
         private System.Windows.Forms.Label label24;
         private System.Windows.Forms.Label label23;
         private System.Windows.Forms.Label label21;
-        private Guna.UI.WinForms.GunaDateTimePicker DesDateTimePicker2;
-        private Guna.UI.WinForms.GunaDateTimePicker RecDateTimePicker2;
+        private System.Windows.Forms.MaskedTextBox maskedTextBox2;
+        private System.Windows.Forms.MaskedTextBox maskedTextBox1;
+        private System.Windows.Forms.Label label25;
+        private System.Windows.Forms.Label label26;
     }
 }

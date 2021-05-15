@@ -46,6 +46,12 @@
             this.ObjTextBox = new Guna.UI.WinForms.GunaTextBox();
             this.DeliveryDateTimePicker = new Guna.UI.WinForms.GunaDateTimePicker();
             this.gunaButton1 = new Guna.UI.WinForms.GunaButton();
+            this.label23 = new System.Windows.Forms.Label();
+            this.label21 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.gunaDateTimePicker1 = new Guna.UI.WinForms.GunaDateTimePicker();
+            this.maskedTextBox2 = new System.Windows.Forms.MaskedTextBox();
+            this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.Close_button)).BeginInit();
             this.SuspendLayout();
             // 
@@ -63,7 +69,7 @@
             this.Close_button.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(243)))), ((int)(((byte)(241)))));
             this.Close_button.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Close_button.Image = global::Delivery_service.Properties.Resources.Close_button_leave2;
-            this.Close_button.Location = new System.Drawing.Point(631, 11);
+            this.Close_button.Location = new System.Drawing.Point(600, 11);
             this.Close_button.Margin = new System.Windows.Forms.Padding(2);
             this.Close_button.Name = "Close_button";
             this.Close_button.Size = new System.Drawing.Size(38, 41);
@@ -99,7 +105,7 @@
             this.gunaButton3.ForeColor = System.Drawing.Color.White;
             this.gunaButton3.Image = null;
             this.gunaButton3.ImageSize = new System.Drawing.Size(20, 20);
-            this.gunaButton3.Location = new System.Drawing.Point(513, 244);
+            this.gunaButton3.Location = new System.Drawing.Point(407, 334);
             this.gunaButton3.Name = "gunaButton3";
             this.gunaButton3.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(35)))), ((int)(((byte)(73)))));
             this.gunaButton3.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -118,7 +124,7 @@
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label12.ForeColor = System.Drawing.Color.DimGray;
-            this.label12.Location = new System.Drawing.Point(8, 167);
+            this.label12.Location = new System.Drawing.Point(324, 56);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(107, 20);
             this.label12.TabIndex = 15;
@@ -136,7 +142,7 @@
             this.CommentaryTextBox.FocusedForeColor = System.Drawing.SystemColors.ControlText;
             this.CommentaryTextBox.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.CommentaryTextBox.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.CommentaryTextBox.Location = new System.Drawing.Point(12, 190);
+            this.CommentaryTextBox.Location = new System.Drawing.Point(328, 79);
             this.CommentaryTextBox.MultiLine = true;
             this.CommentaryTextBox.Name = "CommentaryTextBox";
             this.CommentaryTextBox.PasswordChar = '\0';
@@ -153,7 +159,7 @@
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label11.ForeColor = System.Drawing.Color.DimGray;
-            this.label11.Location = new System.Drawing.Point(324, 167);
+            this.label11.Location = new System.Drawing.Point(8, 244);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(168, 20);
             this.label11.TabIndex = 13;
@@ -165,7 +171,7 @@
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label14.ForeColor = System.Drawing.Color.DimGray;
-            this.label14.Location = new System.Drawing.Point(324, 111);
+            this.label14.Location = new System.Drawing.Point(324, 188);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(117, 20);
             this.label14.TabIndex = 8;
@@ -183,12 +189,12 @@
             this.DesTextBox.FocusedForeColor = System.Drawing.SystemColors.ControlText;
             this.DesTextBox.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.DesTextBox.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.DesTextBox.Location = new System.Drawing.Point(328, 134);
+            this.DesTextBox.Location = new System.Drawing.Point(328, 211);
             this.DesTextBox.Name = "DesTextBox";
             this.DesTextBox.PasswordChar = '\0';
             this.DesTextBox.Radius = 7;
             this.DesTextBox.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.DesTextBox.Size = new System.Drawing.Size(340, 30);
+            this.DesTextBox.Size = new System.Drawing.Size(310, 30);
             this.DesTextBox.TabIndex = 7;
             this.DesTextBox.Text = "Адрес доставки";
             this.DesTextBox.TextOffsetX = 7;
@@ -199,7 +205,7 @@
             this.label16.AutoSize = true;
             this.label16.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label16.ForeColor = System.Drawing.Color.DimGray;
-            this.label16.Location = new System.Drawing.Point(324, 56);
+            this.label16.Location = new System.Drawing.Point(8, 188);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(130, 20);
             this.label16.TabIndex = 4;
@@ -217,12 +223,12 @@
             this.RecTextBox.FocusedForeColor = System.Drawing.SystemColors.ControlText;
             this.RecTextBox.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.RecTextBox.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.RecTextBox.Location = new System.Drawing.Point(328, 79);
+            this.RecTextBox.Location = new System.Drawing.Point(12, 211);
             this.RecTextBox.Name = "RecTextBox";
             this.RecTextBox.PasswordChar = '\0';
             this.RecTextBox.Radius = 7;
             this.RecTextBox.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.RecTextBox.Size = new System.Drawing.Size(340, 30);
+            this.RecTextBox.Size = new System.Drawing.Size(310, 30);
             this.RecTextBox.TabIndex = 3;
             this.RecTextBox.Text = "Адрес получения";
             this.RecTextBox.TextOffsetX = 7;
@@ -273,7 +279,7 @@
             this.DeliveryDateTimePicker.Font = new System.Drawing.Font("Segoe UI", 9.75F);
             this.DeliveryDateTimePicker.ForeColor = System.Drawing.Color.Black;
             this.DeliveryDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.DeliveryDateTimePicker.Location = new System.Drawing.Point(328, 190);
+            this.DeliveryDateTimePicker.Location = new System.Drawing.Point(12, 267);
             this.DeliveryDateTimePicker.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
             this.DeliveryDateTimePicker.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
             this.DeliveryDateTimePicker.Name = "DeliveryDateTimePicker";
@@ -282,7 +288,7 @@
             this.DeliveryDateTimePicker.OnHoverForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.DeliveryDateTimePicker.OnPressedColor = System.Drawing.Color.Black;
             this.DeliveryDateTimePicker.Radius = 7;
-            this.DeliveryDateTimePicker.Size = new System.Drawing.Size(341, 30);
+            this.DeliveryDateTimePicker.Size = new System.Drawing.Size(310, 30);
             this.DeliveryDateTimePicker.TabIndex = 16;
             this.DeliveryDateTimePicker.Text = "01.10.2019";
             this.DeliveryDateTimePicker.Value = new System.DateTime(2019, 10, 1, 0, 0, 0, 0);
@@ -302,7 +308,7 @@
             this.gunaButton1.ForeColor = System.Drawing.Color.White;
             this.gunaButton1.Image = null;
             this.gunaButton1.ImageSize = new System.Drawing.Size(20, 20);
-            this.gunaButton1.Location = new System.Drawing.Point(337, 244);
+            this.gunaButton1.Location = new System.Drawing.Point(82, 334);
             this.gunaButton1.Name = "gunaButton1";
             this.gunaButton1.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(35)))), ((int)(((byte)(73)))));
             this.gunaButton1.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -312,19 +318,104 @@
             this.gunaButton1.Radius = 7;
             this.gunaButton1.Size = new System.Drawing.Size(155, 31);
             this.gunaButton1.TabIndex = 17;
-            this.gunaButton1.Text = "Отменить";
+            this.gunaButton1.Text = "Отменить доставку";
             this.gunaButton1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.gunaButton1.Click += new System.EventHandler(this.gunaButton1_Click);
             // 
-            // InfoDelivery
+            // label23
+            // 
+            this.label23.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label23.ForeColor = System.Drawing.Color.DimGray;
+            this.label23.Location = new System.Drawing.Point(328, 167);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(310, 20);
+            this.label23.TabIndex = 20;
+            this.label23.Text = "Куда";
+            this.label23.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // label21
+            // 
+            this.label21.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label21.ForeColor = System.Drawing.Color.DimGray;
+            this.label21.Location = new System.Drawing.Point(8, 167);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(314, 20);
+            this.label21.TabIndex = 19;
+            this.label21.Text = "Откуда";
+            this.label21.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label1.ForeColor = System.Drawing.Color.DimGray;
+            this.label1.Location = new System.Drawing.Point(324, 244);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(168, 20);
+            this.label1.TabIndex = 13;
+            this.label1.Text = "Дата и время доставки";
+            this.label1.Click += new System.EventHandler(this.label11_Click);
+            // 
+            // gunaDateTimePicker1
+            // 
+            this.gunaDateTimePicker1.BackColor = System.Drawing.Color.Transparent;
+            this.gunaDateTimePicker1.BaseColor = System.Drawing.Color.White;
+            this.gunaDateTimePicker1.BorderColor = System.Drawing.SystemColors.WindowFrame;
+            this.gunaDateTimePicker1.CustomFormat = null;
+            this.gunaDateTimePicker1.DropDownAlign = System.Windows.Forms.LeftRightAlignment.Right;
+            this.gunaDateTimePicker1.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.gunaDateTimePicker1.Font = new System.Drawing.Font("Segoe UI", 9.75F);
+            this.gunaDateTimePicker1.ForeColor = System.Drawing.Color.Black;
+            this.gunaDateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.gunaDateTimePicker1.Location = new System.Drawing.Point(328, 267);
+            this.gunaDateTimePicker1.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
+            this.gunaDateTimePicker1.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
+            this.gunaDateTimePicker1.Name = "gunaDateTimePicker1";
+            this.gunaDateTimePicker1.OnHoverBaseColor = System.Drawing.Color.White;
+            this.gunaDateTimePicker1.OnHoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.gunaDateTimePicker1.OnHoverForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.gunaDateTimePicker1.OnPressedColor = System.Drawing.Color.Black;
+            this.gunaDateTimePicker1.Radius = 7;
+            this.gunaDateTimePicker1.Size = new System.Drawing.Size(310, 30);
+            this.gunaDateTimePicker1.TabIndex = 16;
+            this.gunaDateTimePicker1.Text = "01.10.2019";
+            this.gunaDateTimePicker1.Value = new System.DateTime(2019, 10, 1, 0, 0, 0, 0);
+            // 
+            // maskedTextBox2
+            // 
+            this.maskedTextBox2.Font = new System.Drawing.Font("Segoe UI", 9.75F);
+            this.maskedTextBox2.Location = new System.Drawing.Point(328, 303);
+            this.maskedTextBox2.Mask = "00:00";
+            this.maskedTextBox2.Name = "maskedTextBox2";
+            this.maskedTextBox2.Size = new System.Drawing.Size(310, 25);
+            this.maskedTextBox2.TabIndex = 24;
+            this.maskedTextBox2.ValidatingType = typeof(System.DateTime);
+            // 
+            // maskedTextBox1
+            // 
+            this.maskedTextBox1.Font = new System.Drawing.Font("Segoe UI", 9.75F);
+            this.maskedTextBox1.Location = new System.Drawing.Point(12, 303);
+            this.maskedTextBox1.Mask = "00:00";
+            this.maskedTextBox1.Name = "maskedTextBox1";
+            this.maskedTextBox1.Size = new System.Drawing.Size(310, 25);
+            this.maskedTextBox1.TabIndex = 25;
+            this.maskedTextBox1.ValidatingType = typeof(System.DateTime);
+            // 
+            // InfoDeliveryForClient
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(243)))), ((int)(((byte)(241)))));
-            this.ClientSize = new System.Drawing.Size(680, 291);
+            this.ClientSize = new System.Drawing.Size(648, 375);
+            this.Controls.Add(this.maskedTextBox2);
+            this.Controls.Add(this.maskedTextBox1);
+            this.Controls.Add(this.label23);
+            this.Controls.Add(this.label21);
             this.Controls.Add(this.gunaButton1);
+            this.Controls.Add(this.gunaDateTimePicker1);
             this.Controls.Add(this.DeliveryDateTimePicker);
             this.Controls.Add(this.label12);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.CommentaryTextBox);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.gunaButton3);
@@ -338,9 +429,10 @@
             this.Controls.Add(this.RecTextBox);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "InfoDelivery";
+            this.Name = "InfoDeliveryForClient";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "InfoDelivery";
+            this.Load += new System.EventHandler(this.InfoDeliveryForClient_Load);
             ((System.ComponentModel.ISupportInitialize)(this.Close_button)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -365,5 +457,11 @@
         private Guna.UI.WinForms.GunaTextBox RecTextBox;
         private Guna.UI.WinForms.GunaDateTimePicker DeliveryDateTimePicker;
         private Guna.UI.WinForms.GunaButton gunaButton1;
+        private System.Windows.Forms.Label label23;
+        private System.Windows.Forms.Label label21;
+        private Guna.UI.WinForms.GunaDateTimePicker gunaDateTimePicker1;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.MaskedTextBox maskedTextBox2;
+        private System.Windows.Forms.MaskedTextBox maskedTextBox1;
     }
 }

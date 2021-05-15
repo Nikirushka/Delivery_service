@@ -351,9 +351,9 @@ namespace Delivery_service
             {
                 MessageBox.Show(ex.Message);
             }
-            InfoDeliveryForClient infoDelivery = new InfoDeliveryForClient(DeliveryID, obj, rp, dp, DeliveryDataGridView[6, index].Value.ToString(), com);
-            DialogResult dialogResult = new DialogResult();
-            dialogResult = infoDelivery.ShowDialog();
+            //InfoDeliveryForClient infoDelivery = new InfoDeliveryForClient(DeliveryID, obj, rp, dp, DeliveryDataGridView[6, index].Value.ToString(), com);
+            //DialogResult dialogResult = new DialogResult();
+            //dialogResult = infoDelivery.ShowDialog();
             UpdateDelivery();
 
         }
@@ -384,9 +384,9 @@ namespace Delivery_service
             {
                 MessageBox.Show(ex.Message);
             }
-            InfoDeliveryForClient infoDelivery = new InfoDeliveryForClient(DeliveryID, obj, rp, dp, DeliveryDataGridView[6, index].Value.ToString(), com);
-            DialogResult dialogResult = new DialogResult();
-            dialogResult = infoDelivery.ShowDialog();
+            //InfoDeliveryForClient infoDelivery = new InfoDeliveryForClient(DeliveryID, obj, rp, dp, DeliveryDataGridView[6, index].Value.ToString(), com);
+            //DialogResult dialogResult = new DialogResult();
+            //dialogResult = infoDelivery.ShowDialog();
             UpdateDelivery();
         }
 
@@ -481,9 +481,9 @@ namespace Delivery_service
             {
                 MessageBox.Show(ex.Message);
             }
-            InfoDeliveryForClient infoDelivery = new InfoDeliveryForClient(DeliveryID, obj, rp, dp, DeliveryDataGridView[6, index].Value.ToString(), com);
-            DialogResult dialogResult = new DialogResult();
-            dialogResult = infoDelivery.ShowDialog();
+            //InfoDeliveryForClient infoDelivery = new InfoDeliveryForClient(DeliveryID, obj, rp, dp, DeliveryDataGridView[6, index].Value.ToString(), com);
+            //DialogResult dialogResult = new DialogResult();
+            //dialogResult = infoDelivery.ShowDialog();
             UpdateDelivery();
         }
 

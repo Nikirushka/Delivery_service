@@ -354,9 +354,9 @@ namespace Delivery_service
             {
                 MessageBox.Show(ex.Message);
             }
-            InfoDeliveryForClient infoDelivery = new InfoDeliveryForClient(DeliveryID,obj, rp, dp, DeliveryDataGridView[4, index].Value.ToString(), com);
-            DialogResult dialogResult = new DialogResult();
-            dialogResult = infoDelivery.ShowDialog();
+            //InfoDeliveryForClient infoDelivery = new InfoDeliveryForClient(DeliveryID,obj, rp, dp, DeliveryDataGridView[4, index].Value.ToString(), com);
+            //DialogResult dialogResult = new DialogResult();
+            //dialogResult = infoDelivery.ShowDialog();
             UpdateDelivery();
             
         }
@@ -390,9 +390,9 @@ namespace Delivery_service
             {
                 MessageBox.Show(ex.Message);
             }
-            InfoDeliveryForClient infoDelivery = new InfoDeliveryForClient(DeliveryID,DeliveryDataGridView[0,index].Value.ToString(), DeliveryDataGridView[2, index].Value.ToString(), DeliveryDataGridView[3, index].Value.ToString(), DeliveryDataGridView[4, index].Value.ToString(), DeliveryDataGridView[5, index].Value.ToString());
-            DialogResult dialogResult = new DialogResult();
-            dialogResult = infoDelivery.ShowDialog();
+            //InfoDeliveryForClient infoDelivery = new InfoDeliveryForClient(DeliveryID,DeliveryDataGridView[0,index].Value.ToString(), DeliveryDataGridView[2, index].Value.ToString(), DeliveryDataGridView[3, index].Value.ToString(), DeliveryDataGridView[4, index].Value.ToString(), DeliveryDataGridView[5, index].Value.ToString());
+            //DialogResult dialogResult = new DialogResult();
+            //dialogResult = infoDelivery.ShowDialog();
             UpdateDelivery();
         }
     }

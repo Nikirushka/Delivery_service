@@ -23,14 +23,17 @@ namespace Delivery_service
         {
             InitializeComponent();
         }
-        public InfoDeliveryForClient(string DeliveryID_, string obj_, string adr1_, string adr2_, string time_, string comm_)
+        public InfoDeliveryForClient(string DeliveryID_, string obj_, string adr1_, string adr2_, string time1_, string time2_,string date1,string date2,string comm_)
         {
             InitializeComponent();
             ObjTextBox.Text = obj_;
             CommentaryTextBox.Text = comm_;
             RecTextBox.Text = adr1_;
             DesTextBox.Text = adr2_;
-            DeliveryDateTimePicker.Value =Convert.ToDateTime(time_);
+            DeliveryDateTimePicker.Value =Convert.ToDateTime(date1);
+            gunaDateTimePicker1.Value = Convert.ToDateTime(date2);
+            maskedTextBox1.Text = time1_;
+            maskedTextBox2.Text = time2_;
             DeliveryID = DeliveryID_;
         }
 
@@ -101,7 +104,7 @@ namespace Delivery_service
             {
                 connection = new SqlConnection(connectionString);
                 connection.Open();
-                string query = $"UPDATE [Delivery service order] SET [Object description] =N'{ObjTextBox.Text}', [Reception point] =N'{RecTextBox.Text}', [Destination point] =N'{DesTextBox.Text}', [Commentary] =N'{CommentaryTextBox.Text}',[Deadline date]=N'{DeliveryDateTimePicker.Value.ToString("yyyy-MM-dd")}'  where [id]={DeliveryID}";
+                string query = $"UPDATE [Delivery service order] SET [Object description] =N'{ObjTextBox.Text}', [Reception point] =N'{RecTextBox.Text}', [Destination point] =N'{DesTextBox.Text}', [Commentary] =N'{CommentaryTextBox.Text}',[Reception date]=N'{DeliveryDateTimePicker.Value.ToString("yyyy-MM-dd")}', [Destination date]=N'{gunaDateTimePicker1.Value.ToString("yyyy-MM-dd")}', [Reception time]=N'{maskedTextBox1.Text}', [Destination time]=N'{maskedTextBox2.Text}'  where [id]={DeliveryID}";
                 cmd = new SqlCommand(query, connection);
                 cmd.ExecuteNonQuery();
                 connection.Close();
@@ -133,6 +136,11 @@ namespace Delivery_service
 
             this.DialogResult = DialogResult.OK;
             this.Close();
+        }
+
+        private void InfoDeliveryForClient_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
