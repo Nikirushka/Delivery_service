@@ -255,10 +255,11 @@
             // 
             // dateTimePicker1
             // 
-            this.dateTimePicker1.CalendarFont = new System.Drawing.Font("Agency FB", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateTimePicker1.CalendarFont = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dateTimePicker1.CalendarMonthBackground = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(213)))), ((int)(((byte)(212)))));
             this.dateTimePicker1.CalendarTitleBackColor = System.Drawing.SystemColors.ControlText;
             this.dateTimePicker1.CalendarTitleForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(213)))), ((int)(((byte)(212)))));
+            this.dateTimePicker1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.dateTimePicker1.Font = new System.Drawing.Font("Segoe UI", 13.8F);
             this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dateTimePicker1.Location = new System.Drawing.Point(342, 72);
@@ -267,7 +268,6 @@
             this.dateTimePicker1.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.dateTimePicker1.Size = new System.Drawing.Size(164, 32);
             this.dateTimePicker1.TabIndex = 25;
-            this.dateTimePicker1.UseWaitCursor = true;
             this.dateTimePicker1.Value = new System.DateTime(2021, 5, 6, 22, 19, 48, 0);
             // 
             // label10
@@ -320,7 +320,7 @@
             // 
             this.maskedTextBox6.Font = new System.Drawing.Font("Segoe UI", 13.8F);
             this.maskedTextBox6.Location = new System.Drawing.Point(344, 204);
-            this.maskedTextBox6.Mask = "00-000-00-00";
+            this.maskedTextBox6.Mask = "000-00-000-00-00";
             this.maskedTextBox6.Name = "maskedTextBox6";
             this.maskedTextBox6.Size = new System.Drawing.Size(163, 32);
             this.maskedTextBox6.TabIndex = 4;

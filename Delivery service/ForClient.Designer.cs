@@ -29,6 +29,9 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -58,6 +61,7 @@
             this.ProfilePicture = new System.Windows.Forms.PictureBox();
             this.gunaElipse2 = new Guna.UI.WinForms.GunaElipse(this.components);
             this.InfoProfilePanel = new System.Windows.Forms.Panel();
+            this.PhoneTextBox = new System.Windows.Forms.MaskedTextBox();
             this.RegDateTimePicker = new Guna.UI.WinForms.GunaDateTimePicker();
             this.label2 = new System.Windows.Forms.Label();
             this.BirthDateTimePicker = new Guna.UI.WinForms.GunaDateTimePicker();
@@ -70,7 +74,6 @@
             this.label8 = new System.Windows.Forms.Label();
             this.EmailTextBox = new Guna.UI.WinForms.GunaTextBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.PhoneTextBox = new Guna.UI.WinForms.GunaTextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -87,6 +90,8 @@
             this.ProfilePanel = new System.Windows.Forms.Panel();
             this.NewDeliveryPanel = new System.Windows.Forms.Panel();
             this.panel6 = new System.Windows.Forms.Panel();
+            this.maskedTextBox2 = new System.Windows.Forms.MaskedTextBox();
+            this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
             this.DesDateTimePicker = new Guna.UI.WinForms.GunaDateTimePicker();
             this.label24 = new System.Windows.Forms.Label();
             this.label23 = new System.Windows.Forms.Label();
@@ -117,11 +122,12 @@
             this.gunaElipse7 = new Guna.UI.WinForms.GunaElipse(this.components);
             this.gunaElipse8 = new Guna.UI.WinForms.GunaElipse(this.components);
             this.InfoPanel = new System.Windows.Forms.Panel();
-            this.label18 = new System.Windows.Forms.Label();
-            this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
-            this.maskedTextBox2 = new System.Windows.Forms.MaskedTextBox();
-            this.label25 = new System.Windows.Forms.Label();
             this.label26 = new System.Windows.Forms.Label();
+            this.label25 = new System.Windows.Forms.Label();
+            this.label18 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.DeliveryDataGridView2 = new Guna.UI.WinForms.GunaDataGridView();
+            this.gunaButton2 = new Guna.UI.WinForms.GunaButton();
             this.MainPanel.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ProfilePic)).BeginInit();
@@ -139,13 +145,14 @@
             this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.QuestionsDataGridView)).BeginInit();
             this.InfoPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DeliveryDataGridView2)).BeginInit();
             this.SuspendLayout();
             // 
             // MainPanel
             // 
-            this.MainPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.MainPanel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.MainPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(18)))), ((int)(((byte)(38)))));
             this.MainPanel.Controls.Add(this.NavPanel);
             this.MainPanel.Controls.Add(this.Settings);
@@ -159,6 +166,7 @@
             this.MainPanel.Name = "MainPanel";
             this.MainPanel.Size = new System.Drawing.Size(186, 577);
             this.MainPanel.TabIndex = 0;
+            this.MainPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.MainPanel_Paint);
             // 
             // NavPanel
             // 
@@ -357,16 +365,14 @@
             // 
             this.ProfilePic.Cursor = System.Windows.Forms.Cursors.Hand;
             this.ProfilePic.Image = global::Delivery_service.Properties.Resources.Profile;
-            this.ProfilePic.Location = new System.Drawing.Point(60, 22);
+            this.ProfilePic.Location = new System.Drawing.Point(11, 8);
             this.ProfilePic.Margin = new System.Windows.Forms.Padding(2);
             this.ProfilePic.Name = "ProfilePic";
-            this.ProfilePic.Size = new System.Drawing.Size(63, 63);
+            this.ProfilePic.Size = new System.Drawing.Size(161, 79);
             this.ProfilePic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.ProfilePic.TabIndex = 1;
             this.ProfilePic.TabStop = false;
             this.ProfilePic.Click += new System.EventHandler(this.ProfilePic_Click);
-            this.ProfilePic.MouseEnter += new System.EventHandler(this.ProfilePic_MouseEnter);
-            this.ProfilePic.MouseLeave += new System.EventHandler(this.ProfilePic_MouseLeave);
             // 
             // gunaDragControl1
             // 
@@ -383,9 +389,6 @@
             // 
             // NamePanel
             // 
-            this.NamePanel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.NamePanel.AutoSize = true;
             this.NamePanel.Font = new System.Drawing.Font("Segoe UI", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.NamePanel.ForeColor = System.Drawing.Color.DimGray;
@@ -398,8 +401,7 @@
             // 
             // string_panel
             // 
-            this.string_panel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
+            this.string_panel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.string_panel.BackColor = System.Drawing.Color.DimGray;
             this.string_panel.Location = new System.Drawing.Point(191, 60);
@@ -457,10 +459,10 @@
             // 
             this.ProfilePicture.Cursor = System.Windows.Forms.Cursors.Hand;
             this.ProfilePicture.Image = global::Delivery_service.Properties.Resources.Profile_on;
-            this.ProfilePicture.Location = new System.Drawing.Point(78, 18);
+            this.ProfilePicture.Location = new System.Drawing.Point(30, 18);
             this.ProfilePicture.Margin = new System.Windows.Forms.Padding(2);
             this.ProfilePicture.Name = "ProfilePicture";
-            this.ProfilePicture.Size = new System.Drawing.Size(63, 63);
+            this.ProfilePicture.Size = new System.Drawing.Size(161, 63);
             this.ProfilePicture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.ProfilePicture.TabIndex = 2;
             this.ProfilePicture.TabStop = false;
@@ -475,6 +477,7 @@
             // 
             this.InfoProfilePanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(243)))), ((int)(((byte)(241)))));
             this.InfoProfilePanel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.InfoProfilePanel.Controls.Add(this.PhoneTextBox);
             this.InfoProfilePanel.Controls.Add(this.RegDateTimePicker);
             this.InfoProfilePanel.Controls.Add(this.label2);
             this.InfoProfilePanel.Controls.Add(this.BirthDateTimePicker);
@@ -487,7 +490,6 @@
             this.InfoProfilePanel.Controls.Add(this.label8);
             this.InfoProfilePanel.Controls.Add(this.EmailTextBox);
             this.InfoProfilePanel.Controls.Add(this.label7);
-            this.InfoProfilePanel.Controls.Add(this.PhoneTextBox);
             this.InfoProfilePanel.Controls.Add(this.label6);
             this.InfoProfilePanel.Controls.Add(this.label5);
             this.InfoProfilePanel.Controls.Add(this.label4);
@@ -500,6 +502,16 @@
             this.InfoProfilePanel.Name = "InfoProfilePanel";
             this.InfoProfilePanel.Size = new System.Drawing.Size(500, 280);
             this.InfoProfilePanel.TabIndex = 6;
+            // 
+            // PhoneTextBox
+            // 
+            this.PhoneTextBox.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.PhoneTextBox.Location = new System.Drawing.Point(14, 125);
+            this.PhoneTextBox.Mask = "000-00-000-00-00";
+            this.PhoneTextBox.Name = "PhoneTextBox";
+            this.PhoneTextBox.Size = new System.Drawing.Size(155, 29);
+            this.PhoneTextBox.TabIndex = 17;
+            this.PhoneTextBox.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.PhoneTextBox_MaskInputRejected);
             // 
             // RegDateTimePicker
             // 
@@ -710,27 +722,6 @@
             this.label7.TabIndex = 4;
             this.label7.Text = "Телефон";
             // 
-            // PhoneTextBox
-            // 
-            this.PhoneTextBox.BackColor = System.Drawing.Color.Transparent;
-            this.PhoneTextBox.BaseColor = System.Drawing.Color.White;
-            this.PhoneTextBox.BorderColor = System.Drawing.SystemColors.WindowFrame;
-            this.PhoneTextBox.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.PhoneTextBox.FocusedBaseColor = System.Drawing.Color.WhiteSmoke;
-            this.PhoneTextBox.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.PhoneTextBox.FocusedForeColor = System.Drawing.SystemColors.ControlText;
-            this.PhoneTextBox.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.PhoneTextBox.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.PhoneTextBox.Location = new System.Drawing.Point(14, 124);
-            this.PhoneTextBox.Name = "PhoneTextBox";
-            this.PhoneTextBox.PasswordChar = '\0';
-            this.PhoneTextBox.Radius = 7;
-            this.PhoneTextBox.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.PhoneTextBox.Size = new System.Drawing.Size(155, 32);
-            this.PhoneTextBox.TabIndex = 3;
-            this.PhoneTextBox.Text = "Телефон";
-            this.PhoneTextBox.TextOffsetX = 7;
-            // 
             // label6
             // 
             this.label6.AutoSize = true;
@@ -849,8 +840,13 @@
             // 
             // panel4
             // 
+            this.panel4.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(243)))), ((int)(((byte)(241)))));
             this.panel4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.panel4.Controls.Add(this.DeliveryDataGridView2);
+            this.panel4.Controls.Add(this.gunaButton2);
             this.panel4.Controls.Add(this.DeliveryDataGridView);
             this.panel4.Controls.Add(this.gunaButton4);
             this.panel4.Controls.Add(this.label22);
@@ -864,30 +860,33 @@
             // 
             this.DeliveryDataGridView.AllowUserToAddRows = false;
             this.DeliveryDataGridView.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(201)))), ((int)(((byte)(197)))));
-            this.DeliveryDataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(201)))), ((int)(((byte)(197)))));
+            this.DeliveryDataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
+            this.DeliveryDataGridView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.DeliveryDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.DeliveryDataGridView.BackgroundColor = System.Drawing.Color.White;
             this.DeliveryDataGridView.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.DeliveryDataGridView.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.DeliveryDataGridView.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(76)))), ((int)(((byte)(60)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 10.5F);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DeliveryDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(76)))), ((int)(((byte)(60)))));
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Segoe UI", 10.5F);
+            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DeliveryDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
             this.DeliveryDataGridView.ColumnHeadersHeight = 40;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(219)))), ((int)(((byte)(216)))));
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 10.5F);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(135)))), ((int)(((byte)(125)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.DeliveryDataGridView.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(219)))), ((int)(((byte)(216)))));
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Segoe UI", 10.5F);
+            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(135)))), ((int)(((byte)(125)))));
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.DeliveryDataGridView.DefaultCellStyle = dataGridViewCellStyle9;
             this.DeliveryDataGridView.EnableHeadersVisualStyles = false;
             this.DeliveryDataGridView.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(192)))), ((int)(((byte)(188)))));
             this.DeliveryDataGridView.Location = new System.Drawing.Point(14, 46);
@@ -896,7 +895,7 @@
             this.DeliveryDataGridView.RowHeadersVisible = false;
             this.DeliveryDataGridView.RowHeadersWidth = 51;
             this.DeliveryDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.DeliveryDataGridView.Size = new System.Drawing.Size(692, 290);
+            this.DeliveryDataGridView.Size = new System.Drawing.Size(692, 180);
             this.DeliveryDataGridView.TabIndex = 1;
             this.DeliveryDataGridView.Theme = Guna.UI.WinForms.GunaDataGridViewPresetThemes.Alizarin;
             this.DeliveryDataGridView.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(201)))), ((int)(((byte)(197)))));
@@ -924,6 +923,7 @@
             // 
             // gunaButton4
             // 
+            this.gunaButton4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.gunaButton4.Animated = true;
             this.gunaButton4.AnimationHoverSpeed = 0.07F;
             this.gunaButton4.AnimationSpeed = 0.03F;
@@ -937,7 +937,7 @@
             this.gunaButton4.ForeColor = System.Drawing.Color.White;
             this.gunaButton4.Image = null;
             this.gunaButton4.ImageSize = new System.Drawing.Size(20, 20);
-            this.gunaButton4.Location = new System.Drawing.Point(272, 342);
+            this.gunaButton4.Location = new System.Drawing.Point(277, 232);
             this.gunaButton4.Name = "gunaButton4";
             this.gunaButton4.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(35)))), ((int)(((byte)(73)))));
             this.gunaButton4.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -965,7 +965,7 @@
             // 
             this.ProfilePanel.Controls.Add(this.PhotoProfilePanel);
             this.ProfilePanel.Controls.Add(this.InfoProfilePanel);
-            this.ProfilePanel.Location = new System.Drawing.Point(477, 463);
+            this.ProfilePanel.Location = new System.Drawing.Point(402, 432);
             this.ProfilePanel.Name = "ProfilePanel";
             this.ProfilePanel.Size = new System.Drawing.Size(791, 514);
             this.ProfilePanel.TabIndex = 7;
@@ -973,7 +973,7 @@
             // NewDeliveryPanel
             // 
             this.NewDeliveryPanel.Controls.Add(this.panel6);
-            this.NewDeliveryPanel.Location = new System.Drawing.Point(803, 194);
+            this.NewDeliveryPanel.Location = new System.Drawing.Point(690, 295);
             this.NewDeliveryPanel.Name = "NewDeliveryPanel";
             this.NewDeliveryPanel.Size = new System.Drawing.Size(791, 514);
             this.NewDeliveryPanel.TabIndex = 8;
@@ -1006,12 +1006,34 @@
             this.panel6.Size = new System.Drawing.Size(659, 402);
             this.panel6.TabIndex = 6;
             // 
+            // maskedTextBox2
+            // 
+            this.maskedTextBox2.Font = new System.Drawing.Font("Segoe UI", 9.75F);
+            this.maskedTextBox2.Location = new System.Drawing.Point(330, 308);
+            this.maskedTextBox2.Mask = "00:00";
+            this.maskedTextBox2.Name = "maskedTextBox2";
+            this.maskedTextBox2.Size = new System.Drawing.Size(310, 25);
+            this.maskedTextBox2.TabIndex = 8;
+            this.maskedTextBox2.Text = "1215";
+            this.maskedTextBox2.ValidatingType = typeof(System.DateTime);
+            // 
+            // maskedTextBox1
+            // 
+            this.maskedTextBox1.Font = new System.Drawing.Font("Segoe UI", 9.75F);
+            this.maskedTextBox1.Location = new System.Drawing.Point(14, 308);
+            this.maskedTextBox1.Mask = "00:00";
+            this.maskedTextBox1.Name = "maskedTextBox1";
+            this.maskedTextBox1.Size = new System.Drawing.Size(310, 25);
+            this.maskedTextBox1.TabIndex = 5;
+            this.maskedTextBox1.Text = "1200";
+            this.maskedTextBox1.ValidatingType = typeof(System.DateTime);
+            // 
             // DesDateTimePicker
             // 
             this.DesDateTimePicker.BackColor = System.Drawing.Color.Transparent;
             this.DesDateTimePicker.BaseColor = System.Drawing.Color.White;
             this.DesDateTimePicker.BorderColor = System.Drawing.SystemColors.WindowFrame;
-            this.DesDateTimePicker.CustomFormat = "MM/dd/yyyy ";
+            this.DesDateTimePicker.CustomFormat = "dd/mm/yyyy ";
             this.DesDateTimePicker.DropDownAlign = System.Windows.Forms.LeftRightAlignment.Right;
             this.DesDateTimePicker.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.DesDateTimePicker.Font = new System.Drawing.Font("Segoe UI", 9.75F);
@@ -1028,8 +1050,8 @@
             this.DesDateTimePicker.OnPressedColor = System.Drawing.Color.Black;
             this.DesDateTimePicker.Radius = 7;
             this.DesDateTimePicker.Size = new System.Drawing.Size(310, 30);
-            this.DesDateTimePicker.TabIndex = 20;
-            this.DesDateTimePicker.Text = "04/23/2021 ";
+            this.DesDateTimePicker.TabIndex = 7;
+            this.DesDateTimePicker.Text = "23/38/2021 ";
             this.DesDateTimePicker.Value = new System.DateTime(2021, 4, 23, 19, 38, 19, 903);
             // 
             // label24
@@ -1070,7 +1092,7 @@
             this.RecDateTimePicker.BackColor = System.Drawing.Color.Transparent;
             this.RecDateTimePicker.BaseColor = System.Drawing.Color.White;
             this.RecDateTimePicker.BorderColor = System.Drawing.SystemColors.WindowFrame;
-            this.RecDateTimePicker.CustomFormat = "MM/dd/yyyy ";
+            this.RecDateTimePicker.CustomFormat = "dd/mm/yyyy ";
             this.RecDateTimePicker.DropDownAlign = System.Windows.Forms.LeftRightAlignment.Right;
             this.RecDateTimePicker.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.RecDateTimePicker.Font = new System.Drawing.Font("Segoe UI", 9.75F);
@@ -1087,8 +1109,8 @@
             this.RecDateTimePicker.OnPressedColor = System.Drawing.Color.Black;
             this.RecDateTimePicker.Radius = 7;
             this.RecDateTimePicker.Size = new System.Drawing.Size(310, 30);
-            this.RecDateTimePicker.TabIndex = 16;
-            this.RecDateTimePicker.Text = "04/23/2021 ";
+            this.RecDateTimePicker.TabIndex = 4;
+            this.RecDateTimePicker.Text = "23/38/2021 ";
             this.RecDateTimePicker.Value = new System.DateTime(2021, 4, 23, 19, 38, 19, 903);
             // 
             // label12
@@ -1120,9 +1142,10 @@
             this.CommentaryTextBox.Radius = 7;
             this.CommentaryTextBox.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.CommentaryTextBox.Size = new System.Drawing.Size(310, 101);
-            this.CommentaryTextBox.TabIndex = 14;
+            this.CommentaryTextBox.TabIndex = 2;
             this.CommentaryTextBox.Text = "Комментарий";
             this.CommentaryTextBox.TextOffsetX = 7;
+            this.CommentaryTextBox.Enter += new System.EventHandler(this.CommentaryTextBox_Enter);
             // 
             // label11
             // 
@@ -1192,9 +1215,10 @@
             this.DesTextBox.Radius = 7;
             this.DesTextBox.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.DesTextBox.Size = new System.Drawing.Size(310, 32);
-            this.DesTextBox.TabIndex = 7;
+            this.DesTextBox.TabIndex = 6;
             this.DesTextBox.Text = "Адрес доставки";
             this.DesTextBox.TextOffsetX = 7;
+            this.DesTextBox.Enter += new System.EventHandler(this.DesTextBox_Enter);
             // 
             // label16
             // 
@@ -1227,6 +1251,7 @@
             this.RecTextBox.TabIndex = 3;
             this.RecTextBox.Text = "Адрес получения";
             this.RecTextBox.TextOffsetX = 7;
+            this.RecTextBox.Enter += new System.EventHandler(this.RecTextBox_Enter);
             // 
             // label19
             // 
@@ -1260,6 +1285,7 @@
             this.ObjTextBox.TabIndex = 1;
             this.ObjTextBox.Text = "Описание объекта заказа";
             this.ObjTextBox.TextOffsetX = 7;
+            this.ObjTextBox.Enter += new System.EventHandler(this.ObjTextBox_Enter);
             // 
             // label20
             // 
@@ -1273,8 +1299,11 @@
             // 
             // MyDeliveryPanel
             // 
+            this.MyDeliveryPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.MyDeliveryPanel.Controls.Add(this.panel4);
-            this.MyDeliveryPanel.Location = new System.Drawing.Point(600, 364);
+            this.MyDeliveryPanel.Location = new System.Drawing.Point(774, 221);
             this.MyDeliveryPanel.Name = "MyDeliveryPanel";
             this.MyDeliveryPanel.Size = new System.Drawing.Size(791, 514);
             this.MyDeliveryPanel.TabIndex = 9;
@@ -1291,9 +1320,7 @@
             // 
             // Close_button
             // 
-            this.Close_button.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.Close_button.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.Close_button.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(213)))), ((int)(((byte)(212)))));
             this.Close_button.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Close_button.Image = global::Delivery_service.Properties.Resources.Close_button_leave2;
@@ -1311,7 +1338,7 @@
             // QuestionPanel
             // 
             this.QuestionPanel.Controls.Add(this.panel5);
-            this.QuestionPanel.Location = new System.Drawing.Point(684, 305);
+            this.QuestionPanel.Location = new System.Drawing.Point(563, 345);
             this.QuestionPanel.Name = "QuestionPanel";
             this.QuestionPanel.Size = new System.Drawing.Size(791, 514);
             this.QuestionPanel.TabIndex = 10;
@@ -1386,30 +1413,30 @@
             // 
             this.QuestionsDataGridView.AllowUserToAddRows = false;
             this.QuestionsDataGridView.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(201)))), ((int)(((byte)(197)))));
-            this.QuestionsDataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(201)))), ((int)(((byte)(197)))));
+            this.QuestionsDataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.QuestionsDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.QuestionsDataGridView.BackgroundColor = System.Drawing.Color.White;
             this.QuestionsDataGridView.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.QuestionsDataGridView.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.QuestionsDataGridView.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(76)))), ((int)(((byte)(60)))));
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 10.5F);
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.QuestionsDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(76)))), ((int)(((byte)(60)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 10.5F);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.QuestionsDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.QuestionsDataGridView.ColumnHeadersHeight = 40;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(219)))), ((int)(((byte)(216)))));
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 10.5F);
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(135)))), ((int)(((byte)(125)))));
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.QuestionsDataGridView.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(219)))), ((int)(((byte)(216)))));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 10.5F);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(135)))), ((int)(((byte)(125)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.QuestionsDataGridView.DefaultCellStyle = dataGridViewCellStyle3;
             this.QuestionsDataGridView.EnableHeadersVisualStyles = false;
             this.QuestionsDataGridView.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(192)))), ((int)(((byte)(188)))));
             this.QuestionsDataGridView.Location = new System.Drawing.Point(14, 194);
@@ -1483,6 +1510,27 @@
             this.InfoPanel.Size = new System.Drawing.Size(791, 514);
             this.InfoPanel.TabIndex = 11;
             // 
+            // label26
+            // 
+            this.label26.AutoSize = true;
+            this.label26.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label26.Location = new System.Drawing.Point(3, 59);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(45, 300);
+            this.label26.TabIndex = 15;
+            this.label26.Text = "1)\r\n2)\r\n3)\r\n4)\r\n5)\r\n6)\r\n7)\r\n8)\r\n9)\r\n10)\r\n";
+            this.label26.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // label25
+            // 
+            this.label25.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label25.Location = new System.Drawing.Point(3, 1);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(757, 46);
+            this.label25.TabIndex = 14;
+            this.label25.Text = "Справка";
+            this.label25.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
             // label18
             // 
             this.label18.AutoSize = true;
@@ -1495,46 +1543,113 @@
     "\r\nРуденко Никита Павлович\r\n2021\r\n";
             this.label18.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
-            // maskedTextBox1
+            // pictureBox1
             // 
-            this.maskedTextBox1.Font = new System.Drawing.Font("Segoe UI", 9.75F);
-            this.maskedTextBox1.Location = new System.Drawing.Point(14, 308);
-            this.maskedTextBox1.Mask = "00:00";
-            this.maskedTextBox1.Name = "maskedTextBox1";
-            this.maskedTextBox1.Size = new System.Drawing.Size(310, 25);
-            this.maskedTextBox1.TabIndex = 23;
-            this.maskedTextBox1.ValidatingType = typeof(System.DateTime);
+            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(213)))), ((int)(((byte)(212)))));
+            this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox1.Image = global::Delivery_service.Properties.Resources.Close_button_leave2;
+            this.pictureBox1.Location = new System.Drawing.Point(856, 8);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(40, 40);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 12;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click_1);
             // 
-            // maskedTextBox2
+            // DeliveryDataGridView2
             // 
-            this.maskedTextBox2.Font = new System.Drawing.Font("Segoe UI", 9.75F);
-            this.maskedTextBox2.Location = new System.Drawing.Point(330, 308);
-            this.maskedTextBox2.Mask = "00:00";
-            this.maskedTextBox2.Name = "maskedTextBox2";
-            this.maskedTextBox2.Size = new System.Drawing.Size(310, 25);
-            this.maskedTextBox2.TabIndex = 23;
-            this.maskedTextBox2.ValidatingType = typeof(System.DateTime);
+            this.DeliveryDataGridView2.AllowUserToAddRows = false;
+            this.DeliveryDataGridView2.AllowUserToDeleteRows = false;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(201)))), ((int)(((byte)(197)))));
+            this.DeliveryDataGridView2.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
+            this.DeliveryDataGridView2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.DeliveryDataGridView2.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.DeliveryDataGridView2.BackgroundColor = System.Drawing.Color.White;
+            this.DeliveryDataGridView2.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.DeliveryDataGridView2.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            this.DeliveryDataGridView2.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(76)))), ((int)(((byte)(60)))));
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 10.5F);
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DeliveryDataGridView2.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            this.DeliveryDataGridView2.ColumnHeadersHeight = 40;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(219)))), ((int)(((byte)(216)))));
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 10.5F);
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(135)))), ((int)(((byte)(125)))));
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.DeliveryDataGridView2.DefaultCellStyle = dataGridViewCellStyle6;
+            this.DeliveryDataGridView2.EnableHeadersVisualStyles = false;
+            this.DeliveryDataGridView2.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(192)))), ((int)(((byte)(188)))));
+            this.DeliveryDataGridView2.Location = new System.Drawing.Point(14, 269);
+            this.DeliveryDataGridView2.Name = "DeliveryDataGridView2";
+            this.DeliveryDataGridView2.ReadOnly = true;
+            this.DeliveryDataGridView2.RowHeadersVisible = false;
+            this.DeliveryDataGridView2.RowHeadersWidth = 51;
+            this.DeliveryDataGridView2.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.DeliveryDataGridView2.Size = new System.Drawing.Size(692, 180);
+            this.DeliveryDataGridView2.TabIndex = 13;
+            this.DeliveryDataGridView2.Theme = Guna.UI.WinForms.GunaDataGridViewPresetThemes.Alizarin;
+            this.DeliveryDataGridView2.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(201)))), ((int)(((byte)(197)))));
+            this.DeliveryDataGridView2.ThemeStyle.AlternatingRowsStyle.Font = null;
+            this.DeliveryDataGridView2.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Empty;
+            this.DeliveryDataGridView2.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.Empty;
+            this.DeliveryDataGridView2.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Empty;
+            this.DeliveryDataGridView2.ThemeStyle.BackColor = System.Drawing.Color.White;
+            this.DeliveryDataGridView2.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(192)))), ((int)(((byte)(188)))));
+            this.DeliveryDataGridView2.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(76)))), ((int)(((byte)(60)))));
+            this.DeliveryDataGridView2.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.DeliveryDataGridView2.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Segoe UI", 10.5F);
+            this.DeliveryDataGridView2.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
+            this.DeliveryDataGridView2.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
+            this.DeliveryDataGridView2.ThemeStyle.HeaderStyle.Height = 40;
+            this.DeliveryDataGridView2.ThemeStyle.ReadOnly = true;
+            this.DeliveryDataGridView2.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(219)))), ((int)(((byte)(216)))));
+            this.DeliveryDataGridView2.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            this.DeliveryDataGridView2.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Segoe UI", 10.5F);
+            this.DeliveryDataGridView2.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.Black;
+            this.DeliveryDataGridView2.ThemeStyle.RowsStyle.Height = 22;
+            this.DeliveryDataGridView2.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(135)))), ((int)(((byte)(125)))));
+            this.DeliveryDataGridView2.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.Black;
             // 
-            // label25
+            // gunaButton2
             // 
-            this.label25.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label25.Location = new System.Drawing.Point(3, 1);
-            this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(757, 46);
-            this.label25.TabIndex = 14;
-            this.label25.Text = "Справка";
-            this.label25.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
-            // label26
-            // 
-            this.label26.AutoSize = true;
-            this.label26.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label26.Location = new System.Drawing.Point(3, 59);
-            this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(45, 300);
-            this.label26.TabIndex = 15;
-            this.label26.Text = "1)\r\n2)\r\n3)\r\n4)\r\n5)\r\n6)\r\n7)\r\n8)\r\n9)\r\n10)\r\n";
-            this.label26.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.gunaButton2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.gunaButton2.Animated = true;
+            this.gunaButton2.AnimationHoverSpeed = 0.07F;
+            this.gunaButton2.AnimationSpeed = 0.03F;
+            this.gunaButton2.BackColor = System.Drawing.Color.Transparent;
+            this.gunaButton2.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(18)))), ((int)(((byte)(38)))));
+            this.gunaButton2.BorderColor = System.Drawing.Color.Black;
+            this.gunaButton2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.gunaButton2.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.gunaButton2.FocusedColor = System.Drawing.Color.Empty;
+            this.gunaButton2.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
+            this.gunaButton2.ForeColor = System.Drawing.Color.White;
+            this.gunaButton2.Image = null;
+            this.gunaButton2.ImageSize = new System.Drawing.Size(20, 20);
+            this.gunaButton2.Location = new System.Drawing.Point(277, 455);
+            this.gunaButton2.Name = "gunaButton2";
+            this.gunaButton2.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(35)))), ((int)(((byte)(73)))));
+            this.gunaButton2.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.gunaButton2.OnHoverForeColor = System.Drawing.Color.White;
+            this.gunaButton2.OnHoverImage = null;
+            this.gunaButton2.OnPressedColor = System.Drawing.Color.Black;
+            this.gunaButton2.Radius = 7;
+            this.gunaButton2.Size = new System.Drawing.Size(155, 31);
+            this.gunaButton2.TabIndex = 14;
+            this.gunaButton2.Text = "Развернуть";
+            this.gunaButton2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // ForClient
             // 
@@ -1542,15 +1657,16 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(213)))), ((int)(((byte)(212)))));
             this.ClientSize = new System.Drawing.Size(951, 577);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.InfoPanel);
             this.Controls.Add(this.ProfilePanel);
-            this.Controls.Add(this.MyDeliveryPanel);
             this.Controls.Add(this.QuestionPanel);
             this.Controls.Add(this.string_panel);
             this.Controls.Add(this.Close_button);
             this.Controls.Add(this.NamePanel);
             this.Controls.Add(this.MainPanel);
             this.Controls.Add(this.NewDeliveryPanel);
+            this.Controls.Add(this.MyDeliveryPanel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(2);
@@ -1580,6 +1696,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.QuestionsDataGridView)).EndInit();
             this.InfoPanel.ResumeLayout(false);
             this.InfoPanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DeliveryDataGridView2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1617,7 +1735,6 @@
         private Guna.UI.WinForms.GunaTextBox NameTextBox;
         private System.Windows.Forms.Panel ProfilePanel;
         private System.Windows.Forms.Label label7;
-        private Guna.UI.WinForms.GunaTextBox PhoneTextBox;
         private System.Windows.Forms.Label label8;
         private Guna.UI.WinForms.GunaTextBox EmailTextBox;
         private System.Windows.Forms.Label label9;
@@ -1673,5 +1790,9 @@
         private System.Windows.Forms.MaskedTextBox maskedTextBox1;
         private System.Windows.Forms.Label label25;
         private System.Windows.Forms.Label label26;
+        private System.Windows.Forms.MaskedTextBox PhoneTextBox;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private Guna.UI.WinForms.GunaDataGridView DeliveryDataGridView2;
+        private Guna.UI.WinForms.GunaButton gunaButton2;
     }
 }

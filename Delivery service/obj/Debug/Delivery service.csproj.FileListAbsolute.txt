@@ -32,3 +32,20 @@ E:\GitHub\Delivery service\Delivery_service\Delivery service\obj\Debug\Delivery 
 E:\GitHub\Delivery service\Delivery_service\Delivery service\obj\Debug\Delivery service.csproj.CopyComplete
 E:\GitHub\Delivery service\Delivery_service\Delivery service\obj\Debug\Delivery service.exe
 E:\GitHub\Delivery service\Delivery_service\Delivery service\obj\Debug\Delivery service.pdb
+D:\GitHub\Delivery service\bin\Debug\Delivery service.exe.config
+D:\GitHub\Delivery service\bin\Debug\Delivery service.exe
+D:\GitHub\Delivery service\bin\Debug\Delivery service.pdb
+D:\GitHub\Delivery service\obj\Debug\Delivery service.csprojAssemblyReference.cache
+D:\GitHub\Delivery service\obj\Debug\Delivery_service.ForEmployee.resources
+D:\GitHub\Delivery service\obj\Debug\Delivery_service.ForOwner.resources
+D:\GitHub\Delivery service\obj\Debug\Delivery_service.ForClient.resources
+D:\GitHub\Delivery service\obj\Debug\Delivery_service.InfoDeliveryForClient.resources
+D:\GitHub\Delivery service\obj\Debug\Delivery_service.Login.resources
+D:\GitHub\Delivery service\obj\Debug\Delivery_service.NewUser.resources
+D:\GitHub\Delivery service\obj\Debug\Delivery_service.Properties.Resources.resources
+D:\GitHub\Delivery service\obj\Debug\Delivery_service.ResPass.resources
+D:\GitHub\Delivery service\obj\Debug\Delivery service.csproj.GenerateResource.cache
+D:\GitHub\Delivery service\obj\Debug\Delivery service.csproj.CoreCompileInputs.cache
+D:\GitHub\Delivery service\obj\Debug\Delivery service.csproj.CopyComplete
+D:\GitHub\Delivery service\obj\Debug\Delivery service.exe
+D:\GitHub\Delivery service\obj\Debug\Delivery service.pdb

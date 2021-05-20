@@ -193,16 +193,6 @@ namespace Delivery_service
             Settings.Image = Properties.Resources.Settings;
         }
 
-        private void ProfilePic_MouseLeave(object sender, EventArgs e)
-        {
-            ProfilePic.Image = Properties.Resources.Profile;
-        }
-
-        private void ProfilePic_MouseEnter(object sender, EventArgs e)
-        {
-            ProfilePic.Image = Properties.Resources.Profile_on;
-        }
-
         private void Close_button_MouseEnter(object sender, EventArgs e)
         {
             Close_button.Image = Properties.Resources.Close_button_enter;
@@ -249,7 +239,7 @@ namespace Delivery_service
                     MemoryStream memoryStream = new MemoryStream();
                     memoryStream.Write((byte[])reader["Photo"], 0, ((byte[])reader["Photo"]).Length);
                     ProfilePicture.Image = Image.FromStream(memoryStream);
-
+                    ProfilePic.Image = Image.FromStream(memoryStream);
                 }
                 connection.Close();
             }
@@ -280,8 +270,7 @@ namespace Delivery_service
             Settings.Image = Properties.Resources.Settings;
             Question.Image = Properties.Resources.Question;
             Help.Image = Properties.Resources.Help;
-            NewDelivery.Image = Properties.Resources.NewDelivery;
-            ProfilePic.Image = Properties.Resources.Profile_on;
+            NewDelivery.Image = Properties.Resources.NewDelivery;   
         }
 
         private void RedButton_Click(object sender, EventArgs e)
@@ -332,8 +321,7 @@ namespace Delivery_service
             {
                 MessageBox.Show(ex.Message);
             }
-
-
+            Orders_Click(sender, e);
         }
 
         private void UpdateDelivery()
@@ -385,7 +373,7 @@ namespace Delivery_service
             {
                 MessageBox.Show(ex.Message);
             }
-            InfoDeliveryForClient infoDelivery =new InfoDeliveryForClient(DeliveryID, obj, rp, dp, rt, dt, rd, dd, com);
+            InfoDeliveryForClient infoDelivery = new InfoDeliveryForClient(DeliveryID, obj, rp, dp, rt, dt, rd, dd, com);
             DialogResult dialogResult = new DialogResult();
             dialogResult = infoDelivery.ShowDialog();
             UpdateDelivery();
@@ -421,7 +409,7 @@ namespace Delivery_service
             {
                 MessageBox.Show(ex.Message);
             }
-            InfoDeliveryForClient infoDelivery = new InfoDeliveryForClient(DeliveryID, obj, rp, dp, rt,dt,rd,dd, com);
+            InfoDeliveryForClient infoDelivery = new InfoDeliveryForClient(DeliveryID, obj, rp, dp, rt, dt, rd, dd, com);
             DialogResult dialogResult = new DialogResult();
             dialogResult = infoDelivery.ShowDialog();
             UpdateDelivery();
@@ -498,6 +486,52 @@ namespace Delivery_service
         private void pictureBox1_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Maximized;
+        }
+
+        private void PhoneTextBox_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
+        {
+
+        }
+
+        private void MainPanel_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void ObjTextBox_Enter(object sender, EventArgs e)
+        {
+            ObjTextBox.Text = "";
+        }
+
+        private void CommentaryTextBox_Enter(object sender, EventArgs e)
+        {
+            CommentaryTextBox.Text = "";
+        }
+
+        private void RecTextBox_Enter(object sender, EventArgs e)
+        {
+            RecTextBox.Text = "";
+        }
+
+        private void DesTextBox_Enter(object sender, EventArgs e)
+        {
+            DesTextBox.Text = "";
+        }
+        private bool flag = false;
+        private void pictureBox1_Click_1(object sender, EventArgs e)
+        {
+            if (!flag)
+            {
+                this.FormBorderStyle = FormBorderStyle.None;
+                this.WindowState = FormWindowState.Maximized;
+                this.TopMost = true;
+                this.Height = System.Windows.Forms.SystemInformation.PrimaryMonitorSize.Height;
+                this.Width = System.Windows.Forms.SystemInformation.PrimaryMonitorSize.Width;
+            }
+            else
+                WindowState = FormWindowState.Normal;
+            flag = !flag;
+            
         }
     }
 }
