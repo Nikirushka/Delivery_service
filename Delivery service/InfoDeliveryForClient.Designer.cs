@@ -129,7 +129,6 @@
             this.label12.Size = new System.Drawing.Size(107, 20);
             this.label12.TabIndex = 15;
             this.label12.Text = "Комментарий";
-            this.label12.Click += new System.EventHandler(this.label12_Click);
             // 
             // CommentaryTextBox
             // 
@@ -152,7 +151,6 @@
             this.CommentaryTextBox.TabIndex = 14;
             this.CommentaryTextBox.Text = "Комментарий";
             this.CommentaryTextBox.TextOffsetX = 7;
-            this.CommentaryTextBox.TextChanged += new System.EventHandler(this.CommentaryTextBox_TextChanged);
             // 
             // label11
             // 
@@ -164,7 +162,6 @@
             this.label11.Size = new System.Drawing.Size(168, 20);
             this.label11.TabIndex = 13;
             this.label11.Text = "Дата и время доставки";
-            this.label11.Click += new System.EventHandler(this.label11_Click);
             // 
             // label14
             // 
@@ -176,7 +173,6 @@
             this.label14.Size = new System.Drawing.Size(117, 20);
             this.label14.TabIndex = 8;
             this.label14.Text = "Адрес доставки";
-            this.label14.Click += new System.EventHandler(this.label14_Click);
             // 
             // DesTextBox
             // 
@@ -198,7 +194,6 @@
             this.DesTextBox.TabIndex = 7;
             this.DesTextBox.Text = "Адрес доставки";
             this.DesTextBox.TextOffsetX = 7;
-            this.DesTextBox.TextChanged += new System.EventHandler(this.DesTextBox_TextChanged);
             // 
             // label16
             // 
@@ -210,7 +205,6 @@
             this.label16.Size = new System.Drawing.Size(130, 20);
             this.label16.TabIndex = 4;
             this.label16.Text = "Адрес получения";
-            this.label16.Click += new System.EventHandler(this.label16_Click);
             // 
             // RecTextBox
             // 
@@ -243,7 +237,6 @@
             this.label19.Size = new System.Drawing.Size(188, 20);
             this.label19.TabIndex = 2;
             this.label19.Text = "Описание объекта заказа";
-            this.label19.Click += new System.EventHandler(this.label19_Click);
             // 
             // ObjTextBox
             // 
@@ -266,7 +259,6 @@
             this.ObjTextBox.TabIndex = 1;
             this.ObjTextBox.Text = "Описание объекта заказа";
             this.ObjTextBox.TextOffsetX = 7;
-            this.ObjTextBox.TextChanged += new System.EventHandler(this.ObjTextBox_TextChanged);
             // 
             // DeliveryDateTimePicker
             // 
@@ -308,7 +300,7 @@
             this.gunaButton1.ForeColor = System.Drawing.Color.White;
             this.gunaButton1.Image = null;
             this.gunaButton1.ImageSize = new System.Drawing.Size(20, 20);
-            this.gunaButton1.Location = new System.Drawing.Point(82, 334);
+            this.gunaButton1.Location = new System.Drawing.Point(76, 334);
             this.gunaButton1.Name = "gunaButton1";
             this.gunaButton1.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(35)))), ((int)(((byte)(73)))));
             this.gunaButton1.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -354,7 +346,6 @@
             this.label1.Size = new System.Drawing.Size(168, 20);
             this.label1.TabIndex = 13;
             this.label1.Text = "Дата и время доставки";
-            this.label1.Click += new System.EventHandler(this.label11_Click);
             // 
             // gunaDateTimePicker1
             // 
@@ -430,9 +421,8 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "InfoDeliveryForClient";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "InfoDelivery";
-            this.Load += new System.EventHandler(this.InfoDeliveryForClient_Load);
             ((System.ComponentModel.ISupportInitialize)(this.Close_button)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

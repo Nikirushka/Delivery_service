@@ -35,7 +35,6 @@ E:\GitHub\Delivery service\Delivery_service\Delivery service\obj\Debug\Delivery 
 D:\GitHub\Delivery service\bin\Debug\Delivery service.exe.config
 D:\GitHub\Delivery service\bin\Debug\Delivery service.exe
 D:\GitHub\Delivery service\bin\Debug\Delivery service.pdb
-D:\GitHub\Delivery service\obj\Debug\Delivery service.csprojAssemblyReference.cache
 D:\GitHub\Delivery service\obj\Debug\Delivery_service.ForEmployee.resources
 D:\GitHub\Delivery service\obj\Debug\Delivery_service.ForOwner.resources
 D:\GitHub\Delivery service\obj\Debug\Delivery_service.ForClient.resources

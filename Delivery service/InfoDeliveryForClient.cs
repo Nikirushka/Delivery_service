@@ -1,13 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Data.OleDb;
 using System.Data.SqlClient;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Delivery_service
@@ -23,14 +15,14 @@ namespace Delivery_service
         {
             InitializeComponent();
         }
-        public InfoDeliveryForClient(string DeliveryID_, string obj_, string adr1_, string adr2_, string time1_, string time2_,string date1,string date2,string comm_)
+        public InfoDeliveryForClient(string DeliveryID_, string obj_, string adr1_, string adr2_, string time1_, string time2_, string date1, string date2, string comm_)
         {
             InitializeComponent();
             ObjTextBox.Text = obj_;
             CommentaryTextBox.Text = comm_;
             RecTextBox.Text = adr1_;
             DesTextBox.Text = adr2_;
-            DeliveryDateTimePicker.Value =Convert.ToDateTime(date1);
+            DeliveryDateTimePicker.Value = Convert.ToDateTime(date1);
             gunaDateTimePicker1.Value = Convert.ToDateTime(date2);
             maskedTextBox1.Text = time1_;
             maskedTextBox2.Text = time2_;
@@ -51,51 +43,6 @@ namespace Delivery_service
         private void Close_button_MouseLeave(object sender, EventArgs e)
         {
             Close_button.Image = Properties.Resources.Close_button_leave2;
-        }
-
-        private void CommentaryTextBox_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void gunaTextBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label11_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label12_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void ObjTextBox_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label19_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label16_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label14_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void DesTextBox_TextChanged(object sender, EventArgs e)
-        {
-
         }
 
         private void gunaButton3_Click(object sender, EventArgs e)
@@ -138,9 +85,5 @@ namespace Delivery_service
             this.Close();
         }
 
-        private void InfoDeliveryForClient_Load(object sender, EventArgs e)
-        {
-
-        }
     }
 }

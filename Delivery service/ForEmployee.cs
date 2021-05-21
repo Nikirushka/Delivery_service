@@ -451,7 +451,7 @@ namespace Delivery_service
                 }
                 catch (Exception ex)
                 {
-                    DialogResult rezult = MessageBox.Show("Невозможно открыть выбранный файл", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                     MessageBox.Show(ex.Message);
                 }
             }
         }

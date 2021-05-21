@@ -209,11 +209,6 @@ namespace Delivery_service
             this.Close();
         }
 
-        private void PhotoProfilePanel_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
         private void UpdateProfile()
         {
 
@@ -270,7 +265,7 @@ namespace Delivery_service
             Settings.Image = Properties.Resources.Settings;
             Question.Image = Properties.Resources.Question;
             Help.Image = Properties.Resources.Help;
-            NewDelivery.Image = Properties.Resources.NewDelivery;   
+            NewDelivery.Image = Properties.Resources.NewDelivery;
         }
 
         private void RedButton_Click(object sender, EventArgs e)
@@ -335,7 +330,11 @@ namespace Delivery_service
                 DataSet ds = new DataSet();
                 adapter.Fill(ds);
                 DeliveryDataGridView.DataSource = ds.Tables[0];
-
+                query = $"exec InfoDeliveryEnd N'{ClientID}'";
+                adapter = new SqlDataAdapter(query, connection);
+                ds = new DataSet();
+                adapter.Fill(ds);
+                DeliveryDataGridView2.DataSource = ds.Tables[0];
             }
             catch (Exception ex)
             {
@@ -346,41 +345,9 @@ namespace Delivery_service
 
         private void gunaButton4_Click(object sender, EventArgs e)
         {
-            string DeliveryID = " ";
-            int index = 0;
-            foreach (DataGridViewCell cell in DeliveryDataGridView.SelectedCells)
-            {
-                index = cell.RowIndex;
-            }
-            string obj = DeliveryDataGridView[2, index].Value.ToString();
-            string rp = DeliveryDataGridView[4, index].Value.ToString();
-            string dp = DeliveryDataGridView[5, index].Value.ToString();
-            string com = DeliveryDataGridView[7, index].Value.ToString();
-            string rd = DeliveryDataGridView[5, index].Value.ToString();
-            string dd = DeliveryDataGridView[8, index].Value.ToString();
-            string rt = DeliveryDataGridView[6, index].Value.ToString();
-            string dt = DeliveryDataGridView[9, index].Value.ToString();
-            try
-            {
-                string query = $"select [id] from [Delivery service order] where [Client id]={ClientID} and [Object description]=N'{obj}'and [Reception point]=N'{rp}' and [Destination point]=N'{dp}' and [Commentary]=N'{com}' ";
-                connection = new SqlConnection(connectionString);
-                connection.Open();
-                cmd = new SqlCommand(query, connection);
-                DeliveryID = cmd.ExecuteScalar().ToString();
-                connection.Close();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-            InfoDeliveryForClient infoDelivery = new InfoDeliveryForClient(DeliveryID, obj, rp, dp, rt, dt, rd, dd, com);
-            DialogResult dialogResult = new DialogResult();
-            dialogResult = infoDelivery.ShowDialog();
-            UpdateDelivery();
-
+            LoadInfo();
         }
-
-        private void DeliveryDataGridView_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
+        private void LoadInfo()
         {
             string DeliveryID = " ";
             int index = 0;
@@ -413,6 +380,10 @@ namespace Delivery_service
             DialogResult dialogResult = new DialogResult();
             dialogResult = infoDelivery.ShowDialog();
             UpdateDelivery();
+        }
+        private void DeliveryDataGridView_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            LoadInfo();
         }
 
         private void UpdateQuestions()
@@ -473,29 +444,14 @@ namespace Delivery_service
                 }
                 catch (Exception ex)
                 {
-                    DialogResult rezult = MessageBox.Show("Невозможно открыть выбранный файл", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show(ex.Message);
                 }
             }
-        }
-
-        private void gunaButton5_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Maximized;
-        }
-
-        private void PhoneTextBox_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
-        {
-
-        }
-
-        private void MainPanel_Paint(object sender, PaintEventArgs e)
-        {
-
         }
 
         private void ObjTextBox_Enter(object sender, EventArgs e)
@@ -524,14 +480,18 @@ namespace Delivery_service
             {
                 this.FormBorderStyle = FormBorderStyle.None;
                 this.WindowState = FormWindowState.Maximized;
-                this.TopMost = true;
                 this.Height = System.Windows.Forms.SystemInformation.PrimaryMonitorSize.Height;
                 this.Width = System.Windows.Forms.SystemInformation.PrimaryMonitorSize.Width;
             }
             else
                 WindowState = FormWindowState.Normal;
             flag = !flag;
-            
+
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
         }
     }
 }

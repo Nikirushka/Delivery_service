@@ -1,15 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using System.Runtime.InteropServices;
-using System.Data.OleDb;
 using System.Data.SqlClient;
+using System.Drawing;
+using System.Windows.Forms;
 
 namespace Delivery_service
 {
@@ -37,8 +29,8 @@ namespace Delivery_service
         }
         private void main_menu_MouseMove(object sender, MouseEventArgs e)
         {
-            
-            if(LoginTB.Text!="")
+
+            if (LoginTB.Text != "")
             {
                 Login_panel.BackColor = Color.FromArgb(217, 35, 73);
                 LoginP.Image = Properties.Resources.Login_on;
@@ -92,7 +84,7 @@ namespace Delivery_service
 
         private void LoginTB_MouseEnter(object sender, EventArgs e)
         {
-            Login_panel.BackColor= Color.FromArgb(217, 35, 73);
+            Login_panel.BackColor = Color.FromArgb(217, 35, 73);
             LoginP.Image = Properties.Resources.Login_on;
         }
 
@@ -146,7 +138,7 @@ namespace Delivery_service
                 {
                     reader.Close();
                     string id = cmd.ExecuteScalar().ToString();
-                    
+
                     query = $"SELECT * FROM [Delivery service client] WHERE [User id]={Convert.ToInt32(id)}";
                     cmd = new SqlCommand(query, connection);
                     reader = cmd.ExecuteReader();

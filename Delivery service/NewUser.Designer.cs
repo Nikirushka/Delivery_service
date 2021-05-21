@@ -55,6 +55,7 @@
             this.PhotoButton = new System.Windows.Forms.Button();
             this.ProfilePic = new System.Windows.Forms.PictureBox();
             this.gunaElipse1 = new Guna.UI.WinForms.GunaElipse(this.components);
+            this.gunaElipse2 = new Guna.UI.WinForms.GunaElipse(this.components);
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ProfilePic)).BeginInit();
             this.SuspendLayout();
@@ -390,6 +391,10 @@
             // 
             this.gunaElipse1.TargetControl = this;
             // 
+            // gunaElipse2
+            // 
+            this.gunaElipse2.TargetControl = this.panel1;
+            // 
             // NewUser
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -440,5 +445,6 @@
         private System.Windows.Forms.Label label9;
         private Guna.UI.WinForms.GunaComboBox UserComboBox;
         private System.Windows.Forms.MaskedTextBox maskedTextBox6;
+        private Guna.UI.WinForms.GunaElipse gunaElipse2;
     }
 }
