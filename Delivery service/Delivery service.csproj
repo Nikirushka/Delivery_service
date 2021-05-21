@@ -50,17 +50,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ForEmployee.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ForEmployee.Designer.cs">
-      <DependentUpon>ForEmployee.cs</DependentUpon>
-    </Compile>
     <Compile Include="ForOwner.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="ForOwner.Designer.cs">
       <DependentUpon>ForOwner.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ForEmployee.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ForEmployee.Designer.cs">
+      <DependentUpon>ForEmployee.cs</DependentUpon>
     </Compile>
     <Compile Include="ForClient.cs">
       <SubType>Form</SubType>
@@ -94,11 +94,11 @@
     <Compile Include="ResPass.Designer.cs">
       <DependentUpon>ResPass.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="ForEmployee.resx">
-      <DependentUpon>ForEmployee.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="ForOwner.resx">
       <DependentUpon>ForOwner.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ForEmployee.resx">
+      <DependentUpon>ForEmployee.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ForClient.resx">
       <DependentUpon>ForClient.cs</DependentUpon>
