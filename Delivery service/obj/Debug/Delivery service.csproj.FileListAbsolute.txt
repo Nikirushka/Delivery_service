@@ -48,3 +48,4 @@ D:\GitHub\Delivery service\obj\Debug\Delivery service.csproj.CoreCompileInputs.c
 D:\GitHub\Delivery service\obj\Debug\Delivery service.csproj.CopyComplete
 D:\GitHub\Delivery service\obj\Debug\Delivery service.exe
 D:\GitHub\Delivery service\obj\Debug\Delivery service.pdb
+D:\GitHub\Delivery service\obj\Debug\Delivery service.csprojAssemblyReference.cache
