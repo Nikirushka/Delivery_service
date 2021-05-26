@@ -513,5 +513,10 @@ namespace Delivery_service
         {
             pictureBox2.Image = Properties.Resources.Hide;
         }
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

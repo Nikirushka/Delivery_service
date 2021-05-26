@@ -15,6 +15,7 @@ namespace Delivery_service
         string connectionString = @"Server=tcp:deliveryservice.database.windows.net,1433;Initial Catalog=Delivery service;Persist Security Info=False;User ID=Nikiru;Password=Rnp26122001;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;";
         string UserID = "";
         string OwnerID = "";
+        string CompanyID = "";
         public ForOwner(string id)
         {
 
@@ -27,7 +28,7 @@ namespace Delivery_service
             NavPanel.Top = NewDelivery.Top;
             NavPanel.Left = NewDelivery.Left;
             NewDelivery.ForeColor = Color.FromArgb(217, 35, 73);
-            NewDelivery.Image = Properties.Resources.NewDelivery_on;
+            NewDelivery.Image = Properties.Resources.Company_on;
             NamePanel.Text = "Новая доставка";
             UserID = id;
             connection = new SqlConnection(connectionString);
@@ -36,21 +37,28 @@ namespace Delivery_service
             cmd = new SqlCommand(query, connection);
             OwnerID = cmd.ExecuteScalar().ToString();
             connection.Close();
+            connection = new SqlConnection(connectionString);
+            connection.Open();
+            query = $"SELECT [id] FROM [Delivery service] WHERE [Owner ID]={OwnerID}";
+            cmd = new SqlCommand(query, connection);
+            CompanyID= cmd.ExecuteScalar().ToString();
+            connection.Close();
             UpdateProfile();
             UpdateDelivery();
             UpdateQuestions();
+            UpdateCompany();
             NewDeliveryPanel.Show();
             NewDeliveryPanel.Location = loc;
             MyDeliveryPanel.Hide();
             ProfilePanel.Hide();
             QuestionPanel.Hide();
             InfoPanel.Hide();
-
         }
         Point loc = new Point(191, 63);
 
         private void NewOrder_Click(object sender, EventArgs e)
         {
+            UpdateCompany();
             InfoPanel.Hide();
             QuestionPanel.Hide();
             MyDeliveryPanel.Hide();
@@ -66,7 +74,7 @@ namespace Delivery_service
             NavPanel.Top = NewDelivery.Top;
             NavPanel.Left = NewDelivery.Left;
             NewDelivery.ForeColor = Color.FromArgb(217, 35, 73);
-            NewDelivery.Image = Properties.Resources.NewDelivery_on;
+            NewDelivery.Image = Properties.Resources.Company_on;
         }
 
         private void ForClient_Load(object sender, EventArgs e)
@@ -83,7 +91,7 @@ namespace Delivery_service
             MyDeliveryPanel.Show();
             ProfilePanel.Hide();
             NewDeliveryPanel.Hide();
-            NamePanel.Text = "Мои доставки";
+            NamePanel.Text = "Наши доставки";
             Settings.ForeColor = Color.FromArgb(227, 213, 212);
             NewDelivery.ForeColor = Color.FromArgb(227, 213, 212);
             Question.ForeColor = Color.FromArgb(227, 213, 212);
@@ -93,7 +101,7 @@ namespace Delivery_service
             NavPanel.Left = Orders.Left;
             Orders.ForeColor = Color.FromArgb(217, 35, 73);
             Orders.Image = Properties.Resources.MyDelivery_on;
-            NewDelivery.Image = Properties.Resources.NewDelivery;
+            NewDelivery.Image = Properties.Resources.Company;
         }
 
         private void Question_Click(object sender, EventArgs e)
@@ -116,7 +124,7 @@ namespace Delivery_service
             NavPanel.Left = Question.Left;
             Question.ForeColor = Color.FromArgb(217, 35, 73);
             Question.Image = Properties.Resources.Question_on;
-            NewDelivery.Image = Properties.Resources.NewDelivery;
+            NewDelivery.Image = Properties.Resources.Company;
         }
 
         private void Help_Click(object sender, EventArgs e)
@@ -137,7 +145,7 @@ namespace Delivery_service
             NavPanel.Left = Help.Left;
             Help.ForeColor = Color.FromArgb(217, 35, 73);
             Help.Image = Properties.Resources.Help_on;
-            NewDelivery.Image = Properties.Resources.NewDelivery;
+            NewDelivery.Image = Properties.Resources.Company;
         }
 
         private void Settings_Click(object sender, EventArgs e)
@@ -159,13 +167,13 @@ namespace Delivery_service
             NavPanel.Left = Settings.Left;
             Settings.ForeColor = Color.FromArgb(217, 35, 73);
             Settings.Image = Properties.Resources.Settings_on;
-            NewDelivery.Image = Properties.Resources.NewDelivery;
+            NewDelivery.Image = Properties.Resources.Company;
         }
 
         private void NewDelivery_Leave(object sender, EventArgs e)
         {
             NewDelivery.ForeColor = Color.FromArgb(227, 213, 212);
-            NewDelivery.Image = Properties.Resources.NewDelivery;
+            NewDelivery.Image = Properties.Resources.Company;
         }
 
         private void Orders_Leave(object sender, EventArgs e)
@@ -230,7 +238,7 @@ namespace Delivery_service
                     BirthDateTimePicker.Value = reader.GetDateTime(3);
                     RegDateTimePicker.Value = reader.GetDateTime(9);
                     gunaTextBox1.Text = reader.GetString(11);
-                    CountOrdersLabel.Text = "Количество готовых заказов компанией : " + reader.GetInt32(10);
+                    CountOrdersLabel.Text = "Выполненные заказы : " + reader.GetInt32(10);
                     MemoryStream memoryStream = new MemoryStream();
                     memoryStream.Write((byte[])reader["Photo"], 0, ((byte[])reader["Photo"]).Length);
                     ProfilePicture.Image = Image.FromStream(memoryStream);
@@ -250,27 +258,30 @@ namespace Delivery_service
             {
                 connection = new SqlConnection(connectionString);
                 connection.Open();
-                string query = $"exec InfoOwner {UserID}";
+                string query = $"exec InfoService {UserID}";
                 cmd = new SqlCommand(query, connection);
                 reader = cmd.ExecuteReader();
                 while (reader.Read())
                 {
-                    SurnameTextBox.Text = reader.GetString(0);
-                    NameTextBox.Text = OwnerName.Text = label1.Text = reader.GetString(1);
-                    PatrTextBox.Text = reader.GetString(2);
-                    PhoneTextBox.Text = reader.GetString(4);
-                    EmailTextBox.Text = reader.GetString(5);
-                    LoginTextBox.Text = reader.GetString(7);
-                    PasswordTextBox.Text = reader.GetString(8);
-                    BirthDateTimePicker.Value = reader.GetDateTime(3);
-                    RegDateTimePicker.Value = reader.GetDateTime(9);
-                    gunaTextBox1.Text = reader.GetString(11);
-                    CountOrdersLabel.Text = "Количество готовых заказов компанией : " + reader.GetInt32(10);
-                    MemoryStream memoryStream = new MemoryStream();
-                    memoryStream.Write((byte[])reader["Photo"], 0, ((byte[])reader["Photo"]).Length);
-                    ProfilePicture.Image = Image.FromStream(memoryStream);
-                    ProfilePic.Image = Image.FromStream(memoryStream);
+                    label23.Text = reader.GetString(0);
+                    gunaTextBox2.Text = reader.GetString(0);
+                    label24.Text = reader.GetString(1);
+                    gunaTextBox3.Text = reader.GetString(1);
+                    label28.Text = reader.GetInt32(2).ToString();
+                    gunaTextBox4.Text = reader.GetInt32(2).ToString();
+                    label29.Text = reader.GetString(3);
+                    gunaTextBox5.Text = reader.GetString(3);
+                    gunaDateTimePicker1.Value = reader.GetDateTime(5);
+                    CountOrdersLabel.Text = "Выполненные заказы : " + reader.GetInt32(4);
+                    label30.Text = "Выполненные заказы : " + reader.GetInt32(4);
                 }
+                query = $"exec AllEmployee {OwnerID}";
+                connection = new SqlConnection(connectionString);
+                connection.Open();
+                SqlDataAdapter adapter = new SqlDataAdapter(query, connection);
+                DataSet ds = new DataSet();
+                adapter.Fill(ds);
+                gunaDataGridView1.DataSource = ds.Tables[0];
             }
             catch (Exception ex)
             {
@@ -301,7 +312,7 @@ namespace Delivery_service
             Settings.Image = Properties.Resources.Settings;
             Question.Image = Properties.Resources.Question;
             Help.Image = Properties.Resources.Help;
-            NewDelivery.Image = Properties.Resources.NewDelivery;
+            NewDelivery.Image = Properties.Resources.Company;
         }
 
         private void RedButton_Click(object sender, EventArgs e)
@@ -359,14 +370,14 @@ namespace Delivery_service
         {
             try
             {
-                string query = $"exec InfoDelivery N'{OwnerID}'";
+                string query = $"exec InfoDeliveryForCompany N'{OwnerID}'";
                 connection = new SqlConnection(connectionString);
                 connection.Open();
                 SqlDataAdapter adapter = new SqlDataAdapter(query, connection);
                 DataSet ds = new DataSet();
                 adapter.Fill(ds);
                 DeliveryDataGridView.DataSource = ds.Tables[0];
-                query = $"exec InfoDeliveryEnd N'{OwnerID}'";
+                query = $"exec InfoDeliveryForCompanyEnd N'{OwnerID}'";
                 adapter = new SqlDataAdapter(query, connection);
                 ds = new DataSet();
                 adapter.Fill(ds);
@@ -529,6 +540,96 @@ namespace Delivery_service
         private void pictureBox2_MouseLeave(object sender, EventArgs e)
         {
             pictureBox2.Image = Properties.Resources.Hide;
+        }
+
+        private void pictureBox1_Click_2(object sender, EventArgs e)
+        {
+            if (!flag)
+            {
+                this.FormBorderStyle = FormBorderStyle.None;
+                this.WindowState = FormWindowState.Maximized;
+                this.Height = System.Windows.Forms.SystemInformation.PrimaryMonitorSize.Height;
+                this.Width = System.Windows.Forms.SystemInformation.PrimaryMonitorSize.Width;
+            }
+            else
+                WindowState = FormWindowState.Normal;
+            flag = !flag;
+        }
+
+        private void pictureBox2_Click_1(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void RedButton_Click_1(object sender, EventArgs e)
+        {
+            try
+            {
+                connection = new SqlConnection(connectionString);
+                connection.Open();
+                string query;
+                if (check == 1)
+                {
+                    query = $"UPDATE [Delivery service user] SET Surname =N'{SurnameTextBox.Text}', Name =N'{NameTextBox.Text}', Patronymic =N'{PatrTextBox.Text}', [Phone number] =N'{PhoneTextBox.Text}', Email =N'{EmailTextBox.Text}', Login =N'{LoginTextBox.Text}', [Password]=N'{PasswordTextBox.Text}',[Birth date]=N'{BirthDateTimePicker.Value.ToString("yyyy-MM-dd")}',[photo]=@p WHERE id={UserID}";
+                    cmd = new SqlCommand(query, connection);
+                    cmd.Parameters.AddWithValue("@p", memoryStream.ToArray());
+                    check = 0;
+                }
+                else
+                {
+                    query = $"UPDATE [Delivery service user] SET Surname =N'{SurnameTextBox.Text}', Name =N'{NameTextBox.Text}', Patronymic =N'{PatrTextBox.Text}', [Phone number] =N'{PhoneTextBox.Text}', Email =N'{EmailTextBox.Text}', Login =N'{LoginTextBox.Text}', [Password]=N'{PasswordTextBox.Text}',[Birth date]=N'{BirthDateTimePicker.Value.ToString("yyyy-MM-dd")}' WHERE id={UserID}";
+                    cmd = new SqlCommand(query, connection);
+                }
+                cmd.ExecuteNonQuery();
+                connection.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
+            UpdateProfile();
+        }
+
+        private void gunaButton1_Click_1(object sender, EventArgs e)
+        {
+            try
+            {
+                connection = new SqlConnection(connectionString);
+                connection.Open();
+                string query = $"update [Delivery service] SET [Name]=N'{gunaTextBox2.Text}', UNP=N'{gunaTextBox4.Text}', Email=N'{gunaTextBox5.Text}' where [Owner id]={OwnerID} ";
+                cmd = new SqlCommand(query, connection);
+                cmd.ExecuteNonQuery();
+                connection.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
+            UpdateCompany();
+        }
+
+        private void gunaButton4_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void gunaButton2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void gunaButton6_Click(object sender, EventArgs e)
+        {
+            
+            this.Hide();
+            NewUser newUser = new NewUser(CompanyID);
+            DialogResult dialogResult = new DialogResult();
+            dialogResult = newUser.ShowDialog();
+            UpdateCompany();
+            this.Show();
+            
         }
     }
 }

@@ -20,6 +20,14 @@ namespace Delivery_service
             InitializeComponent();
             UserComboBox.SelectedIndex = 0;
         }
+        string CompanyID;
+        public NewUser(string company)
+        {
+            InitializeComponent();
+            UserComboBox.Items.Add("Работник");
+            UserComboBox.SelectedIndex = 2;
+            CompanyID = company;
+        }
 
         private void NewUser_Load(object sender, EventArgs e)
         {
@@ -97,9 +105,20 @@ namespace Delivery_service
                 }
                 else
                 {
+                    if (UserComboBox.SelectedIndex == 2)
+                    {
+                        query = $"INSERT INTO [Delivery service employee] " +
+                    $"([User id],[Delivery service id]) " +
+                    $"VALUES ({check},{CompanyID})";
+                    }
+                    else
+                    {
                     query = $"INSERT INTO [Delivery service owner] " +
                     $"([User id]) " +
                     $"VALUES ({check})";
+                    }
+
+                        
                 }
                 cmd = new SqlCommand(query, connection);
                 cmd.ExecuteNonQuery();

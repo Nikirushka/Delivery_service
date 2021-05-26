@@ -347,6 +347,7 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(186, 117);
             this.panel2.TabIndex = 1;
+            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
             // ClientName
             // 
@@ -513,7 +514,7 @@
             this.PhoneTextBox.Mask = "000-00-000-00-00";
             this.PhoneTextBox.Name = "PhoneTextBox";
             this.PhoneTextBox.Size = new System.Drawing.Size(155, 29);
-            this.PhoneTextBox.TabIndex = 17;
+            this.PhoneTextBox.TabIndex = 4;
             // 
             // RegDateTimePicker
             // 
@@ -573,7 +574,7 @@
             this.BirthDateTimePicker.OnPressedColor = System.Drawing.Color.Black;
             this.BirthDateTimePicker.Radius = 7;
             this.BirthDateTimePicker.Size = new System.Drawing.Size(154, 30);
-            this.BirthDateTimePicker.TabIndex = 14;
+            this.BirthDateTimePicker.TabIndex = 6;
             this.BirthDateTimePicker.Text = "23.04.2021";
             this.BirthDateTimePicker.Value = new System.DateTime(2021, 4, 23, 18, 24, 7, 546);
             // 
@@ -612,7 +613,7 @@
             this.RedButton.OnPressedColor = System.Drawing.Color.Black;
             this.RedButton.Radius = 7;
             this.RedButton.Size = new System.Drawing.Size(155, 31);
-            this.RedButton.TabIndex = 11;
+            this.RedButton.TabIndex = 9;
             this.RedButton.Text = "Изменить";
             this.RedButton.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.RedButton.Click += new System.EventHandler(this.RedButton_Click);
@@ -645,7 +646,7 @@
             this.PasswordTextBox.Radius = 7;
             this.PasswordTextBox.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.PasswordTextBox.Size = new System.Drawing.Size(155, 32);
-            this.PasswordTextBox.TabIndex = 9;
+            this.PasswordTextBox.TabIndex = 8;
             this.PasswordTextBox.Text = "Пароль";
             this.PasswordTextBox.TextOffsetX = 7;
             // 
@@ -774,7 +775,7 @@
             this.PatrTextBox.Radius = 7;
             this.PatrTextBox.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.PatrTextBox.Size = new System.Drawing.Size(155, 32);
-            this.PatrTextBox.TabIndex = 1;
+            this.PatrTextBox.TabIndex = 3;
             this.PatrTextBox.Text = "Отчество";
             this.PatrTextBox.TextOffsetX = 7;
             // 
@@ -795,7 +796,7 @@
             this.NameTextBox.Radius = 7;
             this.NameTextBox.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.NameTextBox.Size = new System.Drawing.Size(155, 32);
-            this.NameTextBox.TabIndex = 1;
+            this.NameTextBox.TabIndex = 2;
             this.NameTextBox.Text = "Имя";
             this.NameTextBox.TextOffsetX = 7;
             // 
@@ -1062,7 +1063,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.ProfilePanel.Controls.Add(this.PhotoProfilePanel);
             this.ProfilePanel.Controls.Add(this.InfoProfilePanel);
-            this.ProfilePanel.Location = new System.Drawing.Point(465, 412);
+            this.ProfilePanel.Location = new System.Drawing.Point(434, 426);
             this.ProfilePanel.Name = "ProfilePanel";
             this.ProfilePanel.Size = new System.Drawing.Size(763, 514);
             this.ProfilePanel.TabIndex = 7;
@@ -1461,7 +1462,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.QuestionPanel.Controls.Add(this.panel5);
-            this.QuestionPanel.Location = new System.Drawing.Point(295, 186);
+            this.QuestionPanel.Location = new System.Drawing.Point(559, 330);
             this.QuestionPanel.Name = "QuestionPanel";
             this.QuestionPanel.Size = new System.Drawing.Size(766, 514);
             this.QuestionPanel.TabIndex = 10;

@@ -222,5 +222,11 @@
   <ItemGroup>
     <None Include="Properties\Pictures\Hide_enter.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\Pictures\Company.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\Pictures\Company_on.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
