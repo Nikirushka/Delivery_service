@@ -631,5 +631,64 @@ namespace Delivery_service
             this.Show();
             
         }
+
+        private void gunaButton5_Click(object sender, EventArgs e)
+        {
+            try
+            {
+
+                int index = 0;
+                foreach (DataGridViewCell cell in gunaDataGridView1.SelectedCells)
+                {
+                    index = cell.RowIndex;
+                }
+                string query = $"select [User id] From [Delivery service employee] join [Delivery service user] on [Delivery service user].id=[Delivery service employee].[User id] where[Delivery service user].Login =N'{gunaDataGridView1[6, index].Value.ToString()}' and[Delivery service user].Password = N'{gunaDataGridView1[7, index].Value.ToString()}'";
+
+                connection = new SqlConnection(connectionString);
+                connection.Open();
+                cmd = new SqlCommand(query, connection);
+                string uid=cmd.ExecuteScalar().ToString();
+                query = $"delete from [Delivery service employee] where [User id]={uid}";
+                cmd = new SqlCommand(query, connection);
+                cmd.ExecuteNonQuery();
+                query = $"delete from [Delivery service user] where [id]={uid}";
+                cmd = new SqlCommand(query, connection);
+                cmd.ExecuteNonQuery();
+                connection.Close();
+
+                UpdateCompany();
+            }
+
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void NewDeliveryPanel_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void gunaButton3_Click_1(object sender, EventArgs e)
+        {
+            try
+            {
+                connection = new SqlConnection(connectionString);
+                connection.Open();
+                string query = $"INSERT INTO [delivery service questions] " +
+                    $"([User id],[worker id], [question],[date]) " +
+                    $"VALUES ( {UserID},1,@commentary,GETDATE())";
+                cmd = new SqlCommand(query, connection);
+                cmd.Parameters.AddWithValue("@commentary", QuestionTextBox.Text);
+                cmd.ExecuteNonQuery();
+                connection.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            UpdateQuestions();
+        }
     }
 }

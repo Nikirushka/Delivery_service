@@ -180,11 +180,27 @@ namespace Delivery_service
                             }
                             else
                             {
-                                //this.Hide();
-                                //ForEmployee forEmployee = new ForEmployee(id);
-                                //DialogResult dialogResult = new DialogResult();
-                                //dialogResult = forEmployee.ShowDialog();
-                                //this.Show();
+                                reader.Close();
+                                query = $"SELECT * FROM [Delivery service worker] WHERE [User id]={id}";
+                                cmd = new SqlCommand(query, connection);
+                                reader = cmd.ExecuteReader();
+                                if (reader.HasRows)
+                                {
+                                    this.Hide();
+                                    ForAdmin forAdmin = new ForAdmin(id);
+                                    DialogResult dialogResult = new DialogResult();
+                                    dialogResult = forAdmin.ShowDialog();
+                                    this.Show();
+                                }
+                                else
+                                {
+                                    //this.Hide();
+                                    //ForAdmin forAdmin = new ForAdmin(id);
+                                    //DialogResult dialogResult = new DialogResult();
+                                    //dialogResult = forAdmin.ShowDialog();
+                                    //this.Show();
+                                }
+                                
                             }
 
                         }

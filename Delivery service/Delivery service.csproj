@@ -50,17 +50,47 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="MainMenu\Owner\ForOwner.cs">
+    <Compile Include="MainMenu\Admin\EditEmployee.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MainMenu\Owner\ForOwner.Designer.cs">
-      <DependentUpon>ForOwner.cs</DependentUpon>
+    <Compile Include="MainMenu\Admin\EditEmployee.Designer.cs">
+      <DependentUpon>EditEmployee.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainMenu\Admin\EditOwner.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainMenu\Admin\EditOwner.Designer.cs">
+      <DependentUpon>EditOwner.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainMenu\Admin\ForAdmin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainMenu\Admin\ForAdmin.Designer.cs">
+      <DependentUpon>ForAdmin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainMenu\Admin\EditClient.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainMenu\Admin\EditClient.Designer.cs">
+      <DependentUpon>EditClient.cs</DependentUpon>
     </Compile>
     <Compile Include="MainMenu\Employee\ForEmployee.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="MainMenu\Employee\ForEmployee.Designer.cs">
       <DependentUpon>ForEmployee.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainMenu\Owner\ForOwner.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainMenu\Owner\ForOwner.Designer.cs">
+      <DependentUpon>ForOwner.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainMenu\Employee\ForEmp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainMenu\Employee\ForEmp.Designer.cs">
+      <DependentUpon>ForEmp.cs</DependentUpon>
     </Compile>
     <Compile Include="MainMenu\Client\ForClient.cs">
       <SubType>Form</SubType>
@@ -94,11 +124,26 @@
     <Compile Include="Auth\ResPass.Designer.cs">
       <DependentUpon>ResPass.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="MainMenu\Owner\ForOwner.resx">
-      <DependentUpon>ForOwner.cs</DependentUpon>
+    <EmbeddedResource Include="MainMenu\Admin\EditEmployee.resx">
+      <DependentUpon>EditEmployee.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainMenu\Admin\EditOwner.resx">
+      <DependentUpon>EditOwner.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainMenu\Admin\ForAdmin.resx">
+      <DependentUpon>ForAdmin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainMenu\Admin\EditClient.resx">
+      <DependentUpon>EditClient.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainMenu\Employee\ForEmployee.resx">
       <DependentUpon>ForEmployee.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainMenu\Owner\ForOwner.resx">
+      <DependentUpon>ForOwner.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainMenu\Employee\ForEmp.resx">
+      <DependentUpon>ForEmp.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainMenu\Client\ForClient.resx">
       <DependentUpon>ForClient.cs</DependentUpon>
@@ -207,9 +252,7 @@
   <ItemGroup>
     <None Include="Properties\Pictures\Open_pass_on.png" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="MainMenu\Admin\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <None Include="Properties\Pictures\FullScreen.png" />
   </ItemGroup>

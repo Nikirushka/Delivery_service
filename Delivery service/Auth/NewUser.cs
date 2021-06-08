@@ -108,8 +108,8 @@ namespace Delivery_service
                     if (UserComboBox.SelectedIndex == 2)
                     {
                         query = $"INSERT INTO [Delivery service employee] " +
-                    $"([User id],[Delivery service id]) " +
-                    $"VALUES ({check},{CompanyID})";
+                    $"([User id],[Delivery service id],Position) " +
+                    $"VALUES ({check},{CompanyID},N'Сотрудник')";
                     }
                     else
                     {

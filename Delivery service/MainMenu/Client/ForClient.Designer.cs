@@ -1462,7 +1462,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.QuestionPanel.Controls.Add(this.panel5);
-            this.QuestionPanel.Location = new System.Drawing.Point(559, 330);
+            this.QuestionPanel.Location = new System.Drawing.Point(594, 350);
             this.QuestionPanel.Name = "QuestionPanel";
             this.QuestionPanel.Size = new System.Drawing.Size(766, 514);
             this.QuestionPanel.TabIndex = 10;
@@ -1638,7 +1638,7 @@
             this.InfoPanel.Controls.Add(this.label26);
             this.InfoPanel.Controls.Add(this.label18);
             this.InfoPanel.Controls.Add(this.label25);
-            this.InfoPanel.Location = new System.Drawing.Point(369, 485);
+            this.InfoPanel.Location = new System.Drawing.Point(274, 520);
             this.InfoPanel.Name = "InfoPanel";
             this.InfoPanel.Size = new System.Drawing.Size(767, 514);
             this.InfoPanel.TabIndex = 11;
