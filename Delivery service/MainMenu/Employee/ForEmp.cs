@@ -40,10 +40,9 @@ namespace Delivery_service
             UpdateQuestions();
             NewDeliveryPanel.Show();
             NewDeliveryPanel.Location = loc;
-            MyDeliveryPanel.Hide();
             ProfilePanel.Hide();
             QuestionPanel.Hide();
-
+            MyDeliveryPanel.Hide();
         }
         Point loc = new Point(191, 63);
 
@@ -69,14 +68,13 @@ namespace Delivery_service
 
         private void ForClient_Load(object sender, EventArgs e)
         {
-
+            MyDeliveryPanel.Hide();
         }
 
         private void Orders_Click(object sender, EventArgs e)
         {
             UpdateDelivery();
             QuestionPanel.Hide();
-            UpdateDelivery();
             MyDeliveryPanel.Location = loc;
             MyDeliveryPanel.Show();
             ProfilePanel.Hide();
@@ -99,7 +97,6 @@ namespace Delivery_service
             QuestionPanel.Location = loc;
             QuestionPanel.Show();
             UpdateQuestions();
-            QuestionPanel.Show();
             MyDeliveryPanel.Hide();
             ProfilePanel.Hide();
             NewDeliveryPanel.Hide();

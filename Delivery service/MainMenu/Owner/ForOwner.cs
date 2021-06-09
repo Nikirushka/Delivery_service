@@ -79,7 +79,7 @@ namespace Delivery_service
 
         private void ForClient_Load(object sender, EventArgs e)
         {
-
+            label30.Hide();
         }
 
         private void Orders_Click(object sender, EventArgs e)
@@ -372,16 +372,11 @@ namespace Delivery_service
             {
                 string query = $"exec InfoDeliveryForCompany N'{OwnerID}'";
                 connection = new SqlConnection(connectionString);
-                connection.Open();
+                connection.Open();  
                 SqlDataAdapter adapter = new SqlDataAdapter(query, connection);
                 DataSet ds = new DataSet();
                 adapter.Fill(ds);
                 DeliveryDataGridView.DataSource = ds.Tables[0];
-                query = $"exec InfoDeliveryForCompanyEnd N'{OwnerID}'";
-                adapter = new SqlDataAdapter(query, connection);
-                ds = new DataSet();
-                adapter.Fill(ds);
-                DeliveryDataGridView2.DataSource = ds.Tables[0];
             }
             catch (Exception ex)
             {

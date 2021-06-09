@@ -35,6 +35,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ForAdmin));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -44,7 +45,6 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ForAdmin));
             this.MainPanel = new System.Windows.Forms.Panel();
             this.gunaButton5 = new Guna.UI.WinForms.GunaButton();
             this.NavPanel = new System.Windows.Forms.Panel();
@@ -105,6 +105,7 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.Close_button = new System.Windows.Forms.PictureBox();
+            this.label27 = new System.Windows.Forms.Label();
             this.MainPanel.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ProfilePic)).BeginInit();
@@ -785,10 +786,11 @@
             this.InfoPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.InfoPanel.Controls.Add(this.label27);
             this.InfoPanel.Controls.Add(this.label26);
             this.InfoPanel.Controls.Add(this.label18);
             this.InfoPanel.Controls.Add(this.label25);
-            this.InfoPanel.Location = new System.Drawing.Point(316, 452);
+            this.InfoPanel.Location = new System.Drawing.Point(197, 67);
             this.InfoPanel.Name = "InfoPanel";
             this.InfoPanel.Size = new System.Drawing.Size(767, 514);
             this.InfoPanel.TabIndex = 11;
@@ -796,21 +798,19 @@
             // label26
             // 
             this.label26.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label26.AutoSize = true;
             this.label26.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label26.Location = new System.Drawing.Point(3, 59);
+            this.label26.Location = new System.Drawing.Point(21, 59);
             this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(45, 300);
+            this.label26.Size = new System.Drawing.Size(721, 237);
             this.label26.TabIndex = 15;
-            this.label26.Text = "1)\r\n2)\r\n3)\r\n4)\r\n5)\r\n6)\r\n7)\r\n8)\r\n9)\r\n10)\r\n";
-            this.label26.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.label26.Text = resources.GetString("label26.Text");
             // 
             // label18
             // 
             this.label18.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label18.AutoSize = true;
             this.label18.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label18.Location = new System.Drawing.Point(85, 373);
+            this.label18.Location = new System.Drawing.Point(85, 315);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(607, 120);
             this.label18.TabIndex = 13;
@@ -1308,12 +1308,25 @@
             this.Close_button.MouseEnter += new System.EventHandler(this.Close_button_MouseEnter);
             this.Close_button.MouseLeave += new System.EventHandler(this.Close_button_MouseLeave);
             // 
+            // label27
+            // 
+            this.label27.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label27.AutoSize = true;
+            this.label27.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label27.Location = new System.Drawing.Point(127, 458);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(523, 30);
+            this.label27.TabIndex = 17;
+            this.label27.Text = "Для связи с создателем - nikiru.tut.by@gmail.com";
+            this.label27.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
             // ForAdmin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(213)))), ((int)(((byte)(212)))));
             this.ClientSize = new System.Drawing.Size(951, 577);
+            this.Controls.Add(this.InfoPanel);
             this.Controls.Add(this.Workers);
             this.Controls.Add(this.Delivers);
             this.Controls.Add(this.MyDeliveryPanel);
@@ -1325,7 +1338,6 @@
             this.Controls.Add(this.MainPanel);
             this.Controls.Add(this.NewDeliveryPanel);
             this.Controls.Add(this.QuestionPanel);
-            this.Controls.Add(this.InfoPanel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(2);
@@ -1428,5 +1440,6 @@
         private Guna.UI.WinForms.GunaDataGridView gunaDataGridView4;
         private Guna.UI.WinForms.GunaButton gunaButton9;
         private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.Label label27;
     }
 }

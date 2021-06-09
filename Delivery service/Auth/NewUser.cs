@@ -138,7 +138,7 @@ namespace Delivery_service
                         query = $"SELECT [id] FROM [Delivery service owner] WHERE [User ID]={check}";
                         cmd = new SqlCommand(query, connection);
                         string id_owner = cmd.ExecuteScalar().ToString();
-                        query = $"insert into [delivery service] ([Owner id],[Name],[UNP],[orders],[date]) values ({id_owner},N'Введите имя компании',123123123,0,GETDATE());";
+                        query = $"insert into [delivery service] ([Owner id],[Name],[UNP],[email],[orders],[date]) values ({id_owner},N'Введите имя компании',123123123,'email@email.com',0,GETDATE());";
                     }
  
                 }

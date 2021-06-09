@@ -120,6 +120,18 @@
   <metadata name="gunaDragControl1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>13, 20</value>
   </metadata>
+  <data name="label26.Text" xml:space="preserve">
+    <value>1) Кнопка "Клиенты" - информация о клиентах.
+2) Кнопка "Владельцы" - информация о владельцах.
+3) Кнопка "Работники" - информация о работниках.
+4) Кнопка "Доставки" - информация о доставках.
+5) Кнопка "Вопросы" - вопросы от пользователей.
+6) Кнопка "Помощь" - справочная информация и информация о программе.
+
+
+
+</value>
+  </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>

@@ -15,7 +15,7 @@ namespace Delivery_service
         {
             InitializeComponent();
         }
-        public InfoDeliveryForClient2(string sotr,string cost,string DeliveryID_, string obj_, string adr1_, string adr2_, string time1_, string time2_, string date1, string date2, string comm_)
+        public InfoDeliveryForClient2(string sotr, string cost, string DeliveryID_, string obj_, string adr1_, string adr2_, string time1_, string time2_, string date1, string date2, string comm_)
         {
             InitializeComponent();
             ObjTextBox.Text = obj_;
@@ -49,23 +49,18 @@ namespace Delivery_service
 
         private void gunaButton3_Click(object sender, EventArgs e)
         {
-            try
-            {
-                connection = new SqlConnection(connectionString);
-                connection.Open(); 
 
-                string query = $"update [Delivery service order] set [Delivery service order].[status id]=6, [Delivery service order].Price={gunaTextBox1.Text} where [delivery service order].[id]={DeliveryID}";
-                cmd = new SqlCommand(query, connection);
-                cmd.ExecuteNonQuery();
-                query = $"delete from [Delivery service time order] where [delivery service order].[order id]={DeliveryID}";
-                cmd = new SqlCommand(query, connection);
-                cmd.ExecuteNonQuery();
-                connection.Close();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
+            connection = new SqlConnection(connectionString);
+            connection.Open();
+
+            string query = $"update [Delivery service order] set [Delivery service order].[status id]=6, [Delivery service order].Price={gunaTextBox1.Text} where [delivery service order].[id]={DeliveryID}";
+            cmd = new SqlCommand(query, connection);
+            cmd.ExecuteNonQuery();
+            query = $"delete from [Delivery service time order] where [delivery service order].[order id]={DeliveryID}";
+            cmd = new SqlCommand(query, connection);
+            cmd.ExecuteNonQuery();
+            connection.Close();
+
 
             this.DialogResult = DialogResult.OK;
             this.Close();

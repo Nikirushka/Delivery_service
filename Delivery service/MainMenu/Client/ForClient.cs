@@ -307,7 +307,7 @@ namespace Delivery_service
                 connection.Open();
                 // добавление новой доставки
 
-                string query = $"INSERT INTO [Delivery service order]VALUES ({ClientID},1,5,N'{ObjTextBox.Text}',NULL,N'{RecTextBox.Text}',N'{RecDateTimePicker.Value.ToString("yyyy-MM-dd")}',N'{maskedTextBox1.Text}', N'{DesTextBox.Text}',N'{DesDateTimePicker.Value.ToString("yyyy-MM-dd")}',N'{maskedTextBox2.Text}',N' {CommentaryTextBox.Text}',GETDATE())";
+                string query = $"INSERT INTO [Delivery service order]VALUES ({ClientID},14,5,N'{ObjTextBox.Text}',NULL,N'{RecTextBox.Text}',N'{RecDateTimePicker.Value.ToString("yyyy-MM-dd")}',N'{maskedTextBox1.Text}', N'{DesTextBox.Text}',N'{DesDateTimePicker.Value.ToString("yyyy-MM-dd")}',N'{maskedTextBox2.Text}',N' {CommentaryTextBox.Text}',GETDATE())";
                 cmd = new SqlCommand(query, connection);
                 cmd.ExecuteNonQuery();
                 connection.Close();

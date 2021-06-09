@@ -39,12 +39,14 @@ namespace Delivery_service
             connection.Close();
             UpdateProfile();
             UpdateDelivery();
+            UpdateMyDelivery();
             UpdateQuestions();
             NewDeliveryPanel.Show();
             NewDeliveryPanel.Location = loc;
             ProfilePanel.Hide();
             QuestionPanel.Hide();
             InfoPanel.Hide();
+            MyDeliveryPanel.Hide();
 
         }
         Point loc = new Point(191, 63);
@@ -53,9 +55,8 @@ namespace Delivery_service
         {
             UpdateDelivery();
             InfoPanel.Hide();
-            NewDeliveryPanel.Show();
+            MyDeliveryPanel.Hide();
             QuestionPanel.Hide();
-            NewDeliveryPanel1.Hide();
             ProfilePanel.Hide();
             NewDeliveryPanel.Show();
             NewDeliveryPanel.Location = loc;
@@ -73,19 +74,17 @@ namespace Delivery_service
 
         private void ForClient_Load(object sender, EventArgs e)
         {
-            RecDateTimePicker.Value = DateTime.Now;
-            DesDateTimePicker.Value = DateTime.Now;
+            
         }
 
         private void Orders_Click(object sender, EventArgs e)
         {
+            UpdateMyDelivery();
+            MyDeliveryPanel.Show();
             InfoPanel.Hide();
             QuestionPanel.Hide();
-            UpdateDelivery();
-            NewDeliveryPanel.Location = loc;
-            NewDeliveryPanel.Show();
+            MyDeliveryPanel.Location = loc;
             ProfilePanel.Hide();
-            NewDeliveryPanel1.Hide();
             NamePanel.Text = "Мои доставки";
             Settings.ForeColor = Color.FromArgb(227, 213, 212);
             NewDelivery.ForeColor = Color.FromArgb(227, 213, 212);
@@ -105,6 +104,7 @@ namespace Delivery_service
             QuestionPanel.Location = loc;
             QuestionPanel.Show();
             UpdateQuestions();
+            MyDeliveryPanel.Hide();
             QuestionPanel.Show();
             NewDeliveryPanel.Hide();
             ProfilePanel.Hide();
@@ -124,6 +124,7 @@ namespace Delivery_service
 
         private void Help_Click(object sender, EventArgs e)
         {
+            MyDeliveryPanel.Hide();
             InfoPanel.Location = loc;
             InfoPanel.Show();
             QuestionPanel.Hide();
@@ -151,7 +152,7 @@ namespace Delivery_service
             ProfilePanel.Show();
             QuestionPanel.Hide();
             NewDeliveryPanel.Hide();
-            NewDeliveryPanel1.Hide();
+            MyDeliveryPanel.Hide();
             NamePanel.Text = "Профиль";
             Question.ForeColor = Color.FromArgb(227, 213, 212);
             NewDelivery.ForeColor = Color.FromArgb(227, 213, 212);
@@ -247,13 +248,32 @@ namespace Delivery_service
                 MessageBox.Show(ex.Message);
             }
         }
+
+        private void UpdateMyDelivery()
+        {
+
+            try
+            {
+                string query = $"select[Delivery service user].Surname as Клиент, [Delivery service order status].Name as 'Статус',[Delivery service order].[Object description] AS Описание,dbo.[Delivery service order].Price AS Цена, dbo.[Delivery service order].[Reception point] AS [Адрес получения], dbo.[Delivery service order].[Reception date] AS [Дата получения], dbo.[Delivery service order].[Reception time] AS[Время получения], dbo.[Delivery service order].[Destination point] AS[Адрес доставки], dbo.[Delivery service order].[Destination date] AS[Дата доставки], dbo.[Delivery service order].[Destination time] AS[Время доставки], dbo.[Delivery service order].Commentary AS Комментарий from[Delivery service order] join[Delivery service employee]  on[Delivery service employee].id =[Delivery service order].[Employee id] join[Delivery service] on[Delivery service].id =[Delivery service employee].[Delivery service id] join[Delivery service client] on[Delivery service client].id =[Delivery service order].[Client id] join[Delivery service user] on[Delivery service client].[User id] =[Delivery service user].id join[Delivery service user] dsu on[Delivery service employee].[User id]= dsu.id join[Delivery service order status] on[Delivery service order].[Status id] =[Delivery service order status].id where[Delivery service employee].[User id] = {UserID}";
+                connection = new SqlConnection(connectionString);
+                connection.Open();
+                SqlDataAdapter adapter = new SqlDataAdapter(query, connection);
+                DataSet ds = new DataSet();
+                adapter.Fill(ds);
+                DeliveryDataGridView.DataSource = ds.Tables[0];
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
         private void ProfilePic_Click(object sender, EventArgs e)
         {
 
             InfoPanel.Hide();
             NewDeliveryPanel.Hide();
             UpdateProfile();
-            NewDeliveryPanel1.Hide();
             NamePanel.Text = "Профиль";
             ProfilePanel.Location = loc;
             ProfilePanel.Show();
@@ -405,30 +425,6 @@ namespace Delivery_service
             }
         }
 
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-            this.WindowState = FormWindowState.Maximized;
-        }
-
-        private void ObjTextBox_Enter(object sender, EventArgs e)
-        {
-            ObjTextBox.Text = "";
-        }
-
-        private void CommentaryTextBox_Enter(object sender, EventArgs e)
-        {
-            CommentaryTextBox.Text = "";
-        }
-
-        private void RecTextBox_Enter(object sender, EventArgs e)
-        {
-            RecTextBox.Text = "";
-        }
-
-        private void DesTextBox_Enter(object sender, EventArgs e)
-        {
-            DesTextBox.Text = "";
-        }
         private bool flag = false;
         private void pictureBox1_Click_1(object sender, EventArgs e)
         {
