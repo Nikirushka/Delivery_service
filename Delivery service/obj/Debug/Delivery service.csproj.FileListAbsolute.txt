@@ -53,3 +53,6 @@ D:\GitHub\Delivery service\obj\Debug\Delivery_service.EditClient.resources
 D:\GitHub\Delivery service\obj\Debug\Delivery_service.EditOwner.resources
 D:\GitHub\Delivery service\obj\Debug\Delivery_service.EditEmployee.resources
 D:\GitHub\Delivery service\obj\Debug\Delivery_service.ForEmp.resources
+D:\GitHub\Delivery service\obj\Debug\Delivery service.csprojAssemblyReference.cache
+D:\GitHub\Delivery service\obj\Debug\Delivery_service.InfoDeliveryForEmp.resources
+D:\GitHub\Delivery service\obj\Debug\Delivery_service.InfoDeliveryForClient2.resources

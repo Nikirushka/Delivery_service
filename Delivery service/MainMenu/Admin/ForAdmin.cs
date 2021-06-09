@@ -363,15 +363,15 @@ namespace Delivery_service
             {
                 index = cell.RowIndex;
             }
-            int usid = Convert.ToInt32((gunaDataGridView2[0, index].Value));
-            string sur = (gunaDataGridView2[1, index].Value.ToString());
-            string nam = (gunaDataGridView2[2, index].Value.ToString());
-            string patr = (gunaDataGridView2[3, index].Value.ToString());
-            DateTime date = Convert.ToDateTime((gunaDataGridView2[4, index].Value));
-            string pho = (gunaDataGridView2[5, index].Value.ToString());
-            string ema = (gunaDataGridView2[6, index].Value.ToString());
-            string log = (gunaDataGridView2[7, index].Value.ToString());
-            string pas = (gunaDataGridView2[8, index].Value.ToString());
+            int usid = Convert.ToInt32((gunaDataGridView2[1, index].Value));
+            string sur = (gunaDataGridView2[2, index].Value.ToString());
+            string nam = (gunaDataGridView2[3, index].Value.ToString());
+            string patr = (gunaDataGridView2[4, index].Value.ToString());
+            DateTime date = Convert.ToDateTime((gunaDataGridView2[5, index].Value));
+            string pho = (gunaDataGridView2[6, index].Value.ToString());
+            string ema = (gunaDataGridView2[7, index].Value.ToString());
+            string log = (gunaDataGridView2[8, index].Value.ToString());
+            string pas = (gunaDataGridView2[9, index].Value.ToString());
 
             EditClient EditClient = new EditClient(usid,sur,nam,patr,date,pho,ema,log,pas);
             DialogResult dialogResult = new DialogResult();
@@ -426,23 +426,23 @@ namespace Delivery_service
             connection.Open();
 
             int index = 0;
-            foreach (DataGridViewCell cell in gunaDataGridView1.SelectedCells)
+            foreach (DataGridViewCell cell in gunaDataGridView3.SelectedCells)
             {
                 index = cell.RowIndex;
             }
-            int usid = Convert.ToInt32((gunaDataGridView3[0, index].Value));
-            string sur = (gunaDataGridView3[1, index].Value.ToString());
-            string nam = (gunaDataGridView3[2, index].Value.ToString());
-            string patr = (gunaDataGridView3[3, index].Value.ToString());
-            DateTime date = Convert.ToDateTime((gunaDataGridView3[4, index].Value));
-            string pho = (gunaDataGridView3[5, index].Value.ToString());
-            string ema = (gunaDataGridView3[6, index].Value.ToString());
-            string log = (gunaDataGridView3[7, index].Value.ToString());
-            string pas = (gunaDataGridView3[8, index].Value.ToString());
+            int usid = Convert.ToInt32((gunaDataGridView3[1, index].Value));
+            string sur = (gunaDataGridView3[2, index].Value.ToString());
+            string nam = (gunaDataGridView3[3, index].Value.ToString());
+            string patr = (gunaDataGridView3[4, index].Value.ToString());
+            DateTime date = Convert.ToDateTime((gunaDataGridView3[5, index].Value));
+            string pho = (gunaDataGridView3[6, index].Value.ToString());
+            string ema = (gunaDataGridView3[7, index].Value.ToString());
+            string log = (gunaDataGridView3[8, index].Value.ToString());
+            string pas = (gunaDataGridView3[9, index].Value.ToString());
 
-            EditClient EditClient = new EditClient(usid, sur, nam, patr, date, pho, ema, log, pas);
+            EditEmployee EditEmployee = new EditEmployee(usid, sur, nam, patr, date, pho, ema, log, pas);
             DialogResult dialogResult = new DialogResult();
-            dialogResult = EditClient.ShowDialog();
+            dialogResult = EditEmployee.ShowDialog();
             UpdateWorkers();
         }
     }

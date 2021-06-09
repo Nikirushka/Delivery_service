@@ -1,6 +1,6 @@
 ﻿namespace Delivery_service
 {
-    partial class InfoDeliveryForClient
+    partial class InfoDeliveryForEmp
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(InfoDeliveryForClient));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(InfoDeliveryForEmp));
             this.gunaDragControl1 = new Guna.UI.WinForms.GunaDragControl(this.components);
             this.gunaElipse1 = new Guna.UI.WinForms.GunaElipse(this.components);
             this.Close_button = new System.Windows.Forms.PictureBox();
@@ -45,14 +45,16 @@
             this.label19 = new System.Windows.Forms.Label();
             this.ObjTextBox = new Guna.UI.WinForms.GunaTextBox();
             this.DeliveryDateTimePicker = new Guna.UI.WinForms.GunaDateTimePicker();
-            this.gunaButton1 = new Guna.UI.WinForms.GunaButton();
             this.label23 = new System.Windows.Forms.Label();
             this.label21 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.gunaDateTimePicker1 = new Guna.UI.WinForms.GunaDateTimePicker();
             this.maskedTextBox2 = new System.Windows.Forms.MaskedTextBox();
             this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
-            this.gunaButton2 = new Guna.UI.WinForms.GunaButton();
+            this.label2 = new System.Windows.Forms.Label();
+            this.gunaTextBox1 = new Guna.UI.WinForms.GunaTextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.gunaTextBox2 = new Guna.UI.WinForms.GunaTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.Close_button)).BeginInit();
             this.SuspendLayout();
             // 
@@ -106,7 +108,7 @@
             this.gunaButton3.ForeColor = System.Drawing.Color.White;
             this.gunaButton3.Image = null;
             this.gunaButton3.ImageSize = new System.Drawing.Size(20, 20);
-            this.gunaButton3.Location = new System.Drawing.Point(239, 334);
+            this.gunaButton3.Location = new System.Drawing.Point(249, 387);
             this.gunaButton3.Name = "gunaButton3";
             this.gunaButton3.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(35)))), ((int)(((byte)(73)))));
             this.gunaButton3.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -116,7 +118,7 @@
             this.gunaButton3.Radius = 7;
             this.gunaButton3.Size = new System.Drawing.Size(155, 31);
             this.gunaButton3.TabIndex = 13;
-            this.gunaButton3.Text = "Изменить";
+            this.gunaButton3.Text = "Передложить";
             this.gunaButton3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.gunaButton3.Click += new System.EventHandler(this.gunaButton3_Click);
             // 
@@ -147,6 +149,7 @@
             this.CommentaryTextBox.Name = "CommentaryTextBox";
             this.CommentaryTextBox.PasswordChar = '\0';
             this.CommentaryTextBox.Radius = 7;
+            this.CommentaryTextBox.ReadOnly = true;
             this.CommentaryTextBox.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.CommentaryTextBox.Size = new System.Drawing.Size(310, 85);
             this.CommentaryTextBox.TabIndex = 14;
@@ -190,6 +193,7 @@
             this.DesTextBox.Name = "DesTextBox";
             this.DesTextBox.PasswordChar = '\0';
             this.DesTextBox.Radius = 7;
+            this.DesTextBox.ReadOnly = true;
             this.DesTextBox.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.DesTextBox.Size = new System.Drawing.Size(310, 30);
             this.DesTextBox.TabIndex = 7;
@@ -222,6 +226,7 @@
             this.RecTextBox.Name = "RecTextBox";
             this.RecTextBox.PasswordChar = '\0';
             this.RecTextBox.Radius = 7;
+            this.RecTextBox.ReadOnly = true;
             this.RecTextBox.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.RecTextBox.Size = new System.Drawing.Size(310, 30);
             this.RecTextBox.TabIndex = 3;
@@ -255,6 +260,7 @@
             this.ObjTextBox.Name = "ObjTextBox";
             this.ObjTextBox.PasswordChar = '\0';
             this.ObjTextBox.Radius = 7;
+            this.ObjTextBox.ReadOnly = true;
             this.ObjTextBox.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.ObjTextBox.Size = new System.Drawing.Size(310, 85);
             this.ObjTextBox.TabIndex = 1;
@@ -285,35 +291,6 @@
             this.DeliveryDateTimePicker.TabIndex = 16;
             this.DeliveryDateTimePicker.Text = "01.10.2019";
             this.DeliveryDateTimePicker.Value = new System.DateTime(2019, 10, 1, 0, 0, 0, 0);
-            // 
-            // gunaButton1
-            // 
-            this.gunaButton1.Animated = true;
-            this.gunaButton1.AnimationHoverSpeed = 0.07F;
-            this.gunaButton1.AnimationSpeed = 0.03F;
-            this.gunaButton1.BackColor = System.Drawing.Color.Transparent;
-            this.gunaButton1.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(18)))), ((int)(((byte)(38)))));
-            this.gunaButton1.BorderColor = System.Drawing.Color.Black;
-            this.gunaButton1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.gunaButton1.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.gunaButton1.FocusedColor = System.Drawing.Color.Empty;
-            this.gunaButton1.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
-            this.gunaButton1.ForeColor = System.Drawing.Color.White;
-            this.gunaButton1.Image = null;
-            this.gunaButton1.ImageSize = new System.Drawing.Size(20, 20);
-            this.gunaButton1.Location = new System.Drawing.Point(12, 334);
-            this.gunaButton1.Name = "gunaButton1";
-            this.gunaButton1.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(35)))), ((int)(((byte)(73)))));
-            this.gunaButton1.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.gunaButton1.OnHoverForeColor = System.Drawing.Color.White;
-            this.gunaButton1.OnHoverImage = null;
-            this.gunaButton1.OnPressedColor = System.Drawing.Color.Black;
-            this.gunaButton1.Radius = 7;
-            this.gunaButton1.Size = new System.Drawing.Size(155, 31);
-            this.gunaButton1.TabIndex = 17;
-            this.gunaButton1.Text = "Отменить доставку";
-            this.gunaButton1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.gunaButton1.Click += new System.EventHandler(this.gunaButton1_Click);
             // 
             // label23
             // 
@@ -379,6 +356,7 @@
             this.maskedTextBox2.Location = new System.Drawing.Point(328, 303);
             this.maskedTextBox2.Mask = "00:00";
             this.maskedTextBox2.Name = "maskedTextBox2";
+            this.maskedTextBox2.ReadOnly = true;
             this.maskedTextBox2.Size = new System.Drawing.Size(310, 25);
             this.maskedTextBox2.TabIndex = 24;
             this.maskedTextBox2.ValidatingType = typeof(System.DateTime);
@@ -393,47 +371,85 @@
             this.maskedTextBox1.TabIndex = 25;
             this.maskedTextBox1.ValidatingType = typeof(System.DateTime);
             // 
-            // gunaButton2
+            // label2
             // 
-            this.gunaButton2.Animated = true;
-            this.gunaButton2.AnimationHoverSpeed = 0.07F;
-            this.gunaButton2.AnimationSpeed = 0.03F;
-            this.gunaButton2.BackColor = System.Drawing.Color.Transparent;
-            this.gunaButton2.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(18)))), ((int)(((byte)(38)))));
-            this.gunaButton2.BorderColor = System.Drawing.Color.Black;
-            this.gunaButton2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.gunaButton2.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.gunaButton2.FocusedColor = System.Drawing.Color.Empty;
-            this.gunaButton2.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
-            this.gunaButton2.ForeColor = System.Drawing.Color.White;
-            this.gunaButton2.Image = null;
-            this.gunaButton2.ImageSize = new System.Drawing.Size(20, 20);
-            this.gunaButton2.Location = new System.Drawing.Point(459, 334);
-            this.gunaButton2.Name = "gunaButton2";
-            this.gunaButton2.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(35)))), ((int)(((byte)(73)))));
-            this.gunaButton2.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.gunaButton2.OnHoverForeColor = System.Drawing.Color.White;
-            this.gunaButton2.OnHoverImage = null;
-            this.gunaButton2.OnPressedColor = System.Drawing.Color.Black;
-            this.gunaButton2.Radius = 7;
-            this.gunaButton2.Size = new System.Drawing.Size(179, 31);
-            this.gunaButton2.TabIndex = 26;
-            this.gunaButton2.Text = "Подтвердить доставку";
-            this.gunaButton2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.gunaButton2.Click += new System.EventHandler(this.gunaButton2_Click);
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label2.ForeColor = System.Drawing.Color.DimGray;
+            this.label2.Location = new System.Drawing.Point(8, 328);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(45, 20);
+            this.label2.TabIndex = 27;
+            this.label2.Text = "Цена";
             // 
-            // InfoDeliveryForClient
+            // gunaTextBox1
+            // 
+            this.gunaTextBox1.BackColor = System.Drawing.Color.Transparent;
+            this.gunaTextBox1.BaseColor = System.Drawing.Color.White;
+            this.gunaTextBox1.BorderColor = System.Drawing.SystemColors.WindowFrame;
+            this.gunaTextBox1.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.gunaTextBox1.FocusedBaseColor = System.Drawing.Color.WhiteSmoke;
+            this.gunaTextBox1.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.gunaTextBox1.FocusedForeColor = System.Drawing.SystemColors.ControlText;
+            this.gunaTextBox1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.gunaTextBox1.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.gunaTextBox1.Location = new System.Drawing.Point(12, 351);
+            this.gunaTextBox1.Name = "gunaTextBox1";
+            this.gunaTextBox1.PasswordChar = '\0';
+            this.gunaTextBox1.Radius = 7;
+            this.gunaTextBox1.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.gunaTextBox1.Size = new System.Drawing.Size(310, 30);
+            this.gunaTextBox1.TabIndex = 26;
+            this.gunaTextBox1.Text = "Цена";
+            this.gunaTextBox1.TextOffsetX = 7;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label3.ForeColor = System.Drawing.Color.DimGray;
+            this.label3.Location = new System.Drawing.Point(324, 328);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(132, 20);
+            this.label3.TabIndex = 29;
+            this.label3.Text = "Фамилия клиента";
+            // 
+            // gunaTextBox2
+            // 
+            this.gunaTextBox2.BackColor = System.Drawing.Color.Transparent;
+            this.gunaTextBox2.BaseColor = System.Drawing.Color.White;
+            this.gunaTextBox2.BorderColor = System.Drawing.SystemColors.WindowFrame;
+            this.gunaTextBox2.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.gunaTextBox2.FocusedBaseColor = System.Drawing.Color.WhiteSmoke;
+            this.gunaTextBox2.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.gunaTextBox2.FocusedForeColor = System.Drawing.SystemColors.ControlText;
+            this.gunaTextBox2.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.gunaTextBox2.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.gunaTextBox2.Location = new System.Drawing.Point(328, 351);
+            this.gunaTextBox2.Name = "gunaTextBox2";
+            this.gunaTextBox2.PasswordChar = '\0';
+            this.gunaTextBox2.Radius = 7;
+            this.gunaTextBox2.ReadOnly = true;
+            this.gunaTextBox2.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.gunaTextBox2.Size = new System.Drawing.Size(310, 30);
+            this.gunaTextBox2.TabIndex = 28;
+            this.gunaTextBox2.Text = "Фамилия";
+            this.gunaTextBox2.TextOffsetX = 7;
+            // 
+            // InfoDeliveryForEmp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(243)))), ((int)(((byte)(241)))));
-            this.ClientSize = new System.Drawing.Size(648, 375);
-            this.Controls.Add(this.gunaButton2);
+            this.ClientSize = new System.Drawing.Size(648, 430);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.gunaTextBox2);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.gunaTextBox1);
             this.Controls.Add(this.maskedTextBox2);
             this.Controls.Add(this.maskedTextBox1);
             this.Controls.Add(this.label23);
             this.Controls.Add(this.label21);
-            this.Controls.Add(this.gunaButton1);
             this.Controls.Add(this.gunaDateTimePicker1);
             this.Controls.Add(this.DeliveryDateTimePicker);
             this.Controls.Add(this.label12);
@@ -451,9 +467,10 @@
             this.Controls.Add(this.RecTextBox);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "InfoDeliveryForClient";
+            this.Name = "InfoDeliveryForEmp";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "InfoDelivery";
+            this.Text = "InfoDeliveryForEmp";
+            this.Load += new System.EventHandler(this.InfoDeliveryForEmp_Load);
             ((System.ComponentModel.ISupportInitialize)(this.Close_button)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -477,13 +494,15 @@
         private System.Windows.Forms.Label label16;
         private Guna.UI.WinForms.GunaTextBox RecTextBox;
         private Guna.UI.WinForms.GunaDateTimePicker DeliveryDateTimePicker;
-        private Guna.UI.WinForms.GunaButton gunaButton1;
         private System.Windows.Forms.Label label23;
         private System.Windows.Forms.Label label21;
         private Guna.UI.WinForms.GunaDateTimePicker gunaDateTimePicker1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.MaskedTextBox maskedTextBox2;
         private System.Windows.Forms.MaskedTextBox maskedTextBox1;
-        private Guna.UI.WinForms.GunaButton gunaButton2;
+        private System.Windows.Forms.Label label2;
+        private Guna.UI.WinForms.GunaTextBox gunaTextBox1;
+        private System.Windows.Forms.Label label3;
+        private Guna.UI.WinForms.GunaTextBox gunaTextBox2;
     }
 }

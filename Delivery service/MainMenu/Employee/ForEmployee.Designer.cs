@@ -58,6 +58,10 @@
             this.ProfilePicture = new System.Windows.Forms.PictureBox();
             this.gunaElipse2 = new Guna.UI.WinForms.GunaElipse(this.components);
             this.InfoProfilePanel = new System.Windows.Forms.Panel();
+            this.label27 = new System.Windows.Forms.Label();
+            this.label28 = new System.Windows.Forms.Label();
+            this.DSTextBox = new Guna.UI.WinForms.GunaTextBox();
+            this.PositionTextBox = new Guna.UI.WinForms.GunaTextBox();
             this.PhoneTextBox = new System.Windows.Forms.MaskedTextBox();
             this.RegDateTimePicker = new Guna.UI.WinForms.GunaDateTimePicker();
             this.label2 = new System.Windows.Forms.Label();
@@ -103,7 +107,6 @@
             this.label20 = new System.Windows.Forms.Label();
             this.gunaElipse5 = new Guna.UI.WinForms.GunaElipse(this.components);
             this.gunaElipse6 = new Guna.UI.WinForms.GunaElipse(this.components);
-            this.Close_button = new System.Windows.Forms.PictureBox();
             this.QuestionPanel = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
             this.gunaButton3 = new Guna.UI.WinForms.GunaButton();
@@ -118,17 +121,14 @@
             this.label18 = new System.Windows.Forms.Label();
             this.label25 = new System.Windows.Forms.Label();
             this.gunaElipse9 = new Guna.UI.WinForms.GunaElipse(this.components);
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.label27 = new System.Windows.Forms.Label();
-            this.label28 = new System.Windows.Forms.Label();
-            this.DSTextBox = new Guna.UI.WinForms.GunaTextBox();
-            this.PositionTextBox = new Guna.UI.WinForms.GunaTextBox();
             this.NewDeliveryPanel = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.gunaButton2 = new Guna.UI.WinForms.GunaButton();
             this.NewOrdersDataGridView = new Guna.UI.WinForms.GunaDataGridView();
             this.label22 = new System.Windows.Forms.Label();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.Close_button = new System.Windows.Forms.PictureBox();
             this.MainPanel.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ProfilePic)).BeginInit();
@@ -138,16 +138,16 @@
             this.ProfilePanel.SuspendLayout();
             this.NewDeliveryPanel1.SuspendLayout();
             this.panel6.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.Close_button)).BeginInit();
             this.QuestionPanel.SuspendLayout();
             this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.QuestionsDataGridView)).BeginInit();
             this.InfoPanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.NewDeliveryPanel.SuspendLayout();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.NewOrdersDataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Close_button)).BeginInit();
             this.SuspendLayout();
             // 
             // MainPanel
@@ -509,6 +509,74 @@
             this.InfoProfilePanel.Size = new System.Drawing.Size(509, 280);
             this.InfoProfilePanel.TabIndex = 6;
             // 
+            // label27
+            // 
+            this.label27.AutoSize = true;
+            this.label27.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label27.ForeColor = System.Drawing.Color.DimGray;
+            this.label27.Location = new System.Drawing.Point(176, 219);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(127, 20);
+            this.label27.TabIndex = 21;
+            this.label27.Text = "Служба доставки";
+            // 
+            // label28
+            // 
+            this.label28.AutoSize = true;
+            this.label28.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label28.ForeColor = System.Drawing.Color.DimGray;
+            this.label28.Location = new System.Drawing.Point(15, 219);
+            this.label28.Name = "label28";
+            this.label28.Size = new System.Drawing.Size(86, 20);
+            this.label28.TabIndex = 22;
+            this.label28.Text = "Должность";
+            // 
+            // DSTextBox
+            // 
+            this.DSTextBox.BackColor = System.Drawing.Color.Transparent;
+            this.DSTextBox.BaseColor = System.Drawing.Color.White;
+            this.DSTextBox.BorderColor = System.Drawing.SystemColors.WindowFrame;
+            this.DSTextBox.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.DSTextBox.Enabled = false;
+            this.DSTextBox.FocusedBaseColor = System.Drawing.Color.WhiteSmoke;
+            this.DSTextBox.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.DSTextBox.FocusedForeColor = System.Drawing.SystemColors.ControlText;
+            this.DSTextBox.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.DSTextBox.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.DSTextBox.Location = new System.Drawing.Point(180, 242);
+            this.DSTextBox.Name = "DSTextBox";
+            this.DSTextBox.PasswordChar = '\0';
+            this.DSTextBox.Radius = 7;
+            this.DSTextBox.ReadOnly = true;
+            this.DSTextBox.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.DSTextBox.Size = new System.Drawing.Size(155, 30);
+            this.DSTextBox.TabIndex = 19;
+            this.DSTextBox.Text = "Служба доставки";
+            this.DSTextBox.TextOffsetX = 7;
+            // 
+            // PositionTextBox
+            // 
+            this.PositionTextBox.BackColor = System.Drawing.Color.Transparent;
+            this.PositionTextBox.BaseColor = System.Drawing.Color.White;
+            this.PositionTextBox.BorderColor = System.Drawing.SystemColors.WindowFrame;
+            this.PositionTextBox.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.PositionTextBox.Enabled = false;
+            this.PositionTextBox.FocusedBaseColor = System.Drawing.Color.WhiteSmoke;
+            this.PositionTextBox.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.PositionTextBox.FocusedForeColor = System.Drawing.SystemColors.ControlText;
+            this.PositionTextBox.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.PositionTextBox.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.PositionTextBox.Location = new System.Drawing.Point(19, 242);
+            this.PositionTextBox.Name = "PositionTextBox";
+            this.PositionTextBox.PasswordChar = '\0';
+            this.PositionTextBox.Radius = 7;
+            this.PositionTextBox.ReadOnly = true;
+            this.PositionTextBox.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.PositionTextBox.Size = new System.Drawing.Size(155, 30);
+            this.PositionTextBox.TabIndex = 20;
+            this.PositionTextBox.Text = "Должность";
+            this.PositionTextBox.TextOffsetX = 7;
+            // 
             // PhoneTextBox
             // 
             this.PhoneTextBox.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
@@ -841,6 +909,7 @@
             // gunaElipse4
             // 
             this.gunaElipse4.Radius = 15;
+            this.gunaElipse4.TargetControl = this;
             // 
             // ProfilePanel
             // 
@@ -849,7 +918,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.ProfilePanel.Controls.Add(this.PhotoProfilePanel);
             this.ProfilePanel.Controls.Add(this.InfoProfilePanel);
-            this.ProfilePanel.Location = new System.Drawing.Point(434, 462);
+            this.ProfilePanel.Location = new System.Drawing.Point(415, 436);
             this.ProfilePanel.Name = "ProfilePanel";
             this.ProfilePanel.Size = new System.Drawing.Size(763, 514);
             this.ProfilePanel.TabIndex = 7;
@@ -1212,23 +1281,7 @@
             // gunaElipse6
             // 
             this.gunaElipse6.Radius = 15;
-            // 
-            // Close_button
-            // 
-            this.Close_button.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.Close_button.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(213)))), ((int)(((byte)(212)))));
-            this.Close_button.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.Close_button.Image = global::Delivery_service.Properties.Resources.Close_button_leave2;
-            this.Close_button.Location = new System.Drawing.Point(900, 8);
-            this.Close_button.Margin = new System.Windows.Forms.Padding(2);
-            this.Close_button.Name = "Close_button";
-            this.Close_button.Size = new System.Drawing.Size(40, 40);
-            this.Close_button.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.Close_button.TabIndex = 2;
-            this.Close_button.TabStop = false;
-            this.Close_button.Click += new System.EventHandler(this.Close_button_Click);
-            this.Close_button.MouseEnter += new System.EventHandler(this.Close_button_MouseEnter);
-            this.Close_button.MouseLeave += new System.EventHandler(this.Close_button_MouseLeave);
+            this.gunaElipse6.TargetControl = this;
             // 
             // QuestionPanel
             // 
@@ -1456,116 +1509,16 @@
             // gunaElipse9
             // 
             this.gunaElipse9.Radius = 15;
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(213)))), ((int)(((byte)(212)))));
-            this.pictureBox2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox2.Image = global::Delivery_service.Properties.Resources.Hide;
-            this.pictureBox2.Location = new System.Drawing.Point(818, 10);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(2);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(39, 37);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 15;
-            this.pictureBox2.TabStop = false;
-            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
-            this.pictureBox2.MouseEnter += new System.EventHandler(this.pictureBox2_MouseEnter);
-            this.pictureBox2.MouseLeave += new System.EventHandler(this.pictureBox2_MouseLeave);
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(213)))), ((int)(((byte)(212)))));
-            this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox1.Image = global::Delivery_service.Properties.Resources.FullScreen;
-            this.pictureBox1.Location = new System.Drawing.Point(861, 8);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(40, 40);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 14;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click_1);
-            this.pictureBox1.MouseEnter += new System.EventHandler(this.pictureBox1_MouseEnter);
-            this.pictureBox1.MouseLeave += new System.EventHandler(this.pictureBox1_MouseLeave);
-            // 
-            // label27
-            // 
-            this.label27.AutoSize = true;
-            this.label27.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label27.ForeColor = System.Drawing.Color.DimGray;
-            this.label27.Location = new System.Drawing.Point(176, 219);
-            this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(127, 20);
-            this.label27.TabIndex = 21;
-            this.label27.Text = "Служба доставки";
-            // 
-            // label28
-            // 
-            this.label28.AutoSize = true;
-            this.label28.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label28.ForeColor = System.Drawing.Color.DimGray;
-            this.label28.Location = new System.Drawing.Point(15, 219);
-            this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(86, 20);
-            this.label28.TabIndex = 22;
-            this.label28.Text = "Должность";
-            // 
-            // DSTextBox
-            // 
-            this.DSTextBox.BackColor = System.Drawing.Color.Transparent;
-            this.DSTextBox.BaseColor = System.Drawing.Color.White;
-            this.DSTextBox.BorderColor = System.Drawing.SystemColors.WindowFrame;
-            this.DSTextBox.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.DSTextBox.Enabled = false;
-            this.DSTextBox.FocusedBaseColor = System.Drawing.Color.WhiteSmoke;
-            this.DSTextBox.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.DSTextBox.FocusedForeColor = System.Drawing.SystemColors.ControlText;
-            this.DSTextBox.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.DSTextBox.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.DSTextBox.Location = new System.Drawing.Point(180, 242);
-            this.DSTextBox.Name = "DSTextBox";
-            this.DSTextBox.PasswordChar = '\0';
-            this.DSTextBox.Radius = 7;
-            this.DSTextBox.ReadOnly = true;
-            this.DSTextBox.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.DSTextBox.Size = new System.Drawing.Size(155, 30);
-            this.DSTextBox.TabIndex = 19;
-            this.DSTextBox.Text = "Служба доставки";
-            this.DSTextBox.TextOffsetX = 7;
-            // 
-            // PositionTextBox
-            // 
-            this.PositionTextBox.BackColor = System.Drawing.Color.Transparent;
-            this.PositionTextBox.BaseColor = System.Drawing.Color.White;
-            this.PositionTextBox.BorderColor = System.Drawing.SystemColors.WindowFrame;
-            this.PositionTextBox.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.PositionTextBox.Enabled = false;
-            this.PositionTextBox.FocusedBaseColor = System.Drawing.Color.WhiteSmoke;
-            this.PositionTextBox.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.PositionTextBox.FocusedForeColor = System.Drawing.SystemColors.ControlText;
-            this.PositionTextBox.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.PositionTextBox.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.PositionTextBox.Location = new System.Drawing.Point(19, 242);
-            this.PositionTextBox.Name = "PositionTextBox";
-            this.PositionTextBox.PasswordChar = '\0';
-            this.PositionTextBox.Radius = 7;
-            this.PositionTextBox.ReadOnly = true;
-            this.PositionTextBox.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.PositionTextBox.Size = new System.Drawing.Size(155, 30);
-            this.PositionTextBox.TabIndex = 20;
-            this.PositionTextBox.Text = "Должность";
-            this.PositionTextBox.TextOffsetX = 7;
+            this.gunaElipse9.TargetControl = this;
             // 
             // NewDeliveryPanel
             // 
             this.NewDeliveryPanel.Controls.Add(this.panel4);
-            this.NewDeliveryPanel.Location = new System.Drawing.Point(781, 172);
+            this.NewDeliveryPanel.Location = new System.Drawing.Point(818, 192);
             this.NewDeliveryPanel.Name = "NewDeliveryPanel";
             this.NewDeliveryPanel.Size = new System.Drawing.Size(791, 514);
             this.NewDeliveryPanel.TabIndex = 16;
+            this.NewDeliveryPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.NewDeliveryPanel_Paint);
             // 
             // panel4
             // 
@@ -1607,6 +1560,7 @@
             this.gunaButton2.TabIndex = 13;
             this.gunaButton2.Text = "Развернуть";
             this.gunaButton2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.gunaButton2.Click += new System.EventHandler(this.gunaButton2_Click);
             // 
             // NewOrdersDataGridView
             // 
@@ -1678,6 +1632,57 @@
             this.label22.TabIndex = 0;
             this.label22.Text = "Взять в работу новую доставку";
             // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(213)))), ((int)(((byte)(212)))));
+            this.pictureBox2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox2.Image = global::Delivery_service.Properties.Resources.Hide;
+            this.pictureBox2.Location = new System.Drawing.Point(818, 10);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(39, 37);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 15;
+            this.pictureBox2.TabStop = false;
+            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
+            this.pictureBox2.MouseEnter += new System.EventHandler(this.pictureBox2_MouseEnter);
+            this.pictureBox2.MouseLeave += new System.EventHandler(this.pictureBox2_MouseLeave);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(213)))), ((int)(((byte)(212)))));
+            this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox1.Image = global::Delivery_service.Properties.Resources.FullScreen;
+            this.pictureBox1.Location = new System.Drawing.Point(861, 8);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(40, 40);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 14;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click_1);
+            this.pictureBox1.MouseEnter += new System.EventHandler(this.pictureBox1_MouseEnter);
+            this.pictureBox1.MouseLeave += new System.EventHandler(this.pictureBox1_MouseLeave);
+            // 
+            // Close_button
+            // 
+            this.Close_button.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.Close_button.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(213)))), ((int)(((byte)(212)))));
+            this.Close_button.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Close_button.Image = global::Delivery_service.Properties.Resources.Close_button_leave2;
+            this.Close_button.Location = new System.Drawing.Point(900, 8);
+            this.Close_button.Margin = new System.Windows.Forms.Padding(2);
+            this.Close_button.Name = "Close_button";
+            this.Close_button.Size = new System.Drawing.Size(40, 40);
+            this.Close_button.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.Close_button.TabIndex = 2;
+            this.Close_button.TabStop = false;
+            this.Close_button.Click += new System.EventHandler(this.Close_button_Click);
+            this.Close_button.MouseEnter += new System.EventHandler(this.Close_button_MouseEnter);
+            this.Close_button.MouseLeave += new System.EventHandler(this.Close_button_MouseLeave);
+            // 
             // ForEmployee
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1713,19 +1718,19 @@
             this.NewDeliveryPanel1.ResumeLayout(false);
             this.panel6.ResumeLayout(false);
             this.panel6.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.Close_button)).EndInit();
             this.QuestionPanel.ResumeLayout(false);
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.QuestionsDataGridView)).EndInit();
             this.InfoPanel.ResumeLayout(false);
             this.InfoPanel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.NewDeliveryPanel.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.NewOrdersDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Close_button)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

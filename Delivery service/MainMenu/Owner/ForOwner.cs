@@ -41,7 +41,7 @@ namespace Delivery_service
             connection.Open();
             query = $"SELECT [id] FROM [Delivery service] WHERE [Owner ID]={OwnerID}";
             cmd = new SqlCommand(query, connection);
-            CompanyID= cmd.ExecuteScalar().ToString();
+            CompanyID = cmd.ExecuteScalar().ToString();
             connection.Close();
             UpdateProfile();
             UpdateDelivery();

@@ -14,7 +14,8 @@ namespace Delivery_service
         SqlCommand cmd;
         string connectionString = @"Server=tcp:deliveryservice.database.windows.net,1433;Initial Catalog=Delivery service;Persist Security Info=False;User ID=Nikiru;Password=Rnp26122001;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;";
         string UserID = "";
-        string ClientID = "";
+        string empid = "";
+        MemoryStream memoryStream = new MemoryStream();
         public ForEmployee(string id)
         {
 
@@ -30,7 +31,12 @@ namespace Delivery_service
             NewDelivery.Image = Properties.Resources.NewDelivery_on;
             NamePanel.Text = "Новая доставка";
             UserID = id;
-            
+            connection = new SqlConnection(connectionString);
+            connection.Open();
+            string query = $"SELECT [id] FROM [Delivery service employee] WHERE [user id]={UserID}";
+            cmd = new SqlCommand(query, connection);
+            empid = cmd.ExecuteScalar().ToString();
+            connection.Close();
             UpdateProfile();
             UpdateDelivery();
             UpdateQuestions();
@@ -292,36 +298,35 @@ namespace Delivery_service
             {
                 MessageBox.Show(ex.Message);
             }
-
             UpdateProfile();
         }
 
         private void gunaButton1_Click(object sender, EventArgs e)
         {
 
-            try
-            {
-                connection = new SqlConnection(connectionString);
-                connection.Open();
-                // добавление новой доставки
+            //try
+            //{
+            //    connection = new SqlConnection(connectionString);
+            //    connection.Open();
+            //    // добавление новой доставки
 
-                string query = $"INSERT INTO [Delivery service order]VALUES ({ClientID},1,5,N'{ObjTextBox.Text}',NULL,N'{RecTextBox.Text}',N'{RecDateTimePicker.Value.ToString("yyyy-MM-dd")}',N'{maskedTextBox1.Text}', N'{DesTextBox.Text}',N'{DesDateTimePicker.Value.ToString("yyyy-MM-dd")}',N'{maskedTextBox2.Text}',N' {CommentaryTextBox.Text}',GETDATE())";
-                cmd = new SqlCommand(query, connection);
-                cmd.ExecuteNonQuery();
-                connection.Close();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-            Orders_Click(sender, e);
+            //    string query = $"INSERT INTO [Delivery service order]VALUES ({ClientID},1,5,N'{ObjTextBox.Text}',NULL,N'{RecTextBox.Text}',N'{RecDateTimePicker.Value.ToString("yyyy-MM-dd")}',N'{maskedTextBox1.Text}', N'{DesTextBox.Text}',N'{DesDateTimePicker.Value.ToString("yyyy-MM-dd")}',N'{maskedTextBox2.Text}',N' {CommentaryTextBox.Text}',GETDATE())";
+            //    cmd = new SqlCommand(query, connection);
+            //    cmd.ExecuteNonQuery();
+            //    connection.Close();
+            //}
+            //catch (Exception ex)
+            //{
+            //    MessageBox.Show(ex.Message);
+            //}
+            //Orders_Click(sender, e);
         }
 
         private void UpdateDelivery()
         {
             try
             {
-                string query = $"select * from NewOrders";
+                string query = $"select * from NewOrders where Статус=N'Ожидание курьера' or Статус=N'Ожидание одобрения'";
                 connection = new SqlConnection(connectionString);
                 connection.Open();
                 SqlDataAdapter adapter = new SqlDataAdapter(query, connection);
@@ -378,7 +383,7 @@ namespace Delivery_service
             UpdateQuestions();
         }
 
-        MemoryStream memoryStream = new MemoryStream();
+       
         int check = 0;
         private void ProfilePicture_Click(object sender, EventArgs e)
         {
@@ -468,6 +473,47 @@ namespace Delivery_service
         private void panel2_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void NewDeliveryPanel_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void gunaButton2_Click(object sender, EventArgs e)
+        {
+            string DeliveryID = " ";
+            int index = 0;
+            foreach (DataGridViewCell cell in NewOrdersDataGridView.SelectedCells)
+            {
+                index = cell.RowIndex;
+            }
+            string sur = NewOrdersDataGridView[0, index].Value.ToString();
+            string obj = NewOrdersDataGridView[3, index].Value.ToString();
+            string rp = NewOrdersDataGridView[5, index].Value.ToString();
+            string dp = NewOrdersDataGridView[8, index].Value.ToString();
+            string com = NewOrdersDataGridView[11, index].Value.ToString();
+            string rd = NewOrdersDataGridView[6, index].Value.ToString();
+            string dd = NewOrdersDataGridView[9, index].Value.ToString();
+            string rt = NewOrdersDataGridView[7, index].Value.ToString();
+            string dt = NewOrdersDataGridView[10, index].Value.ToString();
+            try
+            {
+                string query = $"select [Delivery service order].id from [Delivery service order] join [Delivery service client] on [Delivery service Client].[id]=[Delivery service order].[Client id] join [Delivery service user] on [Delivery service user].[id]=[delivery service client].[user id] where [Delivery service user].Name=N'{sur}' and [Object description]=N'{obj}'and [Reception point]=N'{rp}' and [Destination point]=N'{dp}' and [Commentary]=N'{com}' ";
+                connection = new SqlConnection(connectionString);
+                connection.Open();
+                cmd = new SqlCommand(query, connection);
+                DeliveryID = cmd.ExecuteScalar().ToString();
+                connection.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            InfoDeliveryForEmp infoDelivery = new InfoDeliveryForEmp(empid,DeliveryID,sur, obj, rp, dp, rt, dt, rd, dd, com);
+            DialogResult dialogResult = new DialogResult();
+            dialogResult = infoDelivery.ShowDialog();
+            UpdateDelivery();
         }
     }
 }

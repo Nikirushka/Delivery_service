@@ -74,11 +74,23 @@
     <Compile Include="MainMenu\Admin\EditClient.Designer.cs">
       <DependentUpon>EditClient.cs</DependentUpon>
     </Compile>
+    <Compile Include="MainMenu\Client\InfoDeliveryForClient2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainMenu\Client\InfoDeliveryForClient2.Designer.cs">
+      <DependentUpon>InfoDeliveryForClient2.cs</DependentUpon>
+    </Compile>
     <Compile Include="MainMenu\Employee\ForEmployee.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="MainMenu\Employee\ForEmployee.Designer.cs">
       <DependentUpon>ForEmployee.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainMenu\Employee\InfoDeliveryForEmp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainMenu\Employee\InfoDeliveryForEmp.Designer.cs">
+      <DependentUpon>InfoDeliveryForEmp.cs</DependentUpon>
     </Compile>
     <Compile Include="MainMenu\Owner\ForOwner.cs">
       <SubType>Form</SubType>
@@ -136,8 +148,14 @@
     <EmbeddedResource Include="MainMenu\Admin\EditClient.resx">
       <DependentUpon>EditClient.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="MainMenu\Client\InfoDeliveryForClient2.resx">
+      <DependentUpon>InfoDeliveryForClient2.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MainMenu\Employee\ForEmployee.resx">
       <DependentUpon>ForEmployee.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainMenu\Employee\InfoDeliveryForEmp.resx">
+      <DependentUpon>InfoDeliveryForEmp.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainMenu\Owner\ForOwner.resx">
       <DependentUpon>ForOwner.cs</DependentUpon>

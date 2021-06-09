@@ -1119,7 +1119,7 @@
             this.NewDeliveryPanel.Controls.Add(this.gunaButton6);
             this.NewDeliveryPanel.Controls.Add(this.gunaDataGridView1);
             this.NewDeliveryPanel.Controls.Add(this.panel6);
-            this.NewDeliveryPanel.Location = new System.Drawing.Point(884, 258);
+            this.NewDeliveryPanel.Location = new System.Drawing.Point(191, 66);
             this.NewDeliveryPanel.Name = "NewDeliveryPanel";
             this.NewDeliveryPanel.Size = new System.Drawing.Size(766, 514);
             this.NewDeliveryPanel.TabIndex = 8;

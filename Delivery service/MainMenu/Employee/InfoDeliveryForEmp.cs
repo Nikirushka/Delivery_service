@@ -4,18 +4,19 @@ using System.Windows.Forms;
 
 namespace Delivery_service
 {
-    public partial class InfoDeliveryForClient : Form
+    public partial class InfoDeliveryForEmp : Form
     {
         SqlConnection connection;
         SqlDataReader reader = null;
         SqlCommand cmd;
         string connectionString = @"Server=tcp:deliveryservice.database.windows.net,1433;Initial Catalog=Delivery service;Persist Security Info=False;User ID=Nikiru;Password=Rnp26122001;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;";
         string DeliveryID;
-        public InfoDeliveryForClient()
+        string empID;
+        public InfoDeliveryForEmp()
         {
             InitializeComponent();
         }
-        public InfoDeliveryForClient(string DeliveryID_, string obj_, string adr1_, string adr2_, string time1_, string time2_, string date1, string date2, string comm_)
+        public InfoDeliveryForEmp(string emp_,string DeliveryID_,string sur_, string obj_, string adr1_, string adr2_, string time1_, string time2_, string date1, string date2, string comm_)
         {
             InitializeComponent();
             ObjTextBox.Text = obj_;
@@ -27,6 +28,8 @@ namespace Delivery_service
             maskedTextBox1.Text = time1_;
             maskedTextBox2.Text = time2_;
             DeliveryID = DeliveryID_;
+            gunaTextBox2.Text = sur_;
+            empID = emp_;
         }
 
         private void Close_button_Click(object sender, EventArgs e)
@@ -50,8 +53,11 @@ namespace Delivery_service
             try
             {
                 connection = new SqlConnection(connectionString);
-                connection.Open();
-                string query = $"UPDATE [Delivery service order] SET [Object description] =N'{ObjTextBox.Text}', [Reception point] =N'{RecTextBox.Text}', [Destination point] =N'{DesTextBox.Text}', [Commentary] =N'{CommentaryTextBox.Text}',[Reception date]=N'{DeliveryDateTimePicker.Value.ToString("yyyy-MM-dd")}', [Destination date]=N'{gunaDateTimePicker1.Value.ToString("yyyy-MM-dd")}', [Reception time]=N'{maskedTextBox1.Text}', [Destination time]=N'{maskedTextBox2.Text}'  where [id]={DeliveryID}";
+                connection.Open(); 
+                string query = $"INSERT INTO [Delivery service time order] VALUES ({DeliveryID},{empID},{gunaTextBox1.Text})"; 
+                cmd = new SqlCommand(query, connection);
+                cmd.ExecuteNonQuery();
+                query = $"update [Delivery service order] set [Delivery service order].[status id]=4, [Delivery service order].[employee id]={empID} where [delivery service order].[id]={DeliveryID}";
                 cmd = new SqlCommand(query, connection);
                 cmd.ExecuteNonQuery();
                 connection.Close();
@@ -65,44 +71,9 @@ namespace Delivery_service
             this.Close();
         }
 
-        private void gunaButton1_Click(object sender, EventArgs e)
+        private void InfoDeliveryForEmp_Load(object sender, EventArgs e)
         {
-            try
-            {
-                connection = new SqlConnection(connectionString);
-                connection.Open();
-                string query = $"UPDATE [Delivery service order] SET [Status id]=2  where [id]={DeliveryID}";
-                cmd = new SqlCommand(query, connection);
-                cmd.ExecuteNonQuery();
-                connection.Close();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
 
-            this.DialogResult = DialogResult.OK;
-            this.Close();
-        }
-
-        private void gunaButton2_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                connection = new SqlConnection(connectionString);
-                connection.Open();
-                string query = $"UPDATE [Delivery service order] SET [Status id]=1  where [id]={DeliveryID}";
-                cmd = new SqlCommand(query, connection);
-                cmd.ExecuteNonQuery();
-                connection.Close();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-
-            this.DialogResult = DialogResult.OK;
-            this.Close();
         }
     }
 }

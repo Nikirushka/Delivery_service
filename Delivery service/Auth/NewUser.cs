@@ -14,6 +14,7 @@ namespace Delivery_service
         SqlDataReader reader = null;
         SqlCommand cmd;
         string FileNameImage;
+        MemoryStream memoryStream = new MemoryStream();
         string connectionString = @"Server=tcp:deliveryservice.database.windows.net,1433;Initial Catalog=Delivery service;Persist Security Info=False;User ID=Nikiru;Password=Rnp26122001;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;";
         public NewUser()
         {
@@ -32,6 +33,7 @@ namespace Delivery_service
         private void NewUser_Load(object sender, EventArgs e)
         {
             dateTimePicker1.Value = DateTime.Now;
+            
         }
 
         private void BackB_Click(object sender, EventArgs e)
@@ -59,7 +61,8 @@ namespace Delivery_service
         {
             try
             {
-
+                OpenFileDialog openFileDialog1 = new OpenFileDialog();
+                openFileDialog1.Filter = "Image Files(*.BMP;*.JPG;*.GIF;*.PNG)|*.BMP;*.JPG;*.GIF;*.PNG|All files (*.*)|*.*";
                 connection = new SqlConnection(connectionString);
                 connection.Open();
                 // проверка на уникальность логина
@@ -77,13 +80,27 @@ namespace Delivery_service
                 query = $"INSERT INTO [Delivery service user] " +
                     $"VALUES ( N'{textBox4.Text}', N'{textBox3.Text}', N'{textBox5.Text}',N'{dateTimePicker1.Value.ToString("yyyy-MM-dd")}', N'{maskedTextBox6.Text}', N'{textBox8.Text}', @p,N'{textBox1.Text}', N'{textBox2.Text}',GETDATE())";
                 cmd = new SqlCommand(query, connection);
-                if (memoryStream.ToArray().ToString() == "System.Byte[]")
+                if (photo==0)
                 {
-                    OpenFileDialog openFileDialog1 = new OpenFileDialog();
-                    string pathToFile = System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Profile_on.png");
-                    openFileDialog1.FileName = pathToFile;
-                    ProfilePic.Image = new Bitmap(openFileDialog1.FileName);
-                    ProfilePic.Image.Save(memoryStream, ProfilePic.Image.RawFormat);
+
+                    if (openFileDialog1.ShowDialog() == DialogResult.OK)
+                    {
+                        try
+                        {
+                            ProfilePic.Image = new Bitmap(openFileDialog1.FileName);
+                            ProfilePic.Image.Save(memoryStream, ProfilePic.Image.RawFormat);
+                            photo = 1;
+                            
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show(ex.Message);
+                        }
+                    }
+                    else
+                    {
+                        return;
+                    }
                 }
                 cmd.Parameters.AddWithValue("@p", memoryStream.ToArray());
                 cmd.ExecuteNonQuery();
@@ -108,17 +125,22 @@ namespace Delivery_service
                     if (UserComboBox.SelectedIndex == 2)
                     {
                         query = $"INSERT INTO [Delivery service employee] " +
-                    $"([User id],[Delivery service id],Position) " +
-                    $"VALUES ({check},{CompanyID},N'Сотрудник')";
+                    $"([User id],[Delivery service id],Position,Orders) " +
+                    $"VALUES ({check},{CompanyID},N'Сотрудник',0)";
                     }
                     else
                     {
                     query = $"INSERT INTO [Delivery service owner] " +
                     $"([User id]) " +
                     $"VALUES ({check})";
+                        cmd = new SqlCommand(query, connection);
+                        cmd.ExecuteNonQuery();
+                        query = $"SELECT [id] FROM [Delivery service owner] WHERE [User ID]={check}";
+                        cmd = new SqlCommand(query, connection);
+                        string id_owner = cmd.ExecuteScalar().ToString();
+                        query = $"insert into [delivery service] ([Owner id],[Name],[UNP],[orders],[date]) values ({id_owner},N'Введите имя компании',123123123,0,GETDATE());";
                     }
-
-                        
+ 
                 }
                 cmd = new SqlCommand(query, connection);
                 cmd.ExecuteNonQuery();
@@ -162,7 +184,7 @@ namespace Delivery_service
         {
             BackB.ForeColor = Color.FromArgb(227, 213, 212);
         }
-        MemoryStream memoryStream = new MemoryStream();
+        int photo = 0;
         private void button1_Click(object sender, EventArgs e)
         {
 
@@ -175,6 +197,7 @@ namespace Delivery_service
                     ProfilePic.Image = new Bitmap(openFileDialog1.FileName);
 
                     ProfilePic.Image.Save(memoryStream, ProfilePic.Image.RawFormat);
+                    photo = 1;
                 }
                 catch (Exception ex)
                 {

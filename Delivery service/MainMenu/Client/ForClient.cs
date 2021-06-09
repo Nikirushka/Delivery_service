@@ -351,18 +351,18 @@ namespace Delivery_service
         {
             string DeliveryID = " ";
             int index = 0;
-            foreach (DataGridViewCell cell in DeliveryDataGridView.SelectedCells)
+            foreach (DataGridViewCell cell in DeliveryDataGridView2.SelectedCells)
             {
                 index = cell.RowIndex;
             }
-            string obj = DeliveryDataGridView[2, index].Value.ToString();
-            string rp = DeliveryDataGridView[4, index].Value.ToString();
-            string dp = DeliveryDataGridView[7, index].Value.ToString();
-            string com = DeliveryDataGridView[10, index].Value.ToString();
-            string rd = DeliveryDataGridView[5, index].Value.ToString();
-            string dd = DeliveryDataGridView[8, index].Value.ToString();
-            string rt = DeliveryDataGridView[6, index].Value.ToString();
-            string dt = DeliveryDataGridView[9, index].Value.ToString();
+            string obj = DeliveryDataGridView2[2, index].Value.ToString();
+            string rp = DeliveryDataGridView2[4, index].Value.ToString();
+            string dp = DeliveryDataGridView2[7, index].Value.ToString();
+            string com = DeliveryDataGridView2[10, index].Value.ToString();
+            string rd = DeliveryDataGridView2[5, index].Value.ToString();
+            string dd = DeliveryDataGridView2[8, index].Value.ToString();
+            string rt = DeliveryDataGridView2[6, index].Value.ToString();
+            string dt = DeliveryDataGridView2[9, index].Value.ToString();
             try
             {
                 string query = $"select [id] from [Delivery service order] where [Client id]={ClientID} and [Object description]=N'{obj}'and [Reception point]=N'{rp}' and [Destination point]=N'{dp}' and [Commentary]=N'{com}' ";
@@ -517,6 +517,48 @@ namespace Delivery_service
         private void panel2_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void MyDeliveryPanel_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void gunaButton2_Click(object sender, EventArgs e)
+        {
+            string DeliveryID = " ";
+            int index = 0;
+            foreach (DataGridViewCell cell in DeliveryDataGridView.SelectedCells)
+            {
+                index = cell.RowIndex;
+            }
+            string sotr = DeliveryDataGridView[0, index].Value.ToString();
+            string obj = DeliveryDataGridView[2, index].Value.ToString();
+            string rp = DeliveryDataGridView[4, index].Value.ToString();
+            string dp = DeliveryDataGridView[7, index].Value.ToString();
+            string com = DeliveryDataGridView[10, index].Value.ToString();
+            string rd = DeliveryDataGridView[5, index].Value.ToString();
+            string dd = DeliveryDataGridView[8, index].Value.ToString();
+            string rt = DeliveryDataGridView[6, index].Value.ToString();
+            string dt = DeliveryDataGridView[9, index].Value.ToString();
+            string cost = DeliveryDataGridView[3, index].Value.ToString();
+            try
+            {
+                string query = $"select [id] from [Delivery service order] where [Client id]={ClientID} and [Object description]=N'{obj}'and [Reception point]=N'{rp}' and [Destination point]=N'{dp}' and [Commentary]=N'{com}' ";
+                connection = new SqlConnection(connectionString);
+                connection.Open();
+                cmd = new SqlCommand(query, connection);
+                DeliveryID = cmd.ExecuteScalar().ToString();
+                connection.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            InfoDeliveryForClient2 infoDelivery = new InfoDeliveryForClient2(sotr,cost,DeliveryID, obj, rp, dp, rt, dt, rd, dd, com);
+            DialogResult dialogResult = new DialogResult();
+            dialogResult = infoDelivery.ShowDialog();
+            UpdateDelivery();
         }
     }
 }
