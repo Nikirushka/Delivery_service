@@ -74,6 +74,12 @@
     <Compile Include="MainMenu\Admin\EditClient.Designer.cs">
       <DependentUpon>EditClient.cs</DependentUpon>
     </Compile>
+    <Compile Include="MainMenu\Admin\Question.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainMenu\Admin\Question.Designer.cs">
+      <DependentUpon>Question.cs</DependentUpon>
+    </Compile>
     <Compile Include="MainMenu\Client\InfoDeliveryForClient2.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -147,6 +153,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MainMenu\Admin\EditClient.resx">
       <DependentUpon>EditClient.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainMenu\Admin\Question.resx">
+      <DependentUpon>Question.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainMenu\Client\InfoDeliveryForClient2.resx">
       <DependentUpon>InfoDeliveryForClient2.cs</DependentUpon>

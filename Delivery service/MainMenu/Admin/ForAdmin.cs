@@ -255,7 +255,7 @@ namespace Delivery_service
         {
             try
             {
-                string query = $"exec InfoAnswer {UserID}";
+                string query = $"select [Delivery service questions].id as 'Номер вопроса', [Delivery service user].Surname as 'Пользователь', [Delivery service questions].Question as 'Вопрос', [Delivery service questions].Answer as 'Ответ', [Delivery service questions].Date as 'Дата' from [Delivery service questions] join [Delivery service user] on [Delivery service user].[id]=[Delivery service questions].[User id]";
                 connection = new SqlConnection(connectionString);
                 connection.Open();
                 SqlDataAdapter adapter = new SqlDataAdapter(query, connection);
@@ -268,33 +268,6 @@ namespace Delivery_service
                 MessageBox.Show(ex.Message);
             }
 
-        }
-
-        private void gunaButton3_Click(object sender, EventArgs e)
-        {
-
-            try
-            {
-                connection = new SqlConnection(connectionString);
-                connection.Open();
-                string query = $"INSERT INTO [delivery service questions] " +
-                    $"([User id],[worker id], [question],[date]) " +
-                    $"VALUES ( {UserID},1,@commentary,GETDATE())";
-                cmd = new SqlCommand(query, connection);
-                cmd.Parameters.AddWithValue("@commentary", QuestionTextBox.Text);
-                cmd.ExecuteNonQuery();
-                connection.Close();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-            UpdateQuestions();
-        }
-
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-            this.WindowState = FormWindowState.Maximized;
         }
 
         private bool flag = false;
@@ -444,6 +417,44 @@ namespace Delivery_service
             DialogResult dialogResult = new DialogResult();
             dialogResult = EditEmployee.ShowDialog();
             UpdateWorkers();
+        }
+
+        private void gunaButton5_Click(object sender, EventArgs e)
+        {
+            UpdateQuestions();
+            QuestionPanel.Location = loc;
+            Delivers.Hide();
+            InfoPanel.Hide();
+            QuestionPanel.Show();
+            Workers.Hide();
+            MyDeliveryPanel.Hide();
+            NewDeliveryPanel.Hide();
+            NamePanel.Text = "Вопросы";
+            Settings.ForeColor = Color.FromArgb(227, 213, 212);
+            NewDelivery.ForeColor = Color.FromArgb(227, 213, 212);
+            Orders.ForeColor = Color.FromArgb(227, 213, 212);
+            Question.ForeColor = Color.FromArgb(227, 213, 212);
+            NavPanel.Height = Help.Height;
+            NavPanel.Top = Help.Top;
+            NavPanel.Left = Help.Left;
+            Help.ForeColor = Color.FromArgb(217, 35, 73);
+        }
+
+        private void gunaButton3_Click_1(object sender, EventArgs e)
+        {
+            
+            int index = 0;
+            foreach (DataGridViewCell cell in QuestionsDataGridView.SelectedCells)
+            {
+                index = cell.RowIndex;
+            }
+            string QuestID = QuestionsDataGridView[0, index].Value.ToString();
+            string obj = QuestionsDataGridView[2, index].Value.ToString();
+           
+            Question infoDelivery = new Question(QuestID, obj);
+            DialogResult dialogResult = new DialogResult();
+            dialogResult = infoDelivery.ShowDialog();
+            UpdateQuestions();
         }
     }
 }

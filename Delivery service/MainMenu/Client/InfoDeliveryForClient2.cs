@@ -56,7 +56,7 @@ namespace Delivery_service
             string query = $"update [Delivery service order] set [Delivery service order].[status id]=6, [Delivery service order].Price={gunaTextBox1.Text} where [delivery service order].[id]={DeliveryID}";
             cmd = new SqlCommand(query, connection);
             cmd.ExecuteNonQuery();
-            query = $"delete from [Delivery service time order] where [delivery service order].[order id]={DeliveryID}";
+            query = $"delete from [Delivery service time order] where [delivery service time order].[order id]={DeliveryID}";
             cmd = new SqlCommand(query, connection);
             cmd.ExecuteNonQuery();
             connection.Close();
