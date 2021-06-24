@@ -454,6 +454,7 @@
             this.Name = "InfoDeliveryForClient";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "InfoDelivery";
+            this.Load += new System.EventHandler(this.InfoDeliveryForClient_Load);
             ((System.ComponentModel.ISupportInitialize)(this.Close_button)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

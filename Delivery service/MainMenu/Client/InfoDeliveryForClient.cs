@@ -104,5 +104,10 @@ namespace Delivery_service
             this.DialogResult = DialogResult.OK;
             this.Close();
         }
+
+        private void InfoDeliveryForClient_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

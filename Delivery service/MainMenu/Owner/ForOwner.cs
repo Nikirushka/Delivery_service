@@ -44,8 +44,6 @@ namespace Delivery_service
             CompanyID = cmd.ExecuteScalar().ToString();
             connection.Close();
             UpdateProfile();
-            UpdateDelivery();
-            UpdateQuestions();
             UpdateCompany();
             NewDeliveryPanel.Show();
             NewDeliveryPanel.Location = loc;
@@ -685,5 +683,14 @@ namespace Delivery_service
             }
             UpdateQuestions();
         }
+
+        private void gunaTextBox4_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (Char.IsDigit(e.KeyChar) && gunaTextBox4.Text.Length < 11) return;
+            else
+                e.Handled = true;
+        }
+
+
     }
 }

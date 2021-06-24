@@ -39,8 +39,6 @@ namespace Delivery_service
             connection.Close();
             UpdateProfile();
             UpdateDelivery();
-            UpdateMyDelivery();
-            UpdateQuestions();
             NewDeliveryPanel.Show();
             NewDeliveryPanel.Location = loc;
             ProfilePanel.Hide();

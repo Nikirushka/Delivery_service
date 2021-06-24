@@ -37,8 +37,6 @@ namespace Delivery_service
             ClientID = cmd.ExecuteScalar().ToString();
             connection.Close();
             UpdateProfile();
-            UpdateDelivery();
-            UpdateQuestions();
             NewDeliveryPanel.Show();
             NewDeliveryPanel.Location = loc;
             MyDeliveryPanel.Hide();
@@ -73,6 +71,8 @@ namespace Delivery_service
         {
             RecDateTimePicker.Value = DateTime.Now;
             DesDateTimePicker.Value = DateTime.Now;
+            RecDateTimePicker.MinDate = DateTime.Now;
+            DesDateTimePicker.MinDate= DateTime.Now;
         }
 
         private void Orders_Click(object sender, EventArgs e)
@@ -559,6 +559,22 @@ namespace Delivery_service
             DialogResult dialogResult = new DialogResult();
             dialogResult = infoDelivery.ShowDialog();
             UpdateDelivery();
+        }
+
+        private void MainPanel_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void RecDateTimePicker_ValueChanged(object sender, EventArgs e)
+        {
+            DesDateTimePicker.Value = RecDateTimePicker.Value;
+            DesDateTimePicker.MinDate = RecDateTimePicker.Value;
+        }
+
+        private void ObjTextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+
         }
     }
 }

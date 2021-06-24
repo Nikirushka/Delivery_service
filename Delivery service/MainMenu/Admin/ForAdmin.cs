@@ -31,10 +31,7 @@ namespace Delivery_service
             UserID = id;
 
             UpdateClients();
-            UpdateOwners();
-            UpdateWorkers();
-            UpdateDelivers();
-            UpdateQuestions();
+         
             NewDeliveryPanel.Show();
             NewDeliveryPanel.Location = loc;
             MyDeliveryPanel.Hide();
