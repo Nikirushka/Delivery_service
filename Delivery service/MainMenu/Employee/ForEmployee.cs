@@ -3,6 +3,7 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
 using System.IO;
+using System.Text.RegularExpressions;
 using System.Windows.Forms;
 
 namespace Delivery_service
@@ -508,6 +509,36 @@ namespace Delivery_service
             DialogResult dialogResult = new DialogResult();
             dialogResult = infoDelivery.ShowDialog();
             UpdateDelivery();
+        }
+
+        private void SurnameTextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            string Symbol = e.KeyChar.ToString();
+            if ((Regex.Match(Symbol, @"[а-яА-Я]|[a-zA-Z]").Success) || e.KeyChar == 32 || e.KeyChar == 8)
+            {
+                return;
+            }
+            else e.Handled = true;
+        }
+
+        private void NameTextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            string Symbol = e.KeyChar.ToString();
+            if ((Regex.Match(Symbol, @"[а-яА-Я]|[a-zA-Z]").Success) || e.KeyChar == 32 || e.KeyChar == 8)
+            {
+                return;
+            }
+            else e.Handled = true;
+        }
+
+        private void PatrTextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            string Symbol = e.KeyChar.ToString();
+            if ((Regex.Match(Symbol, @"[а-яА-Я]|[a-zA-Z]").Success) || e.KeyChar == 32 || e.KeyChar == 8)
+            {
+                return;
+            }
+            else e.Handled = true;
         }
     }
 }

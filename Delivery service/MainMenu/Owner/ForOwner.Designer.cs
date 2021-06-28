@@ -103,7 +103,6 @@
             this.label16 = new System.Windows.Forms.Label();
             this.gunaTextBox5 = new Guna.UI.WinForms.GunaTextBox();
             this.label14 = new System.Windows.Forms.Label();
-            this.gunaTextBox4 = new Guna.UI.WinForms.GunaTextBox();
             this.label11 = new System.Windows.Forms.Label();
             this.gunaTextBox2 = new Guna.UI.WinForms.GunaTextBox();
             this.label12 = new System.Windows.Forms.Label();
@@ -132,6 +131,7 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.Close_button = new System.Windows.Forms.PictureBox();
+            this.gunaTextBox4 = new System.Windows.Forms.MaskedTextBox();
             this.MainPanel.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ProfilePic)).BeginInit();
@@ -815,6 +815,7 @@
             this.PatrTextBox.TabIndex = 3;
             this.PatrTextBox.Text = "Отчество";
             this.PatrTextBox.TextOffsetX = 7;
+            this.PatrTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.PatrTextBox_KeyPress);
             // 
             // NameTextBox
             // 
@@ -836,6 +837,7 @@
             this.NameTextBox.TabIndex = 2;
             this.NameTextBox.Text = "Имя";
             this.NameTextBox.TextOffsetX = 7;
+            this.NameTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.NameTextBox_KeyPress);
             // 
             // SurnameTextBox
             // 
@@ -857,6 +859,7 @@
             this.SurnameTextBox.TabIndex = 1;
             this.SurnameTextBox.Text = "Фамилия";
             this.SurnameTextBox.TextOffsetX = 7;
+            this.SurnameTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.SurnameTextBox_KeyPress);
             // 
             // label3
             // 
@@ -974,7 +977,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.ProfilePanel.Controls.Add(this.PhotoProfilePanel);
             this.ProfilePanel.Controls.Add(this.InfoProfilePanel);
-            this.ProfilePanel.Location = new System.Drawing.Point(478, 418);
+            this.ProfilePanel.Location = new System.Drawing.Point(450, 461);
             this.ProfilePanel.Name = "ProfilePanel";
             this.ProfilePanel.Size = new System.Drawing.Size(763, 514);
             this.ProfilePanel.TabIndex = 7;
@@ -987,7 +990,7 @@
             this.NewDeliveryPanel.Controls.Add(this.gunaButton6);
             this.NewDeliveryPanel.Controls.Add(this.gunaDataGridView1);
             this.NewDeliveryPanel.Controls.Add(this.panel6);
-            this.NewDeliveryPanel.Location = new System.Drawing.Point(861, 169);
+            this.NewDeliveryPanel.Location = new System.Drawing.Point(709, 296);
             this.NewDeliveryPanel.Name = "NewDeliveryPanel";
             this.NewDeliveryPanel.Size = new System.Drawing.Size(766, 514);
             this.NewDeliveryPanel.TabIndex = 8;
@@ -1093,6 +1096,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(243)))), ((int)(((byte)(241)))));
             this.panel6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.panel6.Controls.Add(this.gunaTextBox4);
             this.panel6.Controls.Add(this.label30);
             this.panel6.Controls.Add(this.label29);
             this.panel6.Controls.Add(this.label28);
@@ -1103,7 +1107,6 @@
             this.panel6.Controls.Add(this.label16);
             this.panel6.Controls.Add(this.gunaTextBox5);
             this.panel6.Controls.Add(this.label14);
-            this.panel6.Controls.Add(this.gunaTextBox4);
             this.panel6.Controls.Add(this.label11);
             this.panel6.Controls.Add(this.gunaTextBox2);
             this.panel6.Controls.Add(this.label12);
@@ -1265,30 +1268,6 @@
             this.label14.Size = new System.Drawing.Size(40, 20);
             this.label14.TabIndex = 17;
             this.label14.Text = "УНП";
-            // 
-            // gunaTextBox4
-            // 
-            this.gunaTextBox4.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.gunaTextBox4.BackColor = System.Drawing.Color.Transparent;
-            this.gunaTextBox4.BaseColor = System.Drawing.Color.White;
-            this.gunaTextBox4.BorderColor = System.Drawing.SystemColors.WindowFrame;
-            this.gunaTextBox4.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.gunaTextBox4.FocusedBaseColor = System.Drawing.Color.WhiteSmoke;
-            this.gunaTextBox4.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.gunaTextBox4.FocusedForeColor = System.Drawing.SystemColors.ControlText;
-            this.gunaTextBox4.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.gunaTextBox4.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.gunaTextBox4.Location = new System.Drawing.Point(362, 95);
-            this.gunaTextBox4.MaxLength = 10;
-            this.gunaTextBox4.Name = "gunaTextBox4";
-            this.gunaTextBox4.PasswordChar = '\0';
-            this.gunaTextBox4.Radius = 7;
-            this.gunaTextBox4.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.gunaTextBox4.Size = new System.Drawing.Size(155, 32);
-            this.gunaTextBox4.TabIndex = 3;
-            this.gunaTextBox4.Text = "УНП";
-            this.gunaTextBox4.TextOffsetX = 7;
-            this.gunaTextBox4.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.gunaTextBox4_KeyPress);
             // 
             // label11
             // 
@@ -1711,6 +1690,15 @@
             this.Close_button.MouseEnter += new System.EventHandler(this.Close_button_MouseEnter);
             this.Close_button.MouseLeave += new System.EventHandler(this.Close_button_MouseLeave);
             // 
+            // gunaTextBox4
+            // 
+            this.gunaTextBox4.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.gunaTextBox4.Location = new System.Drawing.Point(362, 95);
+            this.gunaTextBox4.Mask = "000000000";
+            this.gunaTextBox4.Name = "gunaTextBox4";
+            this.gunaTextBox4.Size = new System.Drawing.Size(155, 29);
+            this.gunaTextBox4.TabIndex = 29;
+            // 
             // ForOwner
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1848,7 +1836,6 @@
         private System.Windows.Forms.Label label16;
         private Guna.UI.WinForms.GunaTextBox gunaTextBox5;
         private System.Windows.Forms.Label label14;
-        private Guna.UI.WinForms.GunaTextBox gunaTextBox4;
         private System.Windows.Forms.Label label30;
         private System.Windows.Forms.Label label29;
         private System.Windows.Forms.Label label28;
@@ -1860,5 +1847,6 @@
         private Guna.UI.WinForms.GunaElipse gunaElipse10;
         private Guna.UI.WinForms.GunaButton gunaButton6;
         private System.Windows.Forms.Label label21;
+        private System.Windows.Forms.MaskedTextBox gunaTextBox4;
     }
 }

@@ -108,28 +108,31 @@ namespace Delivery_service
         private void textBox4_KeyPress(object sender, KeyPressEventArgs e)
         {
             string Symbol = e.KeyChar.ToString();
-            if (!Regex.Match(Symbol, @"[а-яА-Я]|[a-zA-Z]").Success)
+            if ((Regex.Match(Symbol, @"[а-яА-Я]|[a-zA-Z]").Success) || e.KeyChar == 32 || e.KeyChar == 8)
             {
-                e.Handled = true;
+                return;
             }
+            else e.Handled = true;
         }
 
         private void textBox3_KeyPress(object sender, KeyPressEventArgs e)
         {
             string Symbol = e.KeyChar.ToString();
-            if (!Regex.Match(Symbol, @"[а-яА-Я]|[a-zA-Z]").Success)
+            if ((Regex.Match(Symbol, @"[а-яА-Я]|[a-zA-Z]").Success) || e.KeyChar == 32 || e.KeyChar == 8)
             {
-                e.Handled = true;
+                return;
             }
+            else e.Handled = true;
         }
 
         private void textBox5_KeyPress(object sender, KeyPressEventArgs e)
         {
             string Symbol = e.KeyChar.ToString();
-            if (!Regex.Match(Symbol, @"[а-яА-Я]|[a-zA-Z]").Success)
+            if ((Regex.Match(Symbol, @"[а-яА-Я]|[a-zA-Z]").Success) || e.KeyChar == 32 || e.KeyChar == 8)
             {
-                e.Handled = true;
+                return;
             }
+            else e.Handled = true;
         }
     }
 }
