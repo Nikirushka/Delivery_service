@@ -75,5 +75,12 @@ namespace Delivery_service
         {
 
         }
+
+        private void gunaTextBox1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (Char.IsDigit(e.KeyChar) || e.KeyChar == 32 || e.KeyChar == 8) return;
+            else
+                e.Handled = true;
+        }
     }
 }

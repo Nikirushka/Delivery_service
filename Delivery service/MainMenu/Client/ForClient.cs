@@ -568,8 +568,9 @@ namespace Delivery_service
 
         private void RecDateTimePicker_ValueChanged(object sender, EventArgs e)
         {
-            DesDateTimePicker.Value = RecDateTimePicker.Value;
             DesDateTimePicker.MinDate = RecDateTimePicker.Value;
+            DesDateTimePicker.Value = RecDateTimePicker.Value;
+           
         }
 
         private void ObjTextBox_KeyPress(object sender, KeyPressEventArgs e)

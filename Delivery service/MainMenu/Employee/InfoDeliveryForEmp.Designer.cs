@@ -402,6 +402,7 @@
             this.gunaTextBox1.TabIndex = 26;
             this.gunaTextBox1.Text = "Цена";
             this.gunaTextBox1.TextOffsetX = 7;
+            this.gunaTextBox1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.gunaTextBox1_KeyPress);
             // 
             // label3
             // 

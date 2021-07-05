@@ -233,7 +233,7 @@ namespace Delivery_service
         {
             try
             {
-                string query = $"select dlo.id as 'Номер заказa', dlo.[Client id] as 'Номер клиента', dlo.[Employee id] as 'Номер работника', [Delivery service order status].Name as 'Статус заказа', dlo.[Object description] as Описание, dlo.Price as Цена, dlo.[Reception point] as 'Откуда', dlo.[Reception date] as 'Дата', dlo.[Reception time] as 'Время', dlo.[Destination point] as 'Куда', dlo.[Destination date] as 'Дата', dlo.[Destination time] as 'Время', dlo.[Client id] as Комментарий, dlo.Date as 'Дата заказа' from [Delivery service order] dlo join [Delivery service order status] on [Delivery service order status].id=dlo.[Status id]";
+                string query = $"select dlo.id as 'Номер заказa', dlo.[Client id] as 'Номер клиента', dlo.[Employee id] as 'Номер работника', [Delivery service order status].Name as 'Статус заказа', dlo.[Object description] as Описание, dlo.Price as Цена, dlo.[Reception point] as 'Откуда', dlo.[Reception date] as 'Дата', dlo.[Reception time] as 'Время', dlo.[Destination point] as 'Куда', dlo.[Destination date] as 'Дата', dlo.[Destination time] as 'Время', dlo.[Commentary] as Комментарий, dlo.Date as 'Дата заказа' from [Delivery service order] dlo join [Delivery service order status] on [Delivery service order status].id=dlo.[Status id]";
                 connection = new SqlConnection(connectionString);
                 connection.Open();
                 SqlDataAdapter adapter = new SqlDataAdapter(query, connection);
@@ -452,6 +452,58 @@ namespace Delivery_service
             DialogResult dialogResult = new DialogResult();
             dialogResult = infoDelivery.ShowDialog();
             UpdateQuestions();
+        }
+
+        private void gunaButton7_Click_1(object sender, EventArgs e)
+        {
+            string query = $"select [Delivery service client].[id] as 'Номер клиента',[Delivery service client].[User id] as 'Номер пользователя',[Delivery service user].Surname as Фамилия,[Delivery service user].Name as Имя,[Delivery service user].Patronymic as Отчество,[Delivery service user].[Birth date] as 'Дата рождения',[Delivery service user].[Phone number] as Телефон,[Delivery service user].Email,[Delivery service user].Login as Логин,[Delivery service user].Password as Пароль,[Delivery service user].[Registration date] as 'Дата регистрации' from [Delivery Service Client] join [Delivery service user] on [Delivery service user].id =[Delivery service client].[User id] where [Delivery service user].[Surname] like N'%{DesTextBox.Text}%'";
+            connection = new SqlConnection(connectionString);
+            connection.Open();
+            SqlDataAdapter adapter = new SqlDataAdapter(query, connection);
+            DataSet ds = new DataSet();
+            adapter.Fill(ds);
+            gunaDataGridView2.DataSource = ds.Tables[0];
+        }
+
+        private void DesTextBox_Click(object sender, EventArgs e)
+        {
+            DesTextBox.Text = "";
+        }
+
+        private void gunaButton9_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string query = $"select [Delivery service owner].[User id] as Номер,[Delivery service user].Surname as Фамилия,[Delivery service user].Name as Имя,[Delivery service user].Patronymic as Отчество,[Delivery service user].[Birth date] as 'Дата рождения',[Delivery service user].[Phone number] as Телефон,[Delivery service user].Email,[Delivery service user].Login as Логин,[Delivery service user].Password as Пароль,[Delivery service user].[Registration date] as 'Дата регистрации' from [Delivery service owner] join [Delivery service user] on [Delivery service user].id =[Delivery service owner].[User id] where [Delivery service user].Surname like N'%{gunaTextBox1.Text}%'";
+                connection = new SqlConnection(connectionString);
+                connection.Open();
+                SqlDataAdapter adapter = new SqlDataAdapter(query, connection);
+                DataSet ds = new DataSet();
+                adapter.Fill(ds);
+                gunaDataGridView1.DataSource = ds.Tables[0];
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void gunaButton10_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string query = $"select [Delivery service employee].[id] as 'Номер работника', [Delivery service employee].[User id] as 'Номер пользователя',[Delivery service user].Surname as Фамилия,[Delivery service user].Name as Имя,[Delivery service user].Patronymic as Отчество,[Delivery service user].[Birth date] as 'Дата рождения',[Delivery service user].[Phone number] as Телефон,[Delivery service user].Email,[Delivery service user].Login as Логин,[Delivery service user].Password as Пароль,[Delivery service user].[Registration date] as 'Дата регистрации' from [Delivery service employee] join [Delivery service user] on [Delivery service user].id =[Delivery service employee].[User id] where [Delivery service user].Surname like N'%{gunaTextBox2.Text}%' ";
+                connection = new SqlConnection(connectionString);
+                connection.Open();
+                SqlDataAdapter adapter = new SqlDataAdapter(query, connection);
+                DataSet ds = new DataSet();
+                adapter.Fill(ds);
+                gunaDataGridView3.DataSource = ds.Tables[0];
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }
